@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Nikolai Janakiev</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-	<div id="container">
-		<img id="image" src="img/image.png" />
-		<p id="text">
-			Coming Soon
-		</p>
-	</div>
-  </body>
-</html>
+---
+layout: default
+title: Home
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+    {{ post.excerpt }}
+  </div>
+  {% endfor %}
+</div>
