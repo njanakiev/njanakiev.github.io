@@ -2,13 +2,13 @@ exclude: ['README.md']
 permalink: /blog/:title/
 
 title: Nikolai Janakiev
-description: MA Studend in Applied Image and Signal Processing
+description: MA Student in Applied Image and Signal Processing
 url: 'http://janakiev.com'
 author: Nikolai Janakiev
 twitter:
   username: njanakiev
 
-til: 'http://til.janakiev.com' 
+tilurl: 'http://til.janakiev.com' 
 twitterurl: 'https://twitter.com/njanakiev'
 githuburl: 'https://github.com/njanakiev'
 
