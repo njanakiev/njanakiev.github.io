@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
 .masthead {
   padding-top:    1rem;
   padding-bottom: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   border-bottom: 1px solid #eee;
 }
 .masthead-title {
@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #505050;
 }
 .masthead-title small {
-  font-size: 75%;
+  font-size: 70%;
   font-weight: 400;
   color: #c0c0c0;
   letter-spacing: 0;
@@ -535,6 +535,18 @@ a.pagination-item:hover {
 .theme-base-0f .sidebar-toggle,
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
+}
+
+/* Gray */
+.theme-base-10 .sidebar,
+.theme-base-10 .sidebar-toggle:active,
+.theme-base-10 #sidebar-checkbox:checked ~ .sidebar-toggle {
+  background-color: #404040;
+}
+.theme-base-10 .container a,
+.theme-base-10 .sidebar-toggle,
+.theme-base-10 .related-posts li a:hover {
+  color: #404040;
 }
 
 

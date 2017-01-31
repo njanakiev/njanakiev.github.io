@@ -1,8 +1,9 @@
 exclude: ['README.md']
 permalink: /blog/:title/
 
-title: Nikolai Janakiev
-description: MA Student in Applied Image and Signal Processing
+title: PARAMETRIC THOUGHTS
+tagline: A BLOG BY NIKOLAI JANAKIEV
+description: MA Student in Applied Image and Signal Processing // Data Visualization / 3D / Open Data
 url: 'http://janakiev.com'
 author: Nikolai Janakiev
 twitter:
