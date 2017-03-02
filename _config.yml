@@ -2,7 +2,7 @@ exclude: ['README.md']
 permalink: /blog/:title/
 
 title: Parametric Thoughts
-tagline: A Blog by Nikolai Janakiev
+tagline: Homepage of Nikolai Janakiev
 description: MA Student in Applied Image and Signal Processing // Data Visualization / 3D / Open Data
 url: 'http://janakiev.com'
 author: Nikolai Janakiev
@@ -12,6 +12,7 @@ twitter:
 tilurl: 'http://til.janakiev.com' 
 twitterurl: 'https://twitter.com/njanakiev'
 githuburl: 'https://github.com/njanakiev'
+paramcookieurl: 'http://parametriccookie.tumblr.com/'
 
 gems:
   - jekyll-sitemap
