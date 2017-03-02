@@ -10,7 +10,7 @@ image: /assets/image.png
     <h1 class="post-title">
       <a href="{{ post.url | prepend: site.baseurl }}">
         {% if post.image %}
-          <img src="{{ site.baseurl }}/assets/post-images/{{ post.image }}">
+          <img src="{{ site.baseurl }}{{ post.image }}">
         {% endif %}
         {{ post.title }}
       </a>
