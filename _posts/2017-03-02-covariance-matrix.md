@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Understanding the Covariance Matrix
-tags: [Python]
+tags: [Python, Statistics]
 image: /assets/covariance_visualization.png
+comments: true
 ---
 
-This article is showing a geometric and intuitive explanation of the covariance matrix and the way it describes the shape of a data set. We will describe the geometric relationship of the covariance matrix with the use of linear transformations and eigen decomposition.
+This article shows a geometric explanation of the covariance matrix and the way it describes the shape of a data set.
 
 # Introduction
 
@@ -153,6 +154,7 @@ Now we will apply a linear transformation in the form of a transformation matrix
 $$T = RS$$
 
 where the rotation matrix $$R$$ is given by
+
 $$
 R = \left( \begin{array}{ccc}
 cos(\theta) & -sin(\theta) \\
@@ -289,4 +291,4 @@ where $$\mu$$ is the mean and $$C$$ is the covariance of the multivariate normal
 
 In this article we saw the relationship of the covariance matrix with linear transformation which is an important building block for understanding and using [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis), [SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition), the [Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier), the [Mahalanobis distance](https://en.wikipedia.org/wiki/Mahalanobis_distance) and other topics in statistics and pattern recognition. I found the covariance matrix to be a helpful cornerstone in the understanding of the many concepts and methods in pattern recognition and statistics.
 
-Many of the matrix identities can be found in [The Matrix Cookbook](http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf). The relationship between SVD, PCA and the covariance matrix are elegantly shown in this [question](http://math.stackexchange.com/questions/3869/what-is-the-intuitive-relationship-between-svd-and-pca).
+Many of the matrix identities can be found in [The Matrix Cookbook](http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf). The relationship between SVD, PCA and the covariance matrix are elegantly shown in this [question](http://math.stackexchange.com/questions/3869/what-is-the-intuitive-relationship-between-svd-and-pca) and this [question](http://stats.stackexchange.com/questions/134282/relationship-between-svd-and-pca-how-to-use-svd-to-perform-pca). Some further explanations on PCA with python can be found in the article on [Change of Basis](https://people.duke.edu/~ccc14/sta-663/PCASolutions.html).
