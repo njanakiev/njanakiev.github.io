@@ -11,6 +11,15 @@ layout: default
   {{ content }}
 </div>
 
+{% if page.imageurl %}
+  {% if page.imagesource %}
+    <span class="footnote">Image from <a href="{{ page.imageurl }}">{{ page.imagesource }}</a></span>
+  {% else %}
+    <span class="footnote"><a href="{{ page.imageurl }}">Image Source</a></span>
+  {% endif %}
+  
+{% endif %}
+
 {% if page.comments %}
 <div id="disqus_thread"></div>
 <script>
@@ -32,6 +41,7 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}
 
 <div class="related">
   <h2>Related Posts</h2>
@@ -48,4 +58,3 @@ s.setAttribute('data-timestamp', +new Date());
     {% endfor %}
   </ul>
 </div>
-{% endif %}
