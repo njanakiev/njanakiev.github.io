@@ -10,7 +10,7 @@ comments: true
 ---
 
 
-One of the crucial tasks when working with data is to load data properly. The common way the data is formated is [CSV][csv], which comes in different flavors and varying difficulties to parse. This article shows three common approaches.
+One of the crucial tasks when working with data is to load data properly. The common way the data is formated is [CSV][csv], which comes in different flavors and varying difficulties to parse. This article shows three common approaches in Python.
 
 The data used for the recipes commes from [GPSies][gpsies], a data base of GPS Tracks for hiking, biking and other activities, [NYC Department of Transportation][nyc dot] with data feeds of New York infrastructure and [World Bank Open Data][world bank] where some data sets like global population of the world can be found.
 
@@ -74,8 +74,8 @@ which gives us
  [ 48.88987   2.68981  72.     ]]
 ```
 
-![Coordinates]({{ site.baseurl }}/assets/python_csv_image_01.png)
-![Elevation]({{ site.baseurl }}/assets/python_csv_image_02.png)
+![Coordinates]({{ site.baseurl }}/assets/python_csv_files/python_csv_image_01.png)
+![Elevation]({{ site.baseurl }}/assets/python_csv_files/python_csv_image_02.png)
 
 First we need to open the file with [`open()`][python open] giving gives us a file object. the `with` statement makes sure that the file is then closed after the [`with`][python with] block. The file is then is used for the [`csv.reader`][csv.reader] which can be iterated over all rows returning for each row a list of the items as strings. We then finally transform the data into a [Numpy][numpy] array for further processing.
 
@@ -122,7 +122,7 @@ plt.xticks([])
 plt.yticks([])
 plt.show()
 ```
-![Bike Racks]({{ site.baseurl }}/assets/python_csv_image_03.png)
+![Bike Racks]({{ site.baseurl }}/assets/python_csv_files/python_csv_image_03.png)
 
 As mentioned before, the `names` argument enables us to use the header names to select the columns directly with their names as with `data['X']`. It is important to note that the `str` data type only works as a data type for all columns and without specified `names` argument
 
@@ -193,7 +193,7 @@ plt.ticklabel_format(style='plain')
 plt.show()
 ```
 
-![Population]({{ site.baseurl }}/assets/python_csv_image_04.png)
+![Population]({{ site.baseurl }}/assets/python_csv_files/python_csv_image_04.png)
 
 Here are some good resources for Pandas on [Indexing and Selecting Data][pandas indexing], [Working with Missing Data][pandas missing values] and [Data Structures][pandas data structures]. There is also a [10 minutes to pandas][pandas 10min] introduction which covers many helpful use cases.
 
