@@ -6,7 +6,7 @@ image: /assets/covariance_visualization.png
 comments: true
 ---
 
-This article shows a geometric explanation of the covariance matrix and the way it describes the shape of a data set.
+Here we show a geometric explanation of the covariance matrix and the way it describes the shape of a data set.
 
 # Introduction
 
