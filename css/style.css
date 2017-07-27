@@ -52,3 +52,8 @@ table {
   display: block;
   overflow: auto;
 }
+
+pre {
+  overflow: auto;
+  white-space: pre;
+}

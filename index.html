@@ -15,8 +15,8 @@ image: /assets/image.png
         {{ post.title }}
       </a>
     </h1>
-
     <span class="post-date">{{ post.date | date_to_string }}</span>
+    <p>{{ post.excerpt }}</p>
   </div>
   {% endfor %}
 </div>
