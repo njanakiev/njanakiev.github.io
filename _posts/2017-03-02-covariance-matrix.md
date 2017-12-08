@@ -6,7 +6,7 @@ image: /assets/covariance_visualization.png
 comments: true
 ---
 
-Here we show a geometric explanation of the covariance matrix and the way it describes the shape of a data set.
+The covariance matrix is a confusing yet powerful matrix, which frequently shows up while delving into statistics and probability theory. Here I'll show a more intuitive geometric explanation of the covariance matrix and the way it describes the shape of a data set.
 
 # Introduction
 
