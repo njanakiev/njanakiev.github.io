@@ -55,7 +55,7 @@ plt.show()
 ```
 
 
-![png]({{ site.baseurl }}/assets/covariance-matrix_files/covariance-matrix_1_0.png)
+![png]({{ site.baseurl }}/assets/covariance_matrix_files/covariance-matrix_1_0.png)
 
 
 This case would mean that $$x$$ and $$y$$ are independent (or uncorrelated) and the covariance matrix $$C$$ is
@@ -136,7 +136,7 @@ cov_mat(Y.T)
 ```
 
 
-![png]({{ site.baseurl }}/assets/covariance-matrix_files/covariance-matrix_5_0.png)
+![png]({{ site.baseurl }}/assets/covariance_matrix_files/covariance-matrix_5_0.png)
 
 
 
@@ -191,7 +191,7 @@ cov_mat(Y.T)
 ```
 
 
-![png]({{ site.baseurl }}/assets/covariance-matrix_files/covariance-matrix_7_0.png)
+![png]({{ site.baseurl }}/assets/covariance_matrix_files/covariance-matrix_7_0.png)
 
 
 
@@ -249,7 +249,7 @@ plt.show()
 ```
 
 
-![png]({{ site.baseurl }}/assets/covariance-matrix_files/covariance-matrix_10_0.png)
+![png]({{ site.baseurl }}/assets/covariance_matrix_files/covariance-matrix_10_0.png)
 
 
 We can now get from the covariance the transformation matrix $$T$$ and we can use the inverse of $$T$$ to uncorrelate (whiten) the data. 
@@ -278,7 +278,7 @@ cov_mat(Z.T)
 ```
 
 
-![png]({{ site.baseurl }}/assets/covariance-matrix_files/covariance-matrix_12_0.png)
+![png]({{ site.baseurl }}/assets/covariance_matrix_files/covariance-matrix_12_0.png)
 
 
 An interesting use of the covariance matrix is in the [Mahalanobis distance](https://en.wikipedia.org/wiki/Mahalanobis_distance), which is used when measuring multivariate distances with covariance. It does that by calculating the uncorrelated distance between a point $$x$$ to a multivariate normal distribution with the following formula

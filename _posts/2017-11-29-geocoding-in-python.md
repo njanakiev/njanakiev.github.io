@@ -4,6 +4,8 @@ title: Batch Geocoding with Python
 tags: [Python]
 author: Nikolai Janakiev
 image: /assets/monuments.png
+imageurl: https://github.com/njanakiev/austrian-monuments-visualization
+imagesource: austrian-monuments-visualization
 comments: true
 ---
 
