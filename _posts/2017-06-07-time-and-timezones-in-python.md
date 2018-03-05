@@ -2,7 +2,6 @@
 layout: post
 title: Working with Time and Time Zones in Python
 tags: [Python]
-author: Nikolai Janakiev
 image: /assets/MET_2094.jpg
 imageurl: http://www.metmuseum.org/art/collection/search/2094
 imagesource: Metropolitan Museum of Art

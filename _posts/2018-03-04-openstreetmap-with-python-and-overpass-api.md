@@ -2,7 +2,6 @@
 layout: post
 title: Loading Data from OpenStreetMap with Python and the Overpass API
 tags: [OpenStreetMap, Overpass API, GIS, Python]
-author: Nikolai Janakiev
 image: /assets/DE_amenity_biergarten.png
 imageurl: https://github.com/njanakiev/openstreetmap-heatmap
 imagesource: openstreetmap-heatmap

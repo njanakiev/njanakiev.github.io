@@ -2,7 +2,6 @@
 layout: post
 title: Command-Line Image Processing with ImageMagick
 tags: [Commmand-Line, ImageMagick, Image Processing]
-author: Nikolai Janakiev
 image: /assets/NOS_163254866811.jpg
 imageurl: http://nos.twnsnd.co/image/163254866811
 imagesource: New Old Stock

@@ -2,7 +2,6 @@
 layout: post
 title: Three ways to get most of your CSV in Python
 tags: [Python, CSV]
-author: Nikolai Janakiev
 image: /assets/NOS_159641617020.jpg
 imageurl: http://nos.twnsnd.co/image/159641617020
 imagesource: New Old Stock
