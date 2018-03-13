@@ -4,7 +4,7 @@ title: About
 ---
 
 
-Hello, I am a Master student in Applied Image and Signal Processing based in Austria. I am interested in various topics spanning from geometric modelling, computer aided design and computational design over to data analysis, signal processing and data visualization. This blog is dedicated to some of the topics and interests I like to explore. My CV can be found [here]({{ site.baseurl }}/assets/cv_nikolai_janakiev.pdf).
+Hello, I am a Master in Applied Image and Signal Processing based in Austria. I am interested in various topics spanning from geometric modelling, computer aided design and computational design over to data analysis, signal processing and data visualization. This blog is dedicated to some of the topics and interests I like to explore.
 
 ## Talks
 - 2015 - Internet of Things, [(Video)][science slam video] @ [Science Slam Salzburg][science slam]
