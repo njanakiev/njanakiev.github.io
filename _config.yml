@@ -22,7 +22,7 @@ twitterurl: 'https://twitter.com/njanakiev'
 githuburl: 'https://github.com/njanakiev'
 paramcookieurl: 'http://parametriccookie.tumblr.com/'
 
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed

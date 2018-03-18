@@ -51,9 +51,12 @@
 table {
   display: block;
   overflow: auto;
+  font-size: .58rem;
+  border: none;
 }
 
 pre {
+  font-size: .6rem;
   overflow: auto;
   white-space: pre;
 }
