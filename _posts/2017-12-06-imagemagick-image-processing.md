@@ -1,5 +1,6 @@
 ---
 layout: post
+category: blog
 title: Command-Line Image Processing with ImageMagick
 tags: [Commmand-Line, ImageMagick, Image Processing]
 image: /assets/NOS_163254866811.jpg

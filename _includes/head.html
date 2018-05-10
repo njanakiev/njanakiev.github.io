@@ -1,3 +1,24 @@
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/cookieconsent.min.css" />
+<script src="{{ site.baseurl }}/js/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#edeff5",
+      "text": "#838391"
+    },
+    "button": {
+      "background": "#4b81e8"
+    }
+  },
+  "theme": "edgeless",
+  "content": {
+    "href": "{{ site.baseurl }}/privacy"
+  }
+})});
+</script>
+
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -1,5 +1,6 @@
 ---
 layout: post
+category: blog
 title: Working with Time and Time Zones in Python
 tags: [Python]
 image: /assets/MET_2094.jpg

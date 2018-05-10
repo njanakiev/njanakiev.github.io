@@ -1,5 +1,6 @@
 ---
 layout: post
+category: blog
 title: Understanding the Covariance Matrix
 tags: [Python, Statistics]
 image: /assets/covariance_visualization.png

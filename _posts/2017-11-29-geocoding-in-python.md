@@ -1,5 +1,6 @@
 ---
 layout: post
+category: blog
 title: Batch Geocoding with Python
 tags: [Python]
 image: /assets/monuments.png

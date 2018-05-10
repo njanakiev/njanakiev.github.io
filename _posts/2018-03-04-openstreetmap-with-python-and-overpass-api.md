@@ -1,5 +1,6 @@
 ---
 layout: post
+category: blog
 title: Loading Data from OpenStreetMap with Python and the Overpass API
 tags: [OpenStreetMap, Overpass API, GIS, Python]
 image: /assets/DE_amenity_biergarten.png

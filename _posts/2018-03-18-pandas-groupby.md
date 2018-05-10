@@ -1,5 +1,6 @@
 ---
 layout: post
+category: blog
 title: Working with Pandas Group By in Python
 tags: [Pandas, Python]
 image: /assets/NOS_170539764971.jpg

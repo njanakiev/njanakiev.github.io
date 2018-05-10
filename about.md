@@ -3,7 +3,6 @@ layout: page
 title: About
 ---
 
-
 Hello, I am a Master in Applied Image and Signal Processing based in Austria. I am interested in various topics spanning from geometric modelling, computer aided design and computational design over to data analysis, signal processing and data visualization. This blog is dedicated to some of the topics and interests I like to explore.
 
 ## Talks

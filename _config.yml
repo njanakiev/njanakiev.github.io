@@ -1,5 +1,5 @@
 exclude: ['README.md']
-permalink: /blog/:title/
+permalink: /:categories/:title/
 
 title: Parametric Thoughts
 tagline: Homepage of Nikolai Janakiev
@@ -21,7 +21,6 @@ social:
     - https://medium.com/@njanakiev
     - https://www.linkedin.com/in/nikolai-janakiev/
 
-tilurl: 'http://til.janakiev.com' 
 twitterurl: 'https://twitter.com/njanakiev'
 githuburl: 'https://github.com/njanakiev'
 paramcookieurl: 'http://parametriccookie.tumblr.com/'
