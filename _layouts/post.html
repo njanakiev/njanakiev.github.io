@@ -16,6 +16,7 @@ layout: default
     <span class="footnote">Image from <a href="{{ page.imageurl }}">{{ page.imagesource }}</a></span>
   {% else %}
     <span class="footnote"><a href="{{ page.imageurl }}">Image Source</a></span>
-  {% endif %}
-  
+  {% endif %}  
 {% endif %}
+
+{% include related.html %}
