@@ -2,7 +2,7 @@
 layout: post
 category: til
 title: Creating Instagram Videos from Images
-tags: [Instagram, Command-Line, ffmpeg]
+tags: [Instagram, FFmpeg]
 image: /til/assets/NOS_134533666968.jpg
 imageurl: http://nos.twnsnd.co/image/134533666968
 imagesource: New Old Stock

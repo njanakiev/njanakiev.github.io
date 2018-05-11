@@ -2,7 +2,7 @@
 layout: post
 category: til
 title: Videos and GIFs with Three.js
-tags: [GIF, ffmpeg, Three.js, JavaScript, Command-Line]
+tags: [GIF, FFmpeg, Three.js, JavaScript]
 image: /til/assets/webgl_01.gif
 comments: true
 ---

@@ -2,7 +2,7 @@
 layout: post
 category: blog
 title: Batch Geocoding with Python
-tags: [Python]
+tags: [GIS, Python]
 image: /assets/monuments.png
 imageurl: https://github.com/njanakiev/austrian-monuments-visualization
 imagesource: austrian-monuments-visualization

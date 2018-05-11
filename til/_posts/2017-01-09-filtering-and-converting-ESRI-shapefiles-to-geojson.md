@@ -2,7 +2,7 @@
 layout: post
 category: til
 title: Filtering and Converting ESRI Shapefiles to GeoJSON
-tags: [GIS, ESRI shapefile, gdal, ogr, geojson, Commmand-Line]
+tags: [GIS, ESRI Shapefile, GDAL, OGR, GeoJSON]
 image: /til/assets/NOS_135192661848.jpg
 imageurl: http://nos.twnsnd.co/image/135192661848
 imagesource: New Old Stock

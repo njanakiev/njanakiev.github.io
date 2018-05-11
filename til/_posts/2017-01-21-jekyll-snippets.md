@@ -2,7 +2,7 @@
 layout: post
 category: til
 title: Jekyll Snippets
-tags: [Jekyll, Command-Line]
+tags: [Jekyll]
 comments: true
 ---
 

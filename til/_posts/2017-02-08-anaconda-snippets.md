@@ -2,7 +2,7 @@
 layout: post
 category: til
 title: Anaconda Snippets
-tags: [Anaconda, Python, Command-Line]
+tags: [Anaconda, Python]
 comments: true
 ---
 
