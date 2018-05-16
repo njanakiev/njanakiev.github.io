@@ -1,7 +1,7 @@
 ---
 layout: post
 category: blog
-title: Working with Pandas Group By in Python
+title: Working with Group By in Pandas 
 tags: [Pandas, Python]
 image: /assets/NOS_170539764971.jpg
 imageurl: http://nos.twnsnd.co/image/170539764971

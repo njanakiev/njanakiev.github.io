@@ -1,7 +1,7 @@
 ---
 layout: post
 category: til
-title: Working with MultiIndex and Pivot Tables in Pandas and Python
+title: Working with MultiIndex and Pivot Tables in Pandas
 tags: [Pandas, Python]
 comments: true
 ---
