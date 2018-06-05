@@ -2,22 +2,25 @@
 layout: post
 category: blog
 title: Understanding the Covariance Matrix
-tags: [Python, Statistics]
+tags: [Python, Data Science, Statistics]
 image: /assets/covariance_visualization.png
-comments: true
 ---
 
-The covariance matrix is a confusing yet powerful matrix, which frequently shows up while delving into statistics and probability theory. Here I'll show a more intuitive geometric explanation of the covariance matrix and the way it describes the shape of a data set.
+This article is showing a geometric and intuitive explanation of the covariance matrix and the way it describes the shape of a data set. We will describe the geometric relationship of the covariance matrix with the use of linear transformations and eigen decomposition.
 
 # Introduction
 
 Before we get started, we shall take a quick look at the difference between covariance and variance. Variance measures the variation of a single random variable (like height of a person in a population), whereas covariance is a measure of how much two random variables vary together (like the height of a person and the weight of a person in a population). The formula for variance is given by
 
-$$ \sigma^2_x = \frac{1}{n-1} \sum^{n}_{i=1}(x_i - \bar{x})^2 $$
+$$ 
+\sigma^2_x = \frac{1}{n-1} \sum^{n}_{i=1}(x_i - \bar{x})^2 \\
+$$
 
 where $$n$$ is the number of samples (e.g. number of people) and $$\bar{x}$$ is the mean of the random variable $$x$$ (represented as a vector). The covariance $$\sigma(x, y)$$ of two random variables $$x$$ and $$y$$ is given by 
 
-$$\sigma(x, y) = \frac{1}{n-1} \sum^{n}_{i=1}{(x_i-\bar{x})(y_i-\bar{y})}$$
+$$
+\sigma(x, y) = \frac{1}{n-1} \sum^{n}_{i=1}{(x_i-\bar{x})(y_i-\bar{y})}
+$$
 
 with $$n$$ samples. The variance $$\sigma_x^2$$ of a random variable $$x$$ can be also expressed as the covariance with itself by $$\sigma(x, x)$$.
 
@@ -25,7 +28,9 @@ with $$n$$ samples. The variance $$\sigma_x^2$$ of a random variable $$x$$ can b
 
 With the covariance we can calculate entries of the covariance matrix, which is a square matrix given by $$C_{i,j} = \sigma(x_i, x_j)$$ where $$C \in \mathbb{R}^{d \times d}$$ and $$d$$ describes the dimension or number of random variables of the data (e.g. the number of features like height, width, weight, ...). Also the covariance matrix is symmetric since $$\sigma(x_i, x_j) = \sigma(x_j, x_i)$$. The diagonal entries of the covariance matrix are the variances and the other entries are the covariances. For this reason the covariance matrix is sometimes called the _variance-covariance matrix_. The calculation for the covariance matrix can be also expressed as
 
-$$ C = \frac{1}{n-1} \sum^{n}_{i=1}{(X_i-\bar{X})(X_i-\bar{X})^T} $$
+$$
+C = \frac{1}{n-1} \sum^{n}_{i=1}{(X_i-\bar{X})(X_i-\bar{X})^T}
+$$
 
 where our data set is expressed by the matrix $$X \in \mathbb{R}^{n \times d}$$. Following from this equation, the covariance matrix can be computed for a data set with zero mean with $$ C = \frac{XX^T}{n-1} $$ by using the semi-definite matrix $$XX^T$$.
 
@@ -43,6 +48,11 @@ We want to show how linear transformation affect the data set and in result the 
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
+%matplotlib inline
+
+plt.style.use('ggplot')
+plt.rcParams['figure.figsize'] = (12, 8)
+
 
 # Normal distributed x and y vector with mean 0 and standard deviation 1
 x = np.random.normal(0, 1, 500)
@@ -51,12 +61,11 @@ X = np.vstack((x, y)).T
 
 plt.scatter(X[:, 0], X[:, 1])
 plt.title('Generated Data')
-plt.axis('equal')
-plt.show()
+plt.axis('equal');
 ```
 
 
-![png]({{ site.baseurl }}/assets/covariance_matrix_files/covariance-matrix_1_0.png)
+![png]({{ site.baseurl }}/assets/covariance_matrix_files/output_1_0.png)
 
 
 This case would mean that $$x$$ and $$y$$ are independent (or uncorrelated) and the covariance matrix $$C$$ is
@@ -88,8 +97,8 @@ cov_mat(X.T) # (or with np.cov(X.T))
 
 
 
-    array([[ 1.00666865,  0.0243458 ],
-           [ 0.0243458 ,  0.88681178]])
+    array([[ 1.008072  , -0.01495206],
+           [-0.01495206,  0.92558318]])
 
 
 
@@ -130,22 +139,21 @@ Y = X.dot(Scale)
 plt.scatter(Y[:, 0], Y[:, 1])
 plt.title('Transformed Data')
 plt.axis('equal')
-plt.show()
 
 # Calculate covariance matrix
 cov_mat(Y.T)
 ```
 
 
-![png]({{ site.baseurl }}/assets/covariance_matrix_files/covariance-matrix_5_0.png)
+
+
+    array([[ 0.50558298, -0.09532611],
+           [-0.09532611, 10.43067155]])
 
 
 
 
-
-    array([[  0.49326764,   0.05794301],
-           [  0.05794301,  10.25154418]])
-
+![png]({{ site.baseurl }}/assets/covariance_matrix_files/output_5_1.png)
 
 
 We can see that this does in fact approximately match our expectation with $$0.7^2 = 0.49$$ and $$3.4^2 = 11.56$$ for $$(s_x\sigma_x)^2$$ and $$(s_y\sigma_y)^2$$. This relation holds when the data is scaled in $$x$$ and $$y$$ direction, but it gets more involved for other linear transformations.
@@ -184,23 +192,22 @@ Y = X.dot(T)
 
 plt.scatter(Y[:, 0], Y[:, 1])
 plt.title('Transformed Data')
-plt.axis('equal')
-plt.show()
+plt.axis('equal');
 
 # Calculate covariance matrix
 cov_mat(Y.T)
 ```
 
 
-![png]({{ site.baseurl }}/assets/covariance_matrix_files/covariance-matrix_7_0.png)
+
+
+    array([[ 4.94072998, -4.93536067],
+           [-4.93536067,  5.99552455]])
 
 
 
 
-
-    array([[ 4.70340162, -4.83340262],
-           [-4.83340262,  6.0414102 ]])
-
+![png]({{ site.baseurl }}/assets/covariance_matrix_files/output_7_1.png)
 
 
 This leads to the question how to decompose the covariance matrix $$C$$ into a rotation matrix $$R$$ and a scaling matrix $$S$$.
@@ -243,14 +250,13 @@ eVe, eVa = np.linalg.eig(C)
 
 plt.scatter(Y[:, 0], Y[:, 1])
 for e, v in zip(eVe, eVa.T):
-    plt.plot([0, 3*np.sqrt(e)*v[0]], [0, 3*np.sqrt(e)*v[1]], 'r-', lw=2)
+    plt.plot([0, 3*np.sqrt(e)*v[0]], [0, 3*np.sqrt(e)*v[1]], 'k-', lw=2)
 plt.title('Transformed Data')
-plt.axis('equal')
-plt.show()
+plt.axis('equal');
 ```
 
 
-![png]({{ site.baseurl }}/assets/covariance_matrix_files/covariance-matrix_10_0.png)
+![png]({{ site.baseurl }}/assets/covariance_matrix_files/output_10_0.png)
 
 
 We can now get from the covariance the transformation matrix $$T$$ and we can use the inverse of $$T$$ to uncorrelate (whiten) the data. 
@@ -271,15 +277,22 @@ Z = Y.dot(np.linalg.inv(T))
 
 plt.scatter(Z[:, 0], Z[:, 1])
 plt.title('Uncorrelated Data')
-plt.axis('equal')
-plt.show()
+plt.axis('equal');
 
 # Covariance matrix of the uncorrelated data
 cov_mat(Z.T)
 ```
 
 
-![png]({{ site.baseurl }}/assets/covariance_matrix_files/covariance-matrix_12_0.png)
+
+
+    array([[ 1.00000000e+00, -1.24594167e-16],
+           [-1.24594167e-16,  1.00000000e+00]])
+
+
+
+
+![png]({{ site.baseurl }}/assets/covariance_matrix_files/output_12_1.png)
 
 
 An interesting use of the covariance matrix is in the [Mahalanobis distance](https://en.wikipedia.org/wiki/Mahalanobis_distance), which is used when measuring multivariate distances with covariance. It does that by calculating the uncorrelated distance between a point $$x$$ to a multivariate normal distribution with the following formula
@@ -292,4 +305,4 @@ where $$\mu$$ is the mean and $$C$$ is the covariance of the multivariate normal
 
 In this article we saw the relationship of the covariance matrix with linear transformation which is an important building block for understanding and using [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis), [SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition), the [Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier), the [Mahalanobis distance](https://en.wikipedia.org/wiki/Mahalanobis_distance) and other topics in statistics and pattern recognition. I found the covariance matrix to be a helpful cornerstone in the understanding of the many concepts and methods in pattern recognition and statistics.
 
-Many of the matrix identities can be found in [The Matrix Cookbook](http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf). The relationship between SVD, PCA and the covariance matrix are elegantly shown in this [question](http://math.stackexchange.com/questions/3869/what-is-the-intuitive-relationship-between-svd-and-pca) and this [question](http://stats.stackexchange.com/questions/134282/relationship-between-svd-and-pca-how-to-use-svd-to-perform-pca). Some further explanations on PCA with python can be found in the article on [Change of Basis](https://people.duke.edu/~ccc14/sta-663/PCASolutions.html).
+Many of the matrix identities can be found in [The Matrix Cookbook](http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf). The relationship between SVD, PCA and the covariance matrix are elegantly shown in this [question](http://math.stackexchange.com/questions/3869/what-is-the-intuitive-relationship-between-svd-and-pca).
