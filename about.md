@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-Hello, I am a Master in Applied Image and Signal Processing based in Austria. I am interested in various topics spanning from geometric modelling, computer aided design and computational design over to data analysis, signal processing and data visualization. This blog is dedicated to some of the topics and interests I like to explore.
+Hello, I am a Master in Applied Image and Signal Processing based in Austria. I am interested in various topics spanning from data analysis, signal processing and data visualization over to geometric modelling, computer aided design and computational design. This blog is dedicated to some of the topics and interests I like to explore.
 
 ## Talks
 - 2015 - Internet of Things, [(Video)][science slam video] @ [Science Slam Salzburg][science slam]
@@ -11,6 +11,7 @@ Hello, I am a Master in Applied Image and Signal Processing based in Austria. I 
 - 2016 - Geospatial Storytelling, [(Project)][geospatial storytelling], [(Video)][geospatial storytelling video] @ [Data Visualization NY][data viz ny]
 - 2016 - Yet Another Twitter Bot, [(Slides)][generic-bot slides] @ [Barcamp Salzburg][barcamp october 2016]
 - 2017 - WebGL, Three.js and Shaders, [(Slides)][webgl slides] @ [Barcamp Salzburg][barcamp april 2017]
+- 2018 - Predict Economic Measurements with OpenStreetMap [(Slides)][predict osm slides] @ Z_GIS
 
 ## Around the Web
 I am somewhat active on other parts of the web where you can keep in touch with me, such as [Github][github], [Twitter][twitter] and [LinkedIn][linkedin].
@@ -26,6 +27,7 @@ I am somewhat active on other parts of the web where you can keep in touch with 
 [data viz ny]: https://www.meetup.com/de-DE/DataVisualization/events/231402199/?eventId=231402199
 [barcamp october 2016]: https://www.meetup.com/de-DE/salzburgwebdev/events/231559126/
 [barcamp april 2017]: https://www.meetup.com/de-DE/salzburgwebdev/events/237491594/
+[predict osm slides]: https://janakiev.com/osm-predict-economic-measurements/#/
 [twitter]: https://twitter.com/njanakiev
 [github]: https://github.com/njanakiev
 [linkedin]: https://at.linkedin.com/in/nikolai-janakiev
