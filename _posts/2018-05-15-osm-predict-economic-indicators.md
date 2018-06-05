@@ -18,7 +18,7 @@ _Henderson, J. Vernon, Adam Storeygard, and David N. Weil. "Measuring economic g
 
 Instead of measuring lights, here we will focus on the various amenities like universities, atms, parking spaces and others found in OSM within each of the countries in the european union (EU) and member states of the european free trade association (EFTA). The objective is to see which of those amenities correlate most with the selected economic indicators. All the necessary scripts to collect and clean the data from OSM and the economic indicators can be found in this [repository](https://github.com/njanakiev/osm-predict-economic-measurements).
 
-## Measurements in Economics
+# Measurements in Economics
 
 There are various ways to measure the macroeconomic performance of a given country. The key measures of economic performance include economic growth (e.g. real GDP growth), inflation, unemployment and current account (e.g. low deficit). The focus in this project were three particular indicators, the Gross Domestic Product (GDP), the Human Development Index (HDI) and the Big Mac Index.
 
@@ -122,7 +122,7 @@ df_targets.head()
 
 
 
-### Gross Domestic Product and Gross National Income
+## Gross Domestic Product and Gross National Income
 
 One of the most well-known economic metrics is the [Gross Domestic Product](https://en.wikipedia.org/wiki/Gross_domestic_product) (GDP) which is defined by the [OECD](http://stats.oecd.org/glossary/detail.asp?ID=1163) as _an aggregate measure of production equal to the sum of the gross value added of all resident and instituional units engaged in production_. In simple terms this measures the market value of all goods and services produced in a country within a period of time (e.g. in one year).
 
@@ -139,7 +139,7 @@ plt.xlabel(''); plt.legend(fontsize=15);
 ![png]({{ site.baseurl }}/assets/osm_predict_economic_indicators_files/output_4_0.png)
 
 
-### Human Development Index
+## Human Development Index
 
 The [Human Development Index](http://hdr.undp.org/en/content/human-development-index-hdi) (HDI) is a composite index consisting of life expectancy, education and per capita income indicators which are used to rank countries by their human development. The index was developed by the Pakistani economist _Mahbub ul Haq_ for the [United Nations Development Programme](http://www.undp.org/content/undp/en/home.html) (UNDP) to assess the development of a country and not economic growth alone.
 
@@ -154,7 +154,7 @@ plt.title('Human Development Index', fontsize=20); plt.xlabel('');
 ![png]({{ site.baseurl }}/assets/osm_predict_economic_indicators_files/output_6_0.png)
 
 
-### Big Mac Index
+## Big Mac Index
 
 The final indicator in our selection is the [Big Mac Index](https://www.economist.com/content/big-mac-index) which was created by the Economist Magazine in 1986 as an informal way of comparing purchasing power between currencies against the U.S. Dollar. McDonnalds is available in 119 different countries and one particular thing about McDonnalds is its consistency in its products among its stores. This means the same items are made in the same way with the same ingredients in very different economies around the world, making the Big Mac a suitable candidate for a market basket of goods for the PPP. This can efficiently show which currencies are under or overvalued compared to other currencies. This makes it a prime example for the purchasing power parity discussed before.
 
@@ -170,7 +170,7 @@ plt.xlabel(''); plt.ylabel('Dollar', fontsize=15);
 ![png]({{ site.baseurl }}/assets/osm_predict_economic_indicators_files/output_8_0.png)
 
 
-## Loading Data from OpenStreetMap
+# Loading Data from OpenStreetMap
 
 Having our economic indicators in place, we can now move on to select the desired amenities in OSM. There are various [elements](https://wiki.openstreetmap.org/wiki/Elements) in OSM, which can be associated with [tags](https://wiki.openstreetmap.org/wiki/Tags) consisting of key-value pairs. One useful key is the [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) key, which tags various community facilites like _university_, _school_, _restaurant_ or others.
 
@@ -207,7 +207,7 @@ print(response.text)
     
 
 
-### Load and normalize OSM Counts
+## Load and normalize OSM Counts
 
 Next step is to load the amenities for each country. Since we have also the population for each country, we want to normalize the counts to have an amenity per capita measure. This makes it easier to compare the countries. Additionally we want to replace all amenities with count 0 to 0.1, which is helpful when visualizing the data set with logarithmic scale.
 
@@ -454,7 +454,7 @@ plt.tight_layout()
 ![png]({{ site.baseurl }}/assets/osm_predict_economic_indicators_files/output_16_0.png)
 
 
-## Correlation between Amenities and Economic Indicators
+# Correlation between Amenities and Economic Indicators
 
 Now we will calculate the correlation for each amenity with all of the selected economic indicators to see which one seems to have the most influence. We are using the [Pearson Correlation Coefficient](https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient) to measure the linear correlation. For all economic indicators we will be using the normalized amenity counts and for the population we will take the total amenity counts.
 
@@ -658,13 +658,13 @@ plt.tight_layout()
 
 Since we used economic indicators measuring similar things it should come as no surprise that we will find similar correlation within the amenities. It is still interesting to see that school and marketplace are consistent within those indicators. This would be interesting to extend to other countries to see if this consistency still holds.
 
-## Conclusion
+# Conclusion
 
 OpenStreetMap offers a great source to explore the hidden gems inside its vast data set and this project only scratched the surface of it. There is still a plethora of other things to explore and rabbit holes to fall into and as a living data set that is growing with each distribution the things to explore only increase. Finally, all the calculations and necessary scripts to collect the data from OSM can be found in this [repository](https://github.com/njanakiev/osm-predict-economic-measurements) and this [article]({{ site.baseurl }}{% link _posts/2018-03-04-openstreetmap-with-python-and-overpass-api.md %}) covers more details on how to load data from OSM with Python and the Overpass API.
 
 Related to this topic, there is a great article on [Urban Form Analysis with OpenStreetMap Data](http://geoffboeing.com/2017/04/urban-form-analysis-openstreetmap/) by Geoff Boeing which talks about analysis and visualisation of street networks and building footprints. Another good read is the article [OpenStreetMap past(s), and OpenStreetMap futures(s)](https://hi.stamen.com/openstreetmap-past-s-openstreetmap-future-s-cafddc2a4736) by Alan McConchie which explores the OSM users and the contributions over time. In the next article we will explore what relationships can be found between countries and cities by their amenities.
 
-### Used Data Sets and APIs
+## Used Data Sets and APIs
 
 - [Human Development Index and its components](http://hdr.undp.org/en/composite/HDI) and [Human Development Data (1990-2015)](http://hdr.undp.org/en/data)
 - [World Bank Open Data](https://data.worldbank.org/) with [wbdata](https://github.com/OliverSherouse/wbdata) by Sherouse, Oliver (2014). Arlington, VA. Available from http://github.com/OliverSherouse/wbdata.
