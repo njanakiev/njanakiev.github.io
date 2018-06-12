@@ -4,6 +4,7 @@ category: blog
 title: Understanding the Covariance Matrix
 tags: [Python, Data Science, Statistics]
 image: /assets/covariance_visualization.png
+comments: true
 ---
 
 This article is showing a geometric and intuitive explanation of the covariance matrix and the way it describes the shape of a data set. We will describe the geometric relationship of the covariance matrix with the use of linear transformations and eigen decomposition.
