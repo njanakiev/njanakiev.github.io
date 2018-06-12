@@ -11,7 +11,7 @@ Hello, I am a Master in Applied Image and Signal Processing based in Austria. I 
 - 2016 - Geospatial Storytelling, [(Project)][geospatial storytelling], [(Video)][geospatial storytelling video] @ [Data Visualization NY][data viz ny]
 - 2016 - Yet Another Twitter Bot, [(Slides)][generic-bot slides] @ [Barcamp Salzburg][barcamp october 2016]
 - 2017 - WebGL, Three.js and Shaders, [(Slides)][webgl slides] @ [Barcamp Salzburg][barcamp april 2017]
-- 2018 - Predict Economic Measurements with OpenStreetMap [(Slides)][predict osm slides] @ Z_GIS
+- 2018 - Predict Economic Measurements with OSM [(Slides)][predict osm slides] @ Z_GIS
 
 ## Around the Web
 I am somewhat active on other parts of the web where you can keep in touch with me, such as [Github][github], [Twitter][twitter] and [LinkedIn][linkedin].
