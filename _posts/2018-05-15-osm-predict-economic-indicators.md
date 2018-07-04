@@ -6,10 +6,9 @@ tags: [OpenStreetMap, Overpass API, GIS, Python]
 image: /assets/OperationsSpecialistVTS.jpg
 imageurl: https://en.wikipedia.org/wiki/File:OperationsSpecialistVTS.jpg
 imagesource: Wikimedia Commons
-comments: true
 ---
 
-[OpenStreetMap](https://www.openstreetmap.org/) (OSM) is a massive collaborative map of the world, built and maintained mostly by volunteers. On the other hand, there exist various indicators to measure economic growth, prosperity and produce of a country. What if we use OpenStreetMap to predict those economic indicators?
+[OpenStreetMap](https://www.openstreetmap.org/) (OSM) is a massive collaborative map of the world, built and maintained mostly by volunteers. On the other hand, there exist various indicators to measure economic growth, prosperity, and produce of a country. What if we use OpenStreetMap to predict those economic indicators?
 
 One inspiration for this project came from the publication _Measuring Economic Growth from Outer Space_ where they tried to predict the GDP growth of countries with satellite data at night. Their aim was to have an alternative way to measure economic growth since reliable data on economic growth is difficult to come by, especially in rural areas.
 
@@ -17,13 +16,13 @@ One inspiration for this project came from the publication _Measuring Economic G
 
 _Henderson, J. Vernon, Adam Storeygard, and David N. Weil. "Measuring economic growth from outer space." American economic review 102.2 (2012): 994-1028._
 
-Instead of measuring lights, here we will focus on the various amenities like universities, atms, parking spaces and others found in OSM within each of the countries in the european union (EU) and member states of the european free trade association (EFTA). The objective is to see which of those amenities correlate most with the selected economic indicators. All the necessary scripts to collect and clean the data from OSM and the economic indicators can be found in this [repository](https://github.com/njanakiev/osm-predict-economic-measurements).
+Instead of measuring lights, here we will focus on the various amenities like universities, ATMs, parking spaces and others found in OSM within each of the countries in the European Union (EU) and member states of the European free trade association (EFTA). The objective is to see which of those amenities correlate most with the selected economic indicators. All the necessary scripts to collect and clean the data from OSM and the economic indicators can be found in this [repository](https://github.com/njanakiev/osm-predict-economic-measurements).
 
 # Measurements in Economics
 
 There are various ways to measure the macroeconomic performance of a given country. The key measures of economic performance include economic growth (e.g. real GDP growth), inflation, unemployment and current account (e.g. low deficit). The focus in this project were three particular indicators, the Gross Domestic Product (GDP), the Human Development Index (HDI) and the Big Mac Index.
 
-But before getting to the indicators we need to take a quick look at the [Purchasing Power Parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) (PPP). [Purchasing Power](https://en.wikipedia.org/wiki/Purchasing_power) is the amount of goods you can get for one currency and PPP is the ratio of two countries' purchasing power. This is done by a market basket of goods approach, where the PPP rates are determined by comparing the prices of identical items in different countries. PPP is often used to make more accurate comparisons between two countries gross domestic product (GDP) than can be made when using market exchange rates. In this project the GDP and GNI are based on a purchasing power parity converting them to international dollar as a common currency.
+But before getting to the indicators we need to take a quick look at the [Purchasing Power Parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) (PPP). [Purchasing Power](https://en.wikipedia.org/wiki/Purchasing_power) is the number of goods you can get for one currency and PPP is the ratio of two countries' purchasing power. This is done by a market basket of goods approach, where the PPP rates are determined by comparing the prices of identical items in different countries. PPP is often used to make more accurate comparisons between two countries gross domestic product (GDP) instead of those that can be made when using market exchange rates. In this project, the GDP and GNI are based on a purchasing power parity converting them to the international dollar as a common currency.
 
 
 ```python
@@ -125,9 +124,9 @@ df_targets.head()
 
 ## Gross Domestic Product and Gross National Income
 
-One of the most well-known economic metrics is the [Gross Domestic Product](https://en.wikipedia.org/wiki/Gross_domestic_product) (GDP) which is defined by the [OECD](http://stats.oecd.org/glossary/detail.asp?ID=1163) as _an aggregate measure of production equal to the sum of the gross value added of all resident and instituional units engaged in production_. In simple terms this measures the market value of all goods and services produced in a country within a period of time (e.g. in one year).
+One of the most well-known economic metrics is the [Gross Domestic Product](https://en.wikipedia.org/wiki/Gross_domestic_product) (GDP) which is defined by the [OECD](http://stats.oecd.org/glossary/detail.asp?ID=1163) as _an aggregate measure of production equal to the sum of the gross value added of all resident and institutional units engaged in production_. In simple terms, this measures the market value of all goods and services produced in a country within a period of time (e.g. in one year).
 
-[Gross National Income](https://en.wikipedia.org/wiki/Gross_national_income) (GNI) on the other hand is a measure of a country's income. The main difference to GDP is that GDP exclusively counts income received from domestic sources and GNI includes the net income received from abroad. In most cases GDP and GNI are close. But if the GNI is much higher than the GDP this can mean that the country receives large amounts of foreign aid. In the opposite case where GDP is much higher, it can mean that there are subsidaries of multinational companies in this country because of low taxes which can be seen in the comparison below for Ireland and Luxenbourg.
+[Gross National Income](https://en.wikipedia.org/wiki/Gross_national_income) (GNI) on the other hand is a measure of a country's income. The main difference to GDP is that GDP exclusively counts income received from domestic sources and GNI includes the net income received from abroad. In most cases GDP and GNI are close. But if the GNI is much higher than the GDP this can mean that the country receives large amounts of foreign aid. In the opposite case where GDP is much higher, it can mean that there are subsidiaries of multinational companies in this country because of low taxes which can be seen in the comparison below for Ireland and Luxembourg.
 
 
 ```python
@@ -157,7 +156,7 @@ plt.title('Human Development Index', fontsize=20); plt.xlabel('');
 
 ## Big Mac Index
 
-The final indicator in our selection is the [Big Mac Index](https://www.economist.com/content/big-mac-index) which was created by the Economist Magazine in 1986 as an informal way of comparing purchasing power between currencies against the U.S. Dollar. McDonnalds is available in 119 different countries and one particular thing about McDonnalds is its consistency in its products among its stores. This means the same items are made in the same way with the same ingredients in very different economies around the world, making the Big Mac a suitable candidate for a market basket of goods for the PPP. This can efficiently show which currencies are under or overvalued compared to other currencies. This makes it a prime example for the purchasing power parity discussed before.
+The final indicator in our selection is the [Big Mac Index](https://www.economist.com/content/big-mac-index) which was created by the Economist Magazine in 1986 as an informal way of comparing purchasing power between currencies against the U.S. Dollar. McDonald's is available in 119 different countries and one particular thing about McDonald's is its consistency in its products among its stores. This means the same items are made in the same way with the same ingredients in very different economies around the world, making the Big Mac a suitable candidate for a market basket of goods for the PPP. This can efficiently show which currencies are under or overvalued compared to other currencies. This makes it a prime example of the purchasing power parity discussed before.
 
 
 ```python
@@ -173,9 +172,9 @@ plt.xlabel(''); plt.ylabel('Dollar', fontsize=15);
 
 # Loading Data from OpenStreetMap
 
-Having our economic indicators in place, we can now move on to select the desired amenities in OSM. There are various [elements](https://wiki.openstreetmap.org/wiki/Elements) in OSM, which can be associated with [tags](https://wiki.openstreetmap.org/wiki/Tags) consisting of key-value pairs. One useful key is the [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) key, which tags various community facilites like _university_, _school_, _restaurant_ or others.
+Having our economic indicators in place, we can now move on to select the desired amenities in OSM. There are various [elements](https://wiki.openstreetmap.org/wiki/Elements) in OSM, which can be associated with [tags](https://wiki.openstreetmap.org/wiki/Tags) consisting of key-value pairs. One useful key is the [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) key, which tags various community facilities like _university_, _school_, _restaurant_ or others.
 
-The goal in our data aquisition is to get the 50 most used values for the amenity key (e.g. amenity=parking) for each country. A great website to explore world-wide statistics for key-values tags found in OSM is [taginfo](https://taginfo.openstreetmap.org/), where the most common amenities can be found in this [list](https://taginfo.openstreetmap.org/keys/amenity#values). The 50 most common values were automatically collected with the [taginfo API](https://taginfo.openstreetmap.org/taginfo/apidoc). Next step is to collect the counts for each of the 50 amenities for each country. This is done with the [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API) and the [Overpass QL](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL) which enables specific access to OSM without having to download the whole data set. More information how to work with the Overpass API can be found in this [article]({{ site.baseurl }}{% link _posts/2018-03-04-openstreetmap-with-python-and-overpass-api.md %}). The next example snippet shows how to get the number of all benches in Germany.
+The goal in our data acquisition is to get the 50 most used values for the amenity key (e.g. amenity=parking) for each country. A great website to explore worldwide statistics for key-values tags found in OSM is [taginfo](https://taginfo.openstreetmap.org/), where the most common amenities can be found in this [list](https://taginfo.openstreetmap.org/keys/amenity#values). The 50 most common values were automatically collected with the [taginfo API](https://taginfo.openstreetmap.org/taginfo/apidoc). Next step is to collect the counts for each of the 50 amenities for each country. This is done with the [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API) and the [Overpass QL](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL) which enables specific access to OSM without having to download the whole data set. More information on how to work with the Overpass API can be found in this [article]({{ site.baseurl }}{% link _posts/2018-03-04-openstreetmap-with-python-and-overpass-api.md %}). The next example snippet shows how to get the number of all benches in Germany.
 
 
 ```python
@@ -210,9 +209,9 @@ print(response.text)
 
 ## Load and normalize OSM Counts
 
-Next step is to load the amenities for each country. Since we have also the population for each country, we want to normalize the counts to have an amenity per capita measure. This makes it easier to compare the countries. Additionally we want to replace all amenities with count 0 to 0.1, which is helpful when visualizing the data set with logarithmic scale.
+Next step is to load the amenities for each country. Since we have also the population of each country, we want to normalize the counts to have an amenity per capita measure. This makes it easier to compare the countries. Additionally, we want to replace all amenities with count 0 to 0.1, which is helpful when visualizing the data set with a logarithmic scale.
 
-The population data is from the [World Bank Open Data](https://data.worldbank.org/) and the poulation count is from 2016. The same applies to the GDP and GNI data, which are also from the World Bank from 2016.
+The population data is from the [World Bank Open Data](https://data.worldbank.org/) and the population count is from 2016. The same applies to the GDP and GNI data, which are also from the World Bank from 2016.
 
 
 ```python
@@ -426,7 +425,7 @@ df_amenity.head()
 
 
 
-Now let's take a look how the amenities are distributed.
+Now let's take a look at how the amenities are distributed.
 
 
 ```python
@@ -437,7 +436,7 @@ df_amenity.plot(kind='box', figsize=(16, 9), rot=90, logy=True, fontsize=15);
 ![png]({{ site.baseurl }}/assets/osm_predict_economic_indicators_files/output_14_0.png)
 
 
-With this data we can explore for example which country has the most benches, restaurants, schools or any other amenity that peaks our interest. Note that since OSM is based mostly on community contributions, the data might be incomplete or in some places even too detailed compared to others. It is important to be aware of this possible bias, but we can assume that most amenities, as the more important tags are more complete in this regard.
+With this data, we can explore for example which country has the most benches, restaurants, schools or any other amenity that peaks our interest. Note that since OSM is based mostly on community contributions, the data might be incomplete or in some places even too detailed compared to others. It is important to be aware of this possible bias, but we can assume that most amenities, as the more important tags, are more complete in this regard.
 
 
 ```python
@@ -457,7 +456,7 @@ plt.tight_layout()
 
 # Correlation between Amenities and Economic Indicators
 
-Now we will calculate the correlation for each amenity with all of the selected economic indicators to see which one seems to have the most influence. We are using the [Pearson Correlation Coefficient](https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient) to measure the linear correlation. For all economic indicators we will be using the normalized amenity counts and for the population we will take the total amenity counts.
+Now we will calculate the correlation for each amenity with all of the selected economic indicators to see which one seems to have the most influence. We are using the [Pearson Correlation Coefficient](https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient) to measure the linear correlation. For all economic indicators we will be using the normalized amenity counts and for the population, we will take the total amenity counts.
 
 
 ```python
@@ -582,7 +581,7 @@ plt.subplots_adjust(hspace=0.1)
 ![png]({{ site.baseurl }}/assets/osm_predict_economic_indicators_files/output_20_0.png)
 
 
-This is in fact the case, after looking through the plots we can see that in many cases the outliers skew the correlation significantly, as we have only 32 countries to work with. According to the data the `amenity=university` has the strongest correlation and therefore predicts the population the best.
+We can see that there is, in fact, a correlation present. After looking through the plots we can see that in many cases the outliers skew the correlation significantly, as we have only 32 countries to work with. According to the data the `amenity=university` has the strongest correlation and therefore predicts the population the best.
 
 
 ```python
@@ -611,7 +610,7 @@ for i, amenity in enumerate(['university', 'clinic']):
 ![png]({{ site.baseurl }}/assets/osm_predict_economic_indicators_files/output_22_0.png)
 
 
-This was expected to see correlation in this, but nevertheless interesting to see the most correlated amenities with population. Next, we will take a look at the other indicators and how they correlate with each amenity
+This was expected to see a correlation in this, but nevertheless interesting to see the most correlated amenities with the population. Next, we will take a look at the other indicators and how they correlate with each amenity
 
 
 ```python
@@ -628,7 +627,7 @@ plt.tight_layout();
 ![png]({{ site.baseurl }}/assets/osm_predict_economic_indicators_files/output_24_0.png)
 
 
-Coriously, we can see that school and marketplace seem to hold strongest correlation for positive and negative correlation respectively. Let us take a closer look at the distributions.
+Curiously, we can see that school and marketplace seem to hold the strongest correlation for positive and negative correlation respectively. Let us take a closer look at the distributions.
 
 
 ```python
@@ -663,7 +662,7 @@ Since we used economic indicators measuring similar things it should come as no 
 
 OpenStreetMap offers a great source to explore the hidden gems inside its vast data set and this project only scratched the surface of it. There is still a plethora of other things to explore and rabbit holes to fall into and as a living data set that is growing with each distribution the things to explore only increase. Finally, all the calculations and necessary scripts to collect the data from OSM can be found in this [repository](https://github.com/njanakiev/osm-predict-economic-measurements) and this [article]({{ site.baseurl }}{% link _posts/2018-03-04-openstreetmap-with-python-and-overpass-api.md %}) covers more details on how to load data from OSM with Python and the Overpass API.
 
-Related to this topic, there is a great article on [Urban Form Analysis with OpenStreetMap Data](http://geoffboeing.com/2017/04/urban-form-analysis-openstreetmap/) by Geoff Boeing which talks about analysis and visualisation of street networks and building footprints. Another good read is the article [OpenStreetMap past(s), and OpenStreetMap futures(s)](https://hi.stamen.com/openstreetmap-past-s-openstreetmap-future-s-cafddc2a4736) by Alan McConchie which explores the OSM users and the contributions over time. In the next article we will explore what relationships can be found between countries and cities by their amenities.
+Related to this topic, there is a great article on [Urban Form Analysis with OpenStreetMap Data](http://geoffboeing.com/2017/04/urban-form-analysis-openstreetmap/) by Geoff Boeing which talks about analysis and visualization of street networks and building footprints. Another good read is the article [OpenStreetMap past(s), and OpenStreetMap futures(s)](https://hi.stamen.com/openstreetmap-past-s-openstreetmap-future-s-cafddc2a4736) by Alan McConchie which explores the OSM users and the contributions over time. In the next article, we will explore what relationships can be found between countries and cities with their amenities.
 
 ## Used Data Sets and APIs
 
