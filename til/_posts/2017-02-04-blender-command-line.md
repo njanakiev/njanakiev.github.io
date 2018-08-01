@@ -2,7 +2,7 @@
 layout: post
 category: til
 title: Running Blender from the Command Line
-tags: [Python, Blender]
+tags: [Python, Blender, Command-Line]
 image: /til/assets/MET_265559.jpg
 imageurl: http://www.metmuseum.org/art/collection/search/265559
 imagesource: Metropolitan Museum of Art

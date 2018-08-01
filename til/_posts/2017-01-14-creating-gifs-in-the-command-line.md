@@ -2,7 +2,7 @@
 layout: post
 category: til
 title: Creating GIFs in the Command Line
-tags: [GIF]
+tags: [GIF, Command-Line, Image Processing]
 image: /til/assets/webgl_02.gif
 comments: true
 ---

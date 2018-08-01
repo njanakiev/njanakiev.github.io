@@ -2,7 +2,7 @@
 layout: post
 category: til
 title: Using the Blender Interactive Console from the Command-Line
-tags: [Blender, Python]
+tags: [Blender, Python, Command-Line]
 image: /til/assets/Control_Panel_for_UNIVAC_1232_Computer.jpg
 imageurl: https://commons.wikimedia.org/wiki/File:Control_Panel_for_UNIVAC_1232_Computer.jpg
 imagesource: Wikimedia Commons (Steven Fine)
