@@ -6,6 +6,7 @@ tags: [OpenStreetMap, Overpass API, GIS, Python]
 image: /assets/NOS_135192661848.jpg
 imageurl: http://nos.twnsnd.co/image/135192661848
 imagesource: New Old Stock
+comments: true
 ---
 
 There are many ways to compare countries and cities and many measurements to choose from. We can see how they perform economically, or how their demographics differ, but what if we take a look at data available in [OpenStreetMap](https://www.openstreetmap.org/)? In this article, we explore just that with the help of a procedure called t-SNE.

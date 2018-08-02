@@ -4,6 +4,7 @@ category: blog
 title: "Where do Mayors Come From: Querying Wikidata with Python and SPARQL"
 tags: [Wikidata, SPARQL, Python, Pandas, Data Science]
 image: /assets/wikidata_mayors_screen.png
+comments: true
 ---
 
 In this article, we will be going through building queries for Wikidata with Python and SPARQL by taking a look where mayors in Europe are born. This tutorial is building up the knowledge to collect the data responsible for this [interactive visualization](https://janakiev.com/wikidata-mayors/) from the header image which was done with [deck.gl](http://deck.gl/#/).
