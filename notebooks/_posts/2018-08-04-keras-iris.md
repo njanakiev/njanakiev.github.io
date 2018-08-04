@@ -1,7 +1,7 @@
 ---
 layout: post
 category: notebooks
-title: "Predicting the Iris Data Set with Keras"
+title: "Classifying the Iris Data Set with Keras"
 tags: [Python, Keras, Neural Networks]
 ---
 
