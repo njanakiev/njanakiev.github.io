@@ -9,8 +9,12 @@
 
 .post-listing-title,
 .post-listing-title a {
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   color: #303030;
+}
+
+.section-introduction {
+  padding-bottom: 1em;
 }
 
 .footnote {
@@ -43,8 +47,8 @@
 }
 
 .footer a {
-  color: #303030;
-  padding-right: 0.4rem; 
+  color: #707070;
+  padding-right: 1.0rem; 
   margin-left:  auto;
 }
 
