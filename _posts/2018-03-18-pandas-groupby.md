@@ -1,7 +1,7 @@
 ---
 layout: post
 category: blog
-title: Working with Group By in Pandas 
+title: Working with Pandas Groupby in Python and the Split-Apply-Combine Strategy
 tags: [Pandas, Python]
 image: /assets/NOS_170539764971.jpg
 imageurl: http://nos.twnsnd.co/image/170539764971
@@ -9,7 +9,9 @@ imagesource: New Old Stock
 comments: true
 ---
 
-In this tutorial we will cover how to use the Pandas DataFrame [groupby](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html) function. The data set we will be analysing is the [Current Employee Names, Salaries, and Position Titles](https://www.cityofchicago.org/city/en/depts/dhr/dataset/current_employeenamessalariesandpositiontitles.html) from the City of Chicago, which is listing all their employees with full names, departments, positions, and salaries. Let's get into it!
+In this tutorial we will cover how to use the Pandas DataFrame [groupby](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html) function while having an excursion to the Split-Apply-Combine Strategy for data analysis. The Split-Apply-Combine strategy is a process that can be described as a process of _splitting_ the data into groups, _applying_ a function to each group and _combining_ the result into a final data structure.
+
+The data set we will be analysing is the [Current Employee Names, Salaries, and Position Titles](https://www.cityofchicago.org/city/en/depts/dhr/dataset/current_employeenamessalariesandpositiontitles.html) from the City of Chicago, which is listing all their employees with full names, departments, positions, and salaries. Let's get into it!
 
 
 ```python
