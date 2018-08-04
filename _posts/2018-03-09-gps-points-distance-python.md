@@ -1,9 +1,9 @@
 ---
 layout: post
-category: til
+category: blog
 title: Calculate Distance Between GPS Points in Python
 tags: [GIS, Python]
-image: /til/assets/NOS_162360396834.jpg
+image: /assets/NOS_162360396834.jpg
 imageurl: http://nos.twnsnd.co/image/162360396834
 imagesource: New Old Stock
 comments: true
