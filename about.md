@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-Hello, I am a Master in Applied Image and Signal Processing based in Austria. I am interested in various topics spanning from data analysis, signal processing and data visualization over to geometric modelling, computer aided design and computational design. This blog is dedicated to some of the topics and interests I like to explore.
+Hello, I am a recently graduated Master in Applied Image and Signal Processing based in Austria. I am interested in various topics spanning from data analysis, signal processing and data visualization over to geometric modelling, computer aided design and computational design. This blog is dedicated to some of the topics and interests I like to explore.
 
 ## Talks
 - 2015 - Internet of Things, [(Video)][science slam video] @ [Science Slam Salzburg][science slam]
