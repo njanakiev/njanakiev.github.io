@@ -266,7 +266,7 @@ Starting from the need to get buildings within certain regions, I discovered how
 [OSM amenity cafe]: https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe
 [OSM XML]: https://wiki.openstreetmap.org/wiki/OSM_XML
 [OSM PBF]: https://wiki.openstreetmap.org/wiki/PBF_Format
-[OSM Key Amenity]: wiki.openstreetmap.org/wiki/Key:amenity
+[OSM Key Amenity]: https://wiki.openstreetmap.org/wiki/Key:amenity
 [OSM 3D]: https://wiki.openstreetmap.org/wiki/3D
 
 [London bench]: https://www.openstreetmap.org/node/1607078914
