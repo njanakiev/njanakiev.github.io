@@ -15,7 +15,11 @@ The data set we will be analysing is the [Current Employee Names, Salaries, and 
 
 
 ```python
+%matplotlib inline
+
 import pandas as pd
+import matplotlib.pyplot as plt
+plt.style.use('ggplot')
 
 path = 'data/Current_Employee_Names_Salaries_and_Position_Titles.csv'
 df = pd.read_csv(path)
@@ -62,7 +66,7 @@ df.head()
       <td>F</td>
       <td>Salary</td>
       <td>NaN</td>
-      <td>$$101442.00</td>
+      <td>101442.0</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -73,7 +77,7 @@ df.head()
       <td>F</td>
       <td>Salary</td>
       <td>NaN</td>
-      <td>$$94122.00</td>
+      <td>94122.0</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -84,7 +88,7 @@ df.head()
       <td>F</td>
       <td>Salary</td>
       <td>NaN</td>
-      <td>$$101592.00</td>
+      <td>101592.0</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -95,7 +99,7 @@ df.head()
       <td>F</td>
       <td>Salary</td>
       <td>NaN</td>
-      <td>$$110064.00</td>
+      <td>110064.0</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -107,7 +111,7 @@ df.head()
       <td>Hourly</td>
       <td>20.0</td>
       <td>NaN</td>
-      <td>$$19.86</td>
+      <td>19.86</td>
     </tr>
   </tbody>
 </table>
@@ -131,32 +135,18 @@ df.info(memory_usage='deep')
     Full or Part-Time    33183 non-null object
     Salary or Hourly     33183 non-null object
     Typical Hours        8022 non-null float64
-    Annual Salary        25161 non-null object
-    Hourly Rate          8022 non-null object
-    dtypes: float64(1), object(7)
-    memory usage: 14.2 MB
+    Annual Salary        25161 non-null float64
+    Hourly Rate          8022 non-null float64
+    dtypes: float64(3), object(5)
+    memory usage: 11.6 MB
 
 
 On a sidenote, `memory_usage='deep'` gives us the accurate memory usage of the DataFrame, but it can be slower to load for large DataFrames. 
-
-# Cleaning and Converting our DataFrame
-
-First things first, we need to convert the _Annual Salary_ and the _Hourly Rate_ into floating values, while being careful with the _Not a Number_ values. We do this by using the [Series.apply](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.apply.html) function to both columns and specifying a custom function to convert each entry inside the columns.
-
-
-```python
-convert = lambda s : s if pd.isna(s) else float(s[1:])
-
-df['Annual Salary'] = df['Annual Salary'].apply(convert)
-df['Hourly Rate']   = df['Hourly Rate'].apply(convert)
-```
 
 Now lets see what the average _Annual Salary_ and _Hourly Rate_ is by using the [DataFrame.mean](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.mean.html) function. (Note that _NaN_ values are ignored). And while we're at it, let's take a look at a histogram of them both with the built-in [DataFrame.hist](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.hist.html) function.
 
 
 ```python
-%matplotlib inline
-
 print('Average annual salary : {:8.2f} dollars'.format(df['Annual Salary'].mean()))
 print('Average hourly rate   : {:8.2f} dollars'.format(df['Hourly Rate'].mean()))
 
@@ -168,7 +158,7 @@ df[['Annual Salary', 'Hourly Rate']].hist(figsize=(12, 6), bins=50, grid=False);
 
 
 
-![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_8_1.png)
+![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_6_1.png)
 
 
 Additionally, we want to convert some of the columns into [categorical data](https://pandas.pydata.org/pandas-docs/stable/categorical.html), which will reduce the memory usage and speed up the computations in general (unless there are too many categories in a column). We can do this with [DataFrame.astype](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.astype.html) by converting each column seperately or in one step by passing a dictionary with all columns that we want to convert.
@@ -214,7 +204,7 @@ group
 
 
 
-    <pandas.core.groupby.DataFrameGroupBy object at 0x7fe06730bac8>
+    <pandas.core.groupby.DataFrameGroupBy object at 0x7f3e633bb278>
 
 
 
@@ -233,7 +223,7 @@ finance_df['Annual Salary'].plot(kind='hist', bins=50, figsize=(12, 6), title='F
 
 
 
-![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_14_1.png)
+![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_12_1.png)
 
 
 Of course you could have done that by simply querying the DataFrame for the finance department with `df[df['Department'] == 'FINANCE']`, so what is the use of grouping the DataFrame then?
@@ -506,7 +496,7 @@ average_salary.plot(kind='bar', figsize=(12, 6), color='k', alpha=0.5);
 ```
 
 
-![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_20_0.png)
+![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_18_0.png)
 
 
 # Conclusion
@@ -526,5 +516,5 @@ plt.suptitle('');  # Getting rid of pandas-generated boxplot title
 ```
 
 
-![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_22_0.png)
+![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_20_0.png)
 
