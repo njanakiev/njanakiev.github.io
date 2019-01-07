@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-Hello, I am a recently graduated Master in Applied Image and Signal Processing based in Austria. I am interested in various topics spanning from data analysis, signal processing and data visualization over to geometric modelling, computer aided design and computational design. This blog is dedicated to some of the topics and interests I like to explore.
+Hello, I am a freelance data scientist and recently graduated Master in Applied Image and Signal Processing based in Austria. I am interested in various topics spanning from data analysis, signal processing and data visualization over to  geospatial analysis and linked data. I also have a passion for geometric modelling, computer aided design and computational design with [Blender][blender]. This blog is dedicated to some of the topics and interests I like to explore.
 
 ## Talks
 - 2015 - _Internet of Things_, [(Video)][science slam video] @ [Science Slam Salzburg][science slam]
@@ -15,17 +15,18 @@ Hello, I am a recently graduated Master in Applied Image and Signal Processing b
 - 2018 - _Data Science with OSM_, [(Video)][data science osm video], [(Slides)][data science osm slides] @ [Maptime Salzburg][maptime salzburg]
 - 2018 - _Querying and Exploring Wikidata_, [(Slides)][wikidata slides] @ [Barcamp Salzburg][barcamp november 2018]
 
-## Publications
+## Selected Publications
 - 2018 - _[Understanding the Covariance Matrix](https://datascienceplus.com/understanding-the-covariance-matrix/)_ <br> @ DataScience+
 - 2018 - _[Loading Data from OSM with Python and the Overpass API](https://towardsdatascience.com/loading-data-from-openstreetmap-with-python-and-the-overpass-api-513882a27fd0)_ <br> @ Towards Data Science
 - 2018 - _[Practical Text Classification with Python](https://realpython.com/python-keras-text-classification/)_ <br> @ Real Python
 
 ## Around the Web
-I am somewhat active on other parts of the web where you can keep in touch with me, such as [Github][github], [Twitter][twitter] and [LinkedIn][linkedin]. You can also contact me at:
+You can keep in touch with me on the various networks, such as [Github][github], [Twitter][twitter] and [LinkedIn][linkedin]. You can also contact me for any inquiries and collaboration at:
 
 _nikolai (dot) janakiev (at) gmail (dot) com_
 
 
+[blender]: https://www.blender.org/
 [science slam]: http://www.scienceslam.at/performers/1-science-slam-salzburg-3/
 [science slam video]: https://www.youtube.com/watch?v=c4hu9nVjIJo
 [geospatial storytelling video]: https://www.youtube.com/watch?v=ukBFPd8jnhA
