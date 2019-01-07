@@ -3,6 +3,7 @@ layout: post
 category: notebooks
 title: "Classifying the Iris Data Set with Keras"
 tags: [Python, Keras, Neural Networks]
+comments: true
 ---
 
 In this short notebook we will take a quick look on how to use [Keras](https://keras.io/) with the familiar Iris data set. We will compare networks with the regular [Dense](https://keras.io/layers/core/) layer with different number of nodes and we will employ a [Softmax](https://en.wikipedia.org/wiki/Softmax_function) activation function and the [Adam](https://arxiv.org/abs/1412.6980) optimizer.
