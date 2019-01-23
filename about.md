@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+image: /assets/image.jpeg
 ---
 
 Hello, I am a freelance data scientist and recently graduated Master in Applied Image and Signal Processing based in Austria. I am interested and working in various areas spanning from data analysis and data visualization over to geospatial analysis and linked data. I also have a [passion][parametriccookie] for geometric modelling and computational design with [Blender][blender] which I follow up from time to time. This blog is dedicated to some of the topics and interests I like to explore and find valuable.
