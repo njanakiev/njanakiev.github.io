@@ -18,7 +18,7 @@ Add the [ccapture.js library][ccapture-min] in your project folder and add it to
 <script src="CCapture.all.min.js"></script>
 ```
 
-To control the widht and size of the frames simply set the size of the renderer.
+To control the width and size of the frames simply set the size of the renderer.
 
 ```js
 const width  = 600;
@@ -70,7 +70,7 @@ where the `-delay` flag specifies the delay of each frame in *ticks-per-second* 
 [threejs]: https://threejs.org/
 [webgl]: https://en.wikipedia.org/wiki/WebGL
 [webm]: https://en.wikipedia.org/wiki/WebM
-[7zip]: http://www.7-zip.org/
+[7zip]: https://www.7-zip.org/
 [imagemagick]: http://www.imagemagick.org/
 [gifsicle]: https://www.lcdf.org/gifsicle/
 [ccapture]: https://github.com/spite/ccapture.js/
