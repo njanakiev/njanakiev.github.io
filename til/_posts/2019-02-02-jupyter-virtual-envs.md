@@ -1,5 +1,5 @@
 ---
-title: Using Virtual Environments in Jupyter Notebook with Python
+title: Using Virtual Environments in Jupyter Notebook and Python
 category: til
 comments: True
 image: /assets/LabTest_CHK300J_05-11_037.jpg
