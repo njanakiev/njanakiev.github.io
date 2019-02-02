@@ -1,5 +1,5 @@
 ---
-title: Using Virtual Environments in Jupyter Notebook for Python
+title: Using Virtual Environments in Jupyter Notebook with Python
 category: til
 comments: True
 image: /assets/LabTest_CHK300J_05-11_037.jpg
@@ -9,7 +9,7 @@ layout: post
 tags: ['Python', 'Jupyter']
 ---
 
-Are you working with Jupyter Notebook? Do you also want to benefit from virtual environments? In this tutorial you will see how to do just that with [Anaconda](https://www.anaconda.com/) or [Virtualenv](https://virtualenv.pypa.io/en/latest/)/[venv](https://docs.python.org/3/library/venv.html).
+Are you working with Jupyter Notebook and Python? Do you also want to benefit from virtual environments? In this tutorial you will see how to do just that with [Anaconda](https://www.anaconda.com/) or [Virtualenv](https://virtualenv.pypa.io/en/latest/)/[venv](https://docs.python.org/3/library/venv.html).
 
 Before we start, what is a virtual environment and why do you need it? A virtual environment is an isolated working copy of Python. This means that each environment can have its own dependencies or even its own Python versions. This is useful if you need different versions of Python or packages for different projects. This also keeps things tidy when testing packages and making sure your main Python installation stays healthy.
 
