@@ -3,7 +3,6 @@ layout: post
 category: notebooks
 title: "Classifying the Iris Data Set with Keras"
 tags: [Python, Keras, Neural Networks]
-comments: true
 ---
 
 In this short notebook we will take a quick look on how to use [Keras](https://keras.io/) with the familiar Iris data set. We will compare networks with the regular [Dense](https://keras.io/layers/core/) layer with different number of nodes and we will employ a [Softmax](https://en.wikipedia.org/wiki/Softmax_function) activation function and the [Adam](https://arxiv.org/abs/1412.6980) optimizer.
@@ -78,7 +77,7 @@ plt.legend();
 ```
 
 
-![png]({{ site.baseurl }}/notebooks/assets//keras_iris_files/output_5_0.png)
+![png]({{ site.baseurl }}/notebooks/assets/keras_iris_files/output_5_0.png)
 
 
 # Configure Neural Network Models
@@ -92,7 +91,7 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation
+from keras.layers import Dense
 
 def create_custom_model(input_dim, output_dim, nodes, n=1, name='model'):
     def create_model():
@@ -124,8 +123,6 @@ for create_model in models:
     =================================================================
     dense_1 (Dense)              (None, 8)                 40        
     _________________________________________________________________
-    dropout_1 (Dropout)          (None, 8)                 0         
-    _________________________________________________________________
     dense_2 (Dense)              (None, 3)                 27        
     =================================================================
     Total params: 67
@@ -137,11 +134,7 @@ for create_model in models:
     =================================================================
     dense_3 (Dense)              (None, 8)                 40        
     _________________________________________________________________
-    dropout_2 (Dropout)          (None, 8)                 0         
-    _________________________________________________________________
     dense_4 (Dense)              (None, 8)                 72        
-    _________________________________________________________________
-    dropout_3 (Dropout)          (None, 8)                 0         
     _________________________________________________________________
     dense_5 (Dense)              (None, 3)                 27        
     =================================================================
@@ -154,15 +147,9 @@ for create_model in models:
     =================================================================
     dense_6 (Dense)              (None, 8)                 40        
     _________________________________________________________________
-    dropout_4 (Dropout)          (None, 8)                 0         
-    _________________________________________________________________
     dense_7 (Dense)              (None, 8)                 72        
     _________________________________________________________________
-    dropout_5 (Dropout)          (None, 8)                 0         
-    _________________________________________________________________
     dense_8 (Dense)              (None, 8)                 72        
-    _________________________________________________________________
-    dropout_6 (Dropout)          (None, 8)                 0         
     _________________________________________________________________
     dense_9 (Dense)              (None, 3)                 27        
     =================================================================
@@ -202,13 +189,13 @@ for create_model in models:
 ```
 
     Model name: model_1
-    Test loss: 0.4788510775566101
-    Test accuracy: 0.8533333373069764
+    Test loss: 0.2956871708234151
+    Test accuracy: 0.9333333333333333
     Model name: model_2
-    Test loss: 0.36840104262034096
-    Test accuracy: 0.88
+    Test loss: 0.185623845855395
+    Test accuracy: 0.9333333333333333
     Model name: model_3
-    Test loss: 0.3430390799045563
+    Test loss: 0.13748167728384336
     Test accuracy: 0.9466666666666667
 
 
@@ -235,7 +222,7 @@ plt.show()
 ```
 
 
-![png]({{ site.baseurl }}/notebooks/assets//keras_iris_files/output_11_0.png)
+![png]({{ site.baseurl }}/notebooks/assets/keras_iris_files/output_11_0.png)
 
 
 # Show ROC Curve
@@ -263,7 +250,7 @@ plt.legend();
 ```
 
 
-![png]({{ site.baseurl }}/notebooks/assets//keras_iris_files/output_13_0.png)
+![png]({{ site.baseurl }}/notebooks/assets/keras_iris_files/output_13_0.png)
 
 
 # Measure Performance with Cross Validation
@@ -282,5 +269,4 @@ scores = cross_val_score(estimator, X_scaled, Y, cv=10)
 print("Accuracy : {:0.2f} (+/- {:0.2f})".format(scores.mean(), scores.std()))
 ```
 
-    Accuracy : 0.93 (+/- 0.07)
-
+    Accuracy : 0.94 (+/- 0.08)
