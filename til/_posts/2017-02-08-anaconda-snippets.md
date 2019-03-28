@@ -6,9 +6,9 @@ tags: [Anaconda, Python]
 comments: true
 ---
 
-Here are some useful or frequently used commands and solutions for [Anaconda][anaconda] and [Python][python].
+Here is a short collection of commands and solutions for [Anaconda](https://www.continuum.io/downloads) with Python that I frequently tend to use.
 
-## Quick and Useful Commands
+# Quick and Useful Commands
 
 | Command | Description |
 | --- | --- |
@@ -20,8 +20,9 @@ Here are some useful or frequently used commands and solutions for [Anaconda][an
 |`conda info -e`| List all installed enviroments |
 |`conda env export > environment.yml`| Export active environment |
 |`conda env create -f environment.yml`| Create environment from specification |
+|`conda install --rev 1`| Restore root environment to its state after installation|
 
-## How to use virtual environments in Anaconda?
+# How to use virtual environments in Anaconda?
 
 In Anaconda it is possible to run different environments and versions of Python which helps when working with conflicting packages or packages that are for example not updated and available for newer Python versions. In order to install a new environment with the name `py35` in Anaconda simply use
 
@@ -53,12 +54,4 @@ or on windows with `deactivate py35`. And finally if you do not need the environ
 conda remove -n py35 -all
 ```
 
-Here is more information on how to [manage python][managing python] and on how to [manage packages][managing pkgs] in Anaconda.
-
-
-
-[anaconda]: https://www.continuum.io/downloads
-[managing python]: https://conda.io/docs/py2or3.html
-[managing pkgs]: https://conda.io/docs/using/pkgs.html
-[python]: https://www.python.org/
-[pip]: https://pip.pypa.io/en/stable/
+Here is more information on how to [manage python](https://conda.io/docs/py2or3.html) and on how to [manage packages](https://conda.io/docs/using/pkgs.html) in Anaconda.
