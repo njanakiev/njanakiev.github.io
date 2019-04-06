@@ -29,7 +29,7 @@ window.cookieconsent.initialise({
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   {% seo title=false %}
   <title>
-    {% if page.title == "Home" %}
+    {% if page.title == site.title %}
       {{ site.author.name }} - {{ site.title }}
     {% else %}
       {{ page.title }} - {{ site.title }}
