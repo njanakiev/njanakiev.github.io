@@ -1,12 +1,15 @@
 ---
-layout: post
-category: til
 title: Running a Python Script in the Background
-tags: [Python, Command-Line]
-comments: true
+category: til
+comments: True
+image: /til/assets/HP_2647A_terminal.jpg
+imagesource: Wikimedia Commons
+imageurl: https://commons.wikimedia.org/wiki/File:HP_2647A_terminal.jpg
+layout: post
+tags: ['Python', 'Command-Line', 'Server']
 ---
 
-Quick litte snippet on how to run a Python script in background in Linux.
+This is a quick little guide on how to run a Python script in the background in Linux.
 
 First, you need to add a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line in the Python script which looks like the following:
 
@@ -16,30 +19,34 @@ This path is necessary if you have multiple versions of Python installed and `/u
 
     chmod +x test.py
     
-You can run the script with [nohup](https://en.wikipedia.org/wiki/Nohup) which ignores the hangup signal. Meaning that you can close the terminal without stoping the execution. Don't forget `&` to put it in background:
+Now you can run the script with [nohup](https://en.wikipedia.org/wiki/Nohup) which ignores the hangup signal. This means that you can close the terminal without stopping the execution. Also, don't forget to add `&` so the script runs in the background:
 
     nohup /path/to/test.py &
     
-If you did not add a shebang to the file you can also run the script with this command:
+If you did not add a shebang to the file you can instead run the script with this command:
 
     nohup python /path/to/test.py &
     
-The output will be saved in the `nohup.out` file, unless you specify it like here:
+The output will be saved in the `nohup.out` file, unless you specify the output file like here:
 
     nohup /path/to/test.py > output.log &
     nohup python /path/to/test.py > output.log &
 
-You can see the process and its process Id with this command:
+You can find the process and its process Id with this command:
     
     ps ax | grep test.py
     
-If you want to stop the execution, you can kill it with the `kill` command:
+If you want to stop the execution, you can kill it with the [kill](https://en.wikipedia.org/wiki/Kill_(command)) command:
 
     kill PID
     
+It is also possible to kill the process by using [pkill](https://en.wikipedia.org/wiki/Pkill), but make sure you check if there is not a different script running with the same name:
+
+    pkill -f test.py
+    
 ## Output Buffering    
     
-If you check the output file `nohup.out` during execution you might notice that outputs are not written into this file until the execution is finished. This happens because of output buffering. If you add the `-u` flag you can avoid output buffering like this:
+If you check the output file `nohup.out` during execution you might notice that the outputs are not written into this file until the execution is finished. This happens because of output buffering. If you add the `-u` flag you can avoid output buffering like this:
 
     nohup python -u ./test.py &
     
