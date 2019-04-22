@@ -443,7 +443,7 @@ Wonderful! Now you could create a beautiful fractal visualization of your unorga
 
 You have learned in this article how to deal with your file system in an automated fashion with many of the useful tools in the Python standard library. You have also learned how to analyze folder structures with [folderstats](https://github.com/njanakiev/folderstats) and the various ways you can work with the resulting data set. This should prepare you for your next frustrations when dealing with cryptic folder structures and messy file systems.
 
-# Further Reading
+Here is a list of further reading resources if you want to delve deeper into this topic:
 
 - [Diskover](https://github.com/shirosaidev/diskover): File system crawler, disk space usage, file search engine and file system analytics powered by Elasticsearch 
 - [dv](https://github.com/ARM-DOE/dv): Disk Usage Visualization
