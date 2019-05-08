@@ -50,7 +50,7 @@ The final approach is also the most versatile approach and the recommended modul
 
 > The [subprocess](https://docs.python.org/3/library/subprocess.html#module-subprocess) module provides more powerful facilities for spawning new processes and retrieving their results; using that module is preferable to using this function. See the [Replacing Older Functions with the subprocess Module](https://docs.python.org/3/library/subprocess.html#subprocess-replacements) section in the [subprocess](https://docs.python.org/3/library/subprocess.html#module-subprocess) documentation for some helpful recipes. ([Source](https://docs.python.org/3/library/os.html#os.system))
 
-The [subprocess.Popen()](https://docs.python.org/3/library/subprocess.html#subprocess.Popen) class is responsible for the creation and management of the executed process. In contrast to the previous functions, this class executes only a single command with arguments as a list. This means that you won't be able to [pipe](https://en.wikipedia.org/wiki/Pipeline_(Unix)) commands:
+The main function you want to keep in mind if you use Python >= 3.5 is [subprocess.run()](https://docs.python.org/3/library/subprocess.html#subprocess.run), but before we get there let's go through the functionality of the `subprocess` module. The [subprocess.Popen()](https://docs.python.org/3/library/subprocess.html#subprocess.Popen) class is responsible for the creation and management of the executed process. In contrast to the previous functions, this class executes only a single command with arguments as a list. This means that you won't be able to [pipe](https://en.wikipedia.org/wiki/Pipeline_(Unix)) commands:
 
 
 ```python
@@ -129,7 +129,7 @@ shlex.split("/bin/prog -i data.txt -o \"more data.txt\"")
 
 
 
-You have also the [subprocess.call()](https://docs.python.org/3/library/subprocess.html#subprocess.call) function to your disposal which works like the `Popen` class, but it waits until the command completes and gives you the return code as in `return_code = subprocess.call(['echo', 'Even more output'])`. Another neat function that you can use is [subprocess.run()](https://docs.python.org/3/library/subprocess.html#subprocess.run) which works since Python 3.5. It has been added as a simplification of `subprocess.Popen`. The function will return a [subprocess.CompletedProcess](https://docs.python.org/3/library/subprocess.html#subprocess.CompletedProcess) object:
+You have also the [subprocess.call()](https://docs.python.org/3/library/subprocess.html#subprocess.call) function to your disposal which works like the `Popen` class, but it waits until the command completes and gives you the return code as in `return_code = subprocess.call(['echo', 'Even more output'])`. The recommended way however is to use [subprocess.run()](https://docs.python.org/3/library/subprocess.html#subprocess.run) which works since Python 3.5. It has been added as a simplification of `subprocess.Popen`. The function will return a [subprocess.CompletedProcess](https://docs.python.org/3/library/subprocess.html#subprocess.CompletedProcess) object:
 
 
 ```python
@@ -187,7 +187,7 @@ Here you can see how to write input to the process. In this case you need to set
 
 # Conclusion
 
-You have seen now how to run external commands in Python. The most effective way is to use the `subprocess` module with all the functionality it offers. For a short and quick script you might just want to use the `os.system()` or `os.popen()` functions. If you have any questions, feel free to leave them in the comments below.
+You have seen now how to run external commands in Python. The most effective way is to use the `subprocess` module with all the functionality it offers. Most notably, you should consider using `subprocess.run`. For a short and quick script you might just want to use the `os.system()` or `os.popen()` functions. If you have any questions, feel free to leave them in the comments below. There are also other useful libraries that support shell commands in Python, like [plumbum](https://plumbum.readthedocs.io/en/latest/), [sh](https://amoffat.github.io/sh/), [psutils](https://psutil.readthedocs.io/en/latest/) and [pexpect](https://pexpect.readthedocs.io/en/stable/).
 
 ## Further Reading
 
