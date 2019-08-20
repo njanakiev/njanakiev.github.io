@@ -1,9 +1,11 @@
 ---
 layout: post
-category: til
+category: blog
 title: Jekyll Snippets
 tags: [Jekyll]
+image: /assets/jekyll-logo.jpg
 comments: true
+redirect_from: /til/jekyll-snippets
 ---
 
 

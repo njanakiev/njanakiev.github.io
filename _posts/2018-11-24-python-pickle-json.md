@@ -1,9 +1,13 @@
 ---
 layout: post
-category: til
+category: blog
 title: Object Serialization with Pickle and JSON in Python
 tags: [Python]
 comments: true
+image: /assets/Pickled_Vegetables_in_a_Boutique_-_Tiradentes_-_Brazil.jpg
+imagesource: Wikimedia Commons
+imageurl: https://commons.wikimedia.org/wiki/File:Pickled_Vegetables_in_a_Boutique_-_Tiradentes_-_Brazil.jpg
+redirect_from: /til/python-pickle-json
 ---
 
 This is a quick little overview on how to use [pickle](https://docs.python.org/3/library/pickle.html) and [JSON](https://docs.python.org/3/library/json.html) for object serialization in Python with the [Python standard library](https://docs.python.org/3/library/).

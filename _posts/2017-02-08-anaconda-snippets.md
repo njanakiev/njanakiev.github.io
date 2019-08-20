@@ -1,9 +1,13 @@
 ---
 layout: post
-category: til
+category: blog
 title: Anaconda Snippets
 tags: [Anaconda, Python]
+image: /assets/Eunectes_murinus_10zz.jpg
+imagesource: Wikimedia Commons
+imageurl: https://commons.wikimedia.org/wiki/File:Eunectes_murinus_10zz.jpg
 comments: true
+redirect_from: /til/anaconda-snippets
 ---
 
 Here is a short collection of commands and solutions for [Anaconda](https://www.continuum.io/downloads) with Python that I frequently tend to use.

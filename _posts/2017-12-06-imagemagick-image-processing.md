@@ -7,6 +7,7 @@ imagesource: New Old Stock
 imageurl: http://nos.twnsnd.co/image/163254866811
 layout: post
 tags: ['Command-Line', 'ImageMagick', 'Image Processing']
+featured: True
 ---
 
 There are times being stuck with a load of images that need to be cropped, resized or converted, but doing this by hand in an image editor is tedious work. One tool I commonly use in these desperate situations is [ImageMagick](http://www.imagemagick.org/script/index.php), which is a powerful tool when automating raster and vector image processing. Here I'll introduce a few common commands I had to look up multiple times.

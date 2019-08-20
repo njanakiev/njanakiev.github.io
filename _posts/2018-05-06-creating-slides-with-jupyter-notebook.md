@@ -1,20 +1,24 @@
 ---
 layout: post
-category: til
+category: blog
 title: Creating Slides with Jupyter Notebook
 tags: [Jupyter]
+image: /assets/Cocconi_giving_a_lecture_in_CERN's_main_auditorium_1967.jpg
+imagesource: Wikimedia Commons
+imageurl: https://commons.wikimedia.org/wiki/File:Cocconi_giving_a_lecture_in_CERN's_main_auditorium_1967.jpg
 comments: true
+redirect_from: /til/creating-slides-with-juypter-notebook
 ---
 
 [Jupyter notebook](http://jupyter.org/) is a powerful tool to interactively code in web-based notebooks with a whole plethora of programming languages. With it, it is also possible to create web-based slideshows with [reveal.js](https://github.com/hakimel/reveal.js/).
 
 The slides functionality is already included in Jupyter Notebook, so there is no need to install plugins. Although slides do not work at the time of writing for [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/). To open the slides toolbar for each cell in your Jupyter Notebook, enable it via `View > Cell Toolbar > Slideshow`:
 
-![Jupyter Slides Toolbar]({{ site.baseurl }}/til/assets//creating_slides_with_jupyter_notebook_files/jupyter_slides_toolbar.png)
+![Jupyter Slides Toolbar]({{ site.baseurl }}/assets//creating_slides_with_jupyter_notebook_files/jupyter_slides_toolbar.png)
 
 Now you can specify for each cell what kind of slide type you want. The available types are _Slide_ (new slide), _Sub-Slide_ (new slide below last one), _Fragment_ (fragment within previous slide), _Skip_ (skip this cell) and _Notes_ (adding speaker notes):
 
-![Jupyter Slides Toolbar]({{ site.baseurl }}/til/assets//creating_slides_with_jupyter_notebook_files/jupyter_slides_type.png)
+![Jupyter Slides Toolbar]({{ site.baseurl }}/assets//creating_slides_with_jupyter_notebook_files/jupyter_slides_type.png)
 
 You can now convert the notebook with the [`jupyter-nbconvert`](https://nbconvert.readthedocs.io/en/latest/) command line tool and the [`--to slides`](http://nbconvert.readthedocs.io/en/latest/usage.html#convert-revealjs) option. First, you need to add/clone [reveal.js](https://github.com/hakimel/reveal.js/) into your folder with the presentation (`git clone https://github.com/hakimel/reveal.js/`) and then you can run the command:
 
@@ -36,7 +40,7 @@ jupyter-nbconvert --to slides presentation.ipynb --post serve
 
 This will run a server which opens the presentation in your browser ready for presentation. Another neat thing is [RISE](https://github.com/damianavila/RISE), a Jupyter slideshow extension that allows you to instantly turn your Jupyter Notebooks into a slideshow with the press of a button in your notebook:
 
-![Jupyter Slides RISE]({{ site.baseurl }}/til/assets//creating_slides_with_jupyter_notebook_files/jupyter_slides_RISE.png)
+![Jupyter Slides RISE]({{ site.baseurl }}/assets//creating_slides_with_jupyter_notebook_files/jupyter_slides_RISE.png)
 
 Finally, if you want to create a PDF from your slides, you can do that by adding `?print-pdf` to the url of the previously hosted slides:
 

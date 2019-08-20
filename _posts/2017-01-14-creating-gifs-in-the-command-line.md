@@ -1,10 +1,11 @@
 ---
 layout: post
-category: til
+category: blog
 title: Creating GIFs in the Command Line
 tags: [GIF, Command-Line, Image Processing]
-image: /til/assets/webgl_02.gif
+image: /assets/webgl_02.gif
 comments: true
+redirect_from: /til/creating-gifs-in-the-command-line
 ---
 
 

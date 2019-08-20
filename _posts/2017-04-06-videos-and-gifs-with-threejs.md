@@ -1,10 +1,11 @@
 ---
 layout: post
-category: til
+category: blog
 title: Videos and GIFs with Three.js
 tags: [GIF, FFmpeg, Three.js, JavaScript]
-image: /til/assets/webgl_01.gif
+image: /assets/webgl_01.gif
 comments: true
+redirect_from: /til/videos-and-gifs-with-threejs
 ---
 
 
@@ -64,7 +65,7 @@ There are further settings you can add to the command which can be found in the 
 convert -delay 4 -loop 0 *.png animation.gif
 ```
 
-where the `-delay` flag specifies the delay of each frame in *ticks-per-second* and the `-loop` flag specifies the number of loops, which is with `0` an endless loop. Creating more efficient gifs is covered in this [post]({{ site.baseurl }}{% link til/_posts/2017-01-14-creating-gifs-in-the-command-line.md %}) and creating videos for Instagram is covered in this [post]({{ site.baseurl }}{% link til/_posts/2017-02-26-instagram-videos-from-images.md %}).
+where the `-delay` flag specifies the delay of each frame in *ticks-per-second* and the `-loop` flag specifies the number of loops, which is with `0` an endless loop. Creating more efficient gifs is covered in this [post]({{ site.baseurl }}{% link _posts/2017-01-14-creating-gifs-in-the-command-line.md %}) and creating videos for Instagram is covered in this [post]({{ site.baseurl }}{% link _posts/2017-02-26-instagram-videos-from-images.md %}).
 
 
 [threejs]: https://threejs.org/

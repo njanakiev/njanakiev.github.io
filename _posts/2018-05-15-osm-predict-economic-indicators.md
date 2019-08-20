@@ -6,7 +6,8 @@ tags: [OpenStreetMap, Overpass API, GIS, Python]
 image: /assets/OperationsSpecialistVTS.jpg
 imageurl: https://en.wikipedia.org/wiki/File:OperationsSpecialistVTS.jpg
 imagesource: Wikimedia Commons
-comments: true
+comments: True
+featured: True
 ---
 
 [OpenStreetMap](https://www.openstreetmap.org/) (OSM) is a massive collaborative map of the world, built and maintained mostly by volunteers. On the other hand, there exist various indicators to measure economic growth, prosperity, and produce of a country. What if we use OpenStreetMap to predict those economic indicators?

@@ -4,9 +4,21 @@ title: Parametric Thoughts
 image: /assets/image.jpeg
 ---
 
+<div>
+  <h1 class="page-title">Hello,</h1>
+  <div class="post-listing"><p>I am a freelance data scientist and data engineer. I graduated as a Master of Science in Applied Image and Signal Processing studying in Austria, France, and the United States and I am currently based in Austria. I am interested and working in various areas spanning from data analysis and data visualization over to geospatial analysis and linked data. For more information, inquiries or collaborations check out the <a href="{{ site.baseurl }}/about">about</a> page</p>
+
+  <!-- <p>You can keep in touch with me on the various common networks, such as <a href="https://github.com/njanakiev">Github</a>, <a href="">Twitter</a> and <a href="https://at.linkedin.com/in/nikolai-janakiev">LinkedIn</a>. If you find my skills suitable for your project, feel free to reach out. You can contact me for any inquiries and collaborations at:</p>
+
+  <p><i>nikolai (dot) janakiev (at) gmail (dot) com</i></p> -->
+  </div>
+</div>
+
 <div class="posts">
+  <h1 class="page-title">Featured Articles</h1>
+  <div class="section-introduction">Here you can find a selection of articles that are either important for me or were well received by the community. For more articles have a look at my <a href="{{ site.baseurl }}/blog/">blog</a>.</div>
   {% for post in site.posts %}
-    {% if post.categories contains 'blog' %}
+    {% if post.featured %}
     <div class="post">
       <h1 class="post-title">
         <a href="{{ post.url | prepend: site.baseurl }}">
@@ -24,6 +36,6 @@ image: /assets/image.jpeg
   <div class="footer">
     <a href="{{ site.baseurl }}/about">About</a>
     <a href="{{ site.baseurl }}/notebooks/">Notebooks</a>
-    <a href="{{ site.baseurl }}/til/">Today I Learned</a>
+    <a href="{{ site.baseurl }}/blog/">Blog</a>
   </div>
 </div>

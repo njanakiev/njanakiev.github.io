@@ -4,12 +4,26 @@ title: About
 image: /assets/image.jpeg
 ---
 
-Hello, I am a freelance data scientist and recently graduated Master in Applied Image and Signal Processing based in Austria. I am interested and working in various areas spanning from data analysis and data visualization over to geospatial analysis and linked data. I also have a [passion][parametriccookie] for geometric modelling and computational design with [Blender][blender] which I follow up from time to time. This blog is dedicated to some of the topics and interests I like to explore and find valuable.
+Hello, I am a freelance data scientist and data engineer. I graduated as a Master of Science in Applied Image and Signal Processing studying in Austria, France, and the United States and I am currently based in Austria. I am interested and working in various areas spanning from data analysis and data visualization over to geospatial analysis and linked data with a strong focus on Python. I also have a [passion](https://parametriccookie.tumblr.com/) for geometric modeling and computational design with [Blender](https://www.blender.org/) which I follow up from time to time. This blog is dedicated to some of the topics and interests I like to explore and find valuable.
 
-## Around the Web
-You can keep in touch with me on the various common networks, such as [Github][github], [Twitter][twitter] and [LinkedIn][linkedin]. You can also contact me for any inquiries and collaborations at:
+## Services
+I offer various freelancing services and project collaborations in the fields of:
+
+- Building Data Pipelines
+- Data Science and Analytics
+- Geospatial Processing and Data Analytics
+- Python Software Development
+- Data Visualizations and Reporting
+- Building Dashboards
+
+Previous clients include [_Roam Coliving_ (NY, USA)](https://www.roam.co/) where I was building the data pipeline and dashboards for real estate analytics working with geospatial data on a large scale using Python. For [_Riser GmbH_ (Vienna, AT)](http://riserapp.com/) I worked on improving the routing by analyzing street networks in OpenStreetMap, creating custom routing profiles for [GraphHopper](http://graphhopper.com/) and implementing a data pipeline and dashboard.
+
+If you find my skills suitable for your project, feel free to reach out. You can contact me for any inquiries and collaborations at:
 
 _nikolai (dot) janakiev (at) gmail (dot) com_
+
+## Around the Web
+You can also keep in touch with me on the various common networks, such as [Github](https://github.com/njanakiev), [Twitter](https://twitter.com/njanakiev) and [LinkedIn](https://at.linkedin.com/in/nikolai-janakiev).
 
 ## Selected Publications
 - 2018 - _[Practical Text Classification with Python](https://realpython.com/python-keras-text-classification/)_ <br> @ Real Python
@@ -17,38 +31,13 @@ _nikolai (dot) janakiev (at) gmail (dot) com_
 - 2018 - _[Understanding the Covariance Matrix](https://datascienceplus.com/understanding-the-covariance-matrix/)_ <br> @ DataScience+
 
 ## Talks
-- 2018 - _OGR: Process and Transform Vector Data_ <br> @ [Maptime Salzburg][maptime salzburg], [(Video)][ogr video], [(Slides)][ogr slides]
-- 2018 - _Querying and Exploring Wikidata_ <br> @ [Barcamp Salzburg][barcamp november 2018], [(Slides)][wikidata slides]
-- 2018 - _Data Science with OSM_ <br> @ [Maptime Salzburg][maptime salzburg], [(Video)][data science osm video], [(Slides)][data science osm slides]
-- 2018 - _Predict Economic Measurements with OSM_ <br> @ [Z_GIS][zgis], [(Slides)][predict osm slides]
-- 2017 - _WebGL, Three.js and Shaders_ <br> @ [Barcamp Salzburg][barcamp april 2017], [(Slides)][webgl slides]
-- 2016 - _Yet Another Twitter Bot_ <br> @ [Barcamp Salzburg][barcamp october 2016], [(Slides)][generic-bot slides]
-- 2016 - _Geospatial Storytelling_ <br> @ [Data Visualization NY][data viz ny], [(Project)][geospatial storytelling], [(Video)][geospatial storytelling video]
-- 2016 - _Introduction to Processing_ <br> @ [Mobile App Dev Meetup NYC][mobile app dev ny]
-- 2015 - _Internet of Things_ <br> @ [Science Slam Salzburg][science slam], [(Video)][science slam video]
-
-
-[parametriccookie]: https://parametriccookie.tumblr.com/
-[blender]: https://www.blender.org/
-[science slam]: http://www.scienceslam.at/performers/1-science-slam-salzburg-3/
-[science slam video]: https://www.youtube.com/watch?v=c4hu9nVjIJo
-[geospatial storytelling video]: https://www.youtube.com/watch?v=ukBFPd8jnhA
-[geospatial storytelling]: https://github.com/njanakiev/geospatial-storytelling
-[generic-bot slides]: http://janakiev.com/generic-bot/
-[webgl slides]: http://janakiev.com/webgl-presentation/
-[mobile app dev ny]: https://www.meetup.com/de-DE/NYC-Mobile-App-Dev-Meetup/events/229435450/
-[data viz ny]: https://www.meetup.com/de-DE/DataVisualization/events/231402199/?eventId=231402199
-[barcamp october 2016]: https://www.meetup.com/de-DE/salzburgwebdev/events/231559126/
-[barcamp april 2017]: https://www.meetup.com/de-DE/salzburgwebdev/events/237491594/
-[predict osm slides]: https://janakiev.com/osm-predict-economic-measurements/#/
-[zgis]: https://zgis.at/
-[data science osm slides]: https://janakiev.com/osm-data-science/#/
-[data science osm video]: https://www.youtube.com/watch?v=WmCLQCohL3k
-[maptime salzburg]: http://maptime.io/salzburg/
-[barcamp november 2018]: https://www.meetup.com/de-DE/salzburgwebdev/events/248534871/
-[wikidata slides]: https://janakiev.com/wikidata-mayors/slides/
-[ogr slides]: https://janakiev.com/ogr-presentation/
-[ogr video]: https://www.youtube.com/watch?v=DP9F7tJH2Mw
-[twitter]: https://twitter.com/njanakiev
-[github]: https://github.com/njanakiev
-[linkedin]: https://at.linkedin.com/in/nikolai-janakiev
+- 2019 - _Data Science mit OpenStreetMap_ <br> @ [FOSSGIS 2019](https://www.fossgis-konferenz.de/2019/), [(Video)](https://pretalx.com/fossgis2019/talk/WSALG8/), [(Slides)](http://janakiev.com/slides/osm-data-science/)
+- 2018 - _OGR: Process and Transform Vector Data_ <br> @ [Maptime Salzburg](http://maptime.io/salzburg/2018/12/12/data-handling/), [(Video)](https://www.youtube.com/watch?v=DP9F7tJH2Mw), [(Slides)](http://janakiev.com/slides/ogr-presentation/)
+- 2018 - _Querying and Exploring Wikidata_ <br> @ [Barcamp Salzburg](https://www.meetup.com/de-DE/salzburgwebdev/events/248534871/), [(Slides)](https://janakiev.com/wikidata-mayors/slides/)
+- 2018 - _Data Science with OpenStreetMap_ <br> @ [Maptime Salzburg](http://maptime.io/salzburg/2018/10/09/OpenStreetMap/), [(Video)](https://www.youtube.com/watch?v=WmCLQCohL3k), [(Slides)](https://janakiev.com/slides/osm-data-science/)
+- 2018 - _Predict Economic Indicators with OpenStreetMap_ <br> @ [Z_GIS](https://zgis.at/), [(Slides)](http://janakiev.com/slides/osm-predict-economic-indicators/)
+- 2017 - _WebGL, Three.js and Shaders_ <br> @ [Barcamp Salzburg](https://www.meetup.com/de-DE/salzburgwebdev/events/237491594/), [(Slides)](http://janakiev.com/slides/webgl-presentation/)
+- 2016 - _Yet Another Twitter Bot_ <br> @ [Barcamp Salzburg](https://www.meetup.com/de-DE/salzburgwebdev/events/231559126/), [(Slides)](http://janakiev.com/slides/generic-bot/)
+- 2016 - _Geospatial Storytelling_ <br> @ [Data Visualization NY](https://www.meetup.com/de-DE/DataVisualization/events/231402199/?eventId=231402199), [(Project)](https://github.com/njanakiev/geospatial-storytelling), [(Video)](https://www.youtube.com/watch?v=ukBFPd8jnhA)
+- 2016 - _Introduction to Processing_ <br> @ [Mobile App Dev Meetup NYC](https://www.meetup.com/de-DE/NYC-Mobile-App-Dev-Meetup/events/229435450/)
+- 2015 - _Internet of Things_ <br> @ [Science Slam Salzburg](http://www.scienceslam.at/performers/1-science-slam-salzburg-3/), [(Video)](https://www.youtube.com/watch?v=c4hu9nVjIJo)

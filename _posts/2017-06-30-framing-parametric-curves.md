@@ -4,7 +4,8 @@ category: blog
 title: Framing Parametric Curves
 tags: [Python, Computer Graphics, CAD, 3D]
 image: /assets/parametric_curve.png
-comments: true
+comments: True
+featured: True
 ---
 
 

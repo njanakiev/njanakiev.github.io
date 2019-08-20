@@ -1,12 +1,13 @@
 ---
 title: Using Virtual Environments in Jupyter Notebook and Python
-category: til
-comments: True
+category: blog
+comments: true
 image: /assets/LabTest_CHK300J_05-11_037.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:LabTest_CHK300J_05-11_037.jpg
 layout: post
 tags: ['Python', 'Jupyter']
+redirect_from: /til/jupyter-virtual-envs
 ---
 
 Are you working with Jupyter Notebook and Python? Do you also want to benefit from virtual environments? In this tutorial you will see how to do just that with [Anaconda](https://www.anaconda.com/) or [Virtualenv](https://virtualenv.pypa.io/en/latest/)/[venv](https://docs.python.org/3/library/venv.html).
@@ -83,7 +84,7 @@ In this folder you will find a `kernel.json` file which should look the followin
     
 That's all to it! Now you are able to choose the conda environment as a kernel in Jupyter. Here is what that would look like in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/):
 
-![Jupyter Virtual Environment]({{ site.baseurl }}/til/assets/jupyter_virtual_envs_files/jupyter_venv.png)
+![Jupyter Virtual Environment]({{ site.baseurl }}/assets/jupyter_virtual_envs_files/jupyter_venv.png)
 
 # Remove Virtual Environment from Jupyter Notebook
 

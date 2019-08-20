@@ -1,12 +1,13 @@
 ---
 title: Running a Python Script in the Background
-category: til
+category: blog
 comments: True
-image: /til/assets/HP_2647A_terminal.jpg
+image: /assets/HP_2647A_terminal.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:HP_2647A_terminal.jpg
 layout: post
 tags: ['Python', 'Command-Line', 'Server']
+redirect_from: /til/python-background
 ---
 
 This is a quick little guide on how to run a Python script in the background in Linux.

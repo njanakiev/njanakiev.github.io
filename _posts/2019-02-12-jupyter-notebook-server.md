@@ -7,6 +7,7 @@ imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:Leitstand_2.jpg
 layout: post
 tags: ['Jupyter', 'Data Science', 'Server']
+featured: True
 ---
 
 Jupyter Notebook is a powerful tool, but how can you use it in all its glory on a server? In this tutorial you will see how to set up Jupyter notebook on a server like [Digital Ocean](https://m.do.co/c/cd7e4dd5ee1f), [AWS](https://aws.amazon.com/) or most other hosting provider available. Additionally, you will see how to use Jupyter notebooks over SSH tunneling or SSL with with [Let's Encrypt](https://letsencrypt.org/).
@@ -178,12 +179,12 @@ Finally, you can access Jupyter notebooks securely over `https://example.com:888
 
 You have learned how to set up Jupyter for a server from start to finish. This is a task that gets easier with every server set up that you do. Make sure to delve into the surrounding topics of Linux server administration since working with servers can be intimidating in the beginning. Using Jupyter you have access to a wide variety of kernels that enable you to use other languages. A list of all available kernels can be found [here](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels). I hope this was helpful and if you have any further questions or remarks, feel free to share them in the comments bellow.
 
-I covered in a [previous tutorial](https://janakiev.com/til/jupyter-virtual-envs/) how to work with virtual environments in Jupyter notebook. There is also an option to run Jupyter as a Docker container. You can use for example the [jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/) container. You can read more on how to work with Jupyter and Docker in [this guide](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html). Here are further links that I have learned from and that might be useful for you too:
+I covered in a [previous tutorial](https://janakiev.com/jupyter-virtual-envs/) how to work with virtual environments in Jupyter notebook. There is also an option to run Jupyter as a Docker container. You can use for example the [jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/) container. You can read more on how to work with Jupyter and Docker in [this guide](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html). Here are further links that I have learned from and that might be useful for you too:
 
 - [Initial Server Setup](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04)
 - [Running a notebook server](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html)
 - [How To Set Up Jupyter Notebook for Python 3](https://www.digitalocean.com/community/tutorials/how-to-set-up-jupyter-notebook-for-python-3)
 - [How To Use Certbot Standalone Mode to Retrieve Let's Encrypt SSL Certificates](https://www.digitalocean.com/community/tutorials/how-to-use-certbot-standalone-mode-to-retrieve-let-s-encrypt-ssl-certificates-on-ubuntu-16-04)
 - [UFW Essentials: Common Firewall Rules and Commands](https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands)
-- [Using Virtual Environments in Jupyter Notebook and Python](https://janakiev.com/til/jupyter-virtual-envs/)
-- [Creating Slides with Jupyter Notebook](https://janakiev.com/til/creating-slides-with-jupyter-notebook/)
+- [Using Virtual Environments in Jupyter Notebook and Python](https://janakiev.com/jupyter-virtual-envs/)
+- [Creating Slides with Jupyter Notebook](https://janakiev.com/creating-slides-with-jupyter-notebook/)

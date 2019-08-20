@@ -1,9 +1,13 @@
 ---
 layout: post
-category: til
+category: blog
 title: Filtering and Converting ESRI Shapefiles to GeoJSON
 tags: [GIS, ESRI Shapefile, GDAL, OGR, GeoJSON]
+image: /assets/159_of_'The_Conquest_of_England_..._Second_edition._(Edited_by_Alice_S._Green.)'_(11170687766).jpg
+imagesource: Wikimedia Commons
+imageurl: https://commons.wikimedia.org/wiki/File:159_of_'The_Conquest_of_England_..._Second_edition._(Edited_by_Alice_S._Green.)'_(11170687766).jpg
 comments: true
+redirect_from: /til/filtering-and-converting-ESRI-shapefiles-to-geojson
 ---
 
 
@@ -38,7 +42,7 @@ ogr2ogr -f GeoJSON -where "iso_a2 = 'GB'" gb.json input.shp
 ```
 Here is what the selection looks like (rendered with pycairo):
 
-![Great Britain State and Provinces]({{ site.baseurl }}/til/assets/gb.svg)
+![Great Britain State and Provinces]({{ site.baseurl }}/assets/gb.svg)
 
 Some other handy commands can be found in this [GDAL Cheatsheet][gdal cheatsheet].
 

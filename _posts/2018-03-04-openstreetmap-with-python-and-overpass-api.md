@@ -6,7 +6,8 @@ tags: [OpenStreetMap, Overpass API, GIS, Python]
 image: /assets/DE_amenity_biergarten.png
 imageurl: https://github.com/njanakiev/openstreetmap-heatmap
 imagesource: openstreetmap-heatmap
-comments: true
+comments: True
+featured: True
 ---
 
 

@@ -1,12 +1,13 @@
 ---
 title: Analyzing Your File System and Folder Structures with Python
 category: blog
-comments: True
+comments: true
 image: /assets/Hard_disk_head.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:Hard_disk_head.jpg
 layout: post
 tags: ['Python', 'Data Science', 'Statistics', 'File-System']
+featured: true
 ---
 
 Say you have an external hard drive with layers upon layers of cryptically named folders and intricate mazes of directories (like [here](https://xkcd.com/1360/), or [here](https://xkcd.com/1459/)). How can you make sense of this mess? Python offers various tools in the Python standard library to deal with your file system and the [folderstats](https://github.com/njanakiev/folderstats) module can be of additional help to gain insights into your file system.

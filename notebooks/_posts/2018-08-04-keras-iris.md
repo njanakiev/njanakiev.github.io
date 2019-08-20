@@ -3,6 +3,9 @@ layout: post
 category: notebooks
 title: "Classifying the Iris Data Set with Keras"
 tags: [Python, Keras, Neural Networks]
+image: /assets/Iris_sect._californicae_-_Flickr_-_peganum.jpg
+imagesource: Wikimedia Commons
+imageurl: https://commons.wikimedia.org/wiki/File:Iris_sect._californicae_-_Flickr_-_peganum.jpg
 comments: True
 ---
 
