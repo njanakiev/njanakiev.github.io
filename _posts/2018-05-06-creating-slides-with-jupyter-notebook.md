@@ -7,7 +7,7 @@ image: /assets/Cocconi_giving_a_lecture_in_CERN's_main_auditorium_1967.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:Cocconi_giving_a_lecture_in_CERN's_main_auditorium_1967.jpg
 comments: true
-redirect_from: /til/creating-slides-with-juypter-notebook
+redirect_from: '/til/creating-slides-with-juypter-notebook/'
 ---
 
 [Jupyter notebook](http://jupyter.org/) is a powerful tool to interactively code in web-based notebooks with a whole plethora of programming languages. With it, it is also possible to create web-based slideshows with [reveal.js](https://github.com/hakimel/reveal.js/).

@@ -7,7 +7,7 @@ comments: true
 image: /assets/Unix_Server_Attic_Hideaway.jpg
 imageurl: https://commons.wikimedia.org/wiki/File:Unix_Server_Attic_Hideaway.jpeg
 imagesource: Wikimedia Commons
-redirect_from: /til/python-filecmp
+redirect_from: '/til/python-filecmp/'
 ---
 
 The Python standard library offers a powerful set of tools out of the box including file system handling. In this quick little article you'll see a couple of useful recipes to compare files and directories with the [filecmp](https://docs.python.org/3/library/filecmp.html) module.

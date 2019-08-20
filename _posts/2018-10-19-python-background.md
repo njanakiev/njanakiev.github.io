@@ -7,7 +7,7 @@ imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:HP_2647A_terminal.jpg
 layout: post
 tags: ['Python', 'Command-Line', 'Server']
-redirect_from: /til/python-background
+redirect_from: '/til/python-background/'
 ---
 
 This is a quick little guide on how to run a Python script in the background in Linux.

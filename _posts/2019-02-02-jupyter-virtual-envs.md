@@ -7,7 +7,7 @@ imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:LabTest_CHK300J_05-11_037.jpg
 layout: post
 tags: ['Python', 'Jupyter']
-redirect_from: /til/jupyter-virtual-envs
+redirect_from: '/til/jupyter-virtual-envs/'
 ---
 
 Are you working with Jupyter Notebook and Python? Do you also want to benefit from virtual environments? In this tutorial you will see how to do just that with [Anaconda](https://www.anaconda.com/) or [Virtualenv](https://virtualenv.pypa.io/en/latest/)/[venv](https://docs.python.org/3/library/venv.html).

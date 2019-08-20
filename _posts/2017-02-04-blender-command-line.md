@@ -7,7 +7,7 @@ image: /assets/MET_265559.jpg
 imageurl: http://www.metmuseum.org/art/collection/search/265559
 imagesource: Metropolitan Museum of Art
 comments: true
-redirect_from: /til/blender-command-line
+redirect_from: '/til/blender-command-line/'
 ---
 
 

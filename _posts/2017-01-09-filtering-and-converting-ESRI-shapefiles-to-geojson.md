@@ -7,7 +7,7 @@ image: /assets/159_of_'The_Conquest_of_England_..._Second_edition._(Edited_by_Al
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:159_of_'The_Conquest_of_England_..._Second_edition._(Edited_by_Alice_S._Green.)'_(11170687766).jpg
 comments: true
-redirect_from: /til/filtering-and-converting-ESRI-shapefiles-to-geojson
+redirect_from: '/til/filtering-and-converting-ESRI-shapefiles-to-geojson/'
 ---
 
 

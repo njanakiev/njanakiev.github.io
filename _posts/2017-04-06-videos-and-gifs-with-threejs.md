@@ -5,7 +5,7 @@ title: Videos and GIFs with Three.js
 tags: [GIF, FFmpeg, Three.js, JavaScript]
 image: /assets/webgl_01.gif
 comments: true
-redirect_from: /til/videos-and-gifs-with-threejs
+redirect_from: '/til/videos-and-gifs-with-threejs/'
 ---
 
 

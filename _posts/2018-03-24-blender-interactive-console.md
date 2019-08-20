@@ -7,7 +7,7 @@ image: /assets/Control_Panel_for_UNIVAC_1232_Computer.jpg
 imageurl: https://commons.wikimedia.org/wiki/File:Control_Panel_for_UNIVAC_1232_Computer.jpg
 imagesource: Wikimedia Commons (Steven Fine)
 comments: true
-redirect_from: /til/blender-interactive-console
+redirect_from: '/til/blender-interactive-console/'
 ---
 
 [Blender][blender] is a wonderful and free 3D modelling tool, but sometimes you need to work with it without the GUI. Luckily Blender supports that and you can work there and do your thing very easily with Python.

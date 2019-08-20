@@ -7,7 +7,7 @@ image: /assets/Belgrade_zoo_mosaic0041.JPG
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:Belgrade_zoo_mosaic0041.JPG
 comments: true
-redirect_from: /til/pandas-missing-values
+redirect_from: '/til/pandas-missing-values/'
 ---
 
 Here we'll see how to work with missing values in a Pandas DataFrame on a data set from the [World Bank Open Data](https://data.worldbank.org/) of the [Global Economic Monitor](https://datacatalog.worldbank.org/dataset/global-economic-monitor).

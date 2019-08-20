@@ -7,7 +7,7 @@ image: /assets/QWERTY_keyboard.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:QWERTY_keyboard.jpg
 comments: true
-redirect_from: /til/python-testing-server
+redirect_from: '/til/python-testing-server/'
 ---
 
 This quick little tutorial shows how to setup a simple local testing server with Python.
