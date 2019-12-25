@@ -31,7 +31,8 @@ You can also keep in touch with me on the various common networks, such as [Gith
 - 2018 - _[Understanding the Covariance Matrix](https://datascienceplus.com/understanding-the-covariance-matrix/)_ <br> @ DataScience+
 
 ## Talks
-- 2019 - _Data Science mit OpenStreetMap_ <br> @ [FOSSGIS 2019](https://www.fossgis-konferenz.de/2019/), [(Video)](https://pretalx.com/fossgis2019/talk/WSALG8/), [(Slides)](http://janakiev.com/slides/osm-data-science/)
+- 2019 - _Data Science with OpenStreetMap and Wikidata_ <br> @ [FOSS4G Bucharest 2019](https://2019.foss4g.org/), [(Video)](https://media.ccc.de/v/bucharest-408-data-science-with-openstreetmap-and-wikidata), [(Slides)](http://janakiev.com/slides/data-science-osm-wikidata/)
+- 2019 - _Data Science mit OpenStreetMap_ <br> @ [FOSSGIS Dresden 2019](https://www.fossgis-konferenz.de/2019/), [(Video)](https://pretalx.com/fossgis2019/talk/WSALG8/), [(Slides)](http://janakiev.com/slides/osm-data-science/)
 - 2018 - _OGR: Process and Transform Vector Data_ <br> @ [Maptime Salzburg](http://maptime.io/salzburg/2018/12/12/data-handling/), [(Video)](https://www.youtube.com/watch?v=DP9F7tJH2Mw), [(Slides)](http://janakiev.com/slides/ogr-presentation/)
 - 2018 - _Querying and Exploring Wikidata_ <br> @ [Barcamp Salzburg](https://www.meetup.com/de-DE/salzburgwebdev/events/248534871/), [(Slides)](https://janakiev.com/wikidata-mayors/slides/)
 - 2018 - _Data Science with OpenStreetMap_ <br> @ [Maptime Salzburg](http://maptime.io/salzburg/2018/10/09/OpenStreetMap/), [(Video)](https://www.youtube.com/watch?v=WmCLQCohL3k), [(Slides)](https://janakiev.com/slides/osm-data-science/)
