@@ -1,23 +1,21 @@
 ---
-layout: post
+title: "Three Ways to get most of your CSV in Python"
 category: blog
-title: Three ways to get most of your CSV in Python
-tags: [Python, CSV]
-image: /assets/NOS_159641617020.jpg
-imageurl: http://nos.twnsnd.co/image/159641617020
+comments: True
+image: /assets/csv_in_python_files/NOS_159641617020.jpg
 imagesource: New Old Stock
-comments: true
+imageurl: http://nos.twnsnd.co/image/159641617020
+layout: post
+tags: ['Python', 'CSV']
 ---
 
+One of the crucial tasks when working with data is to load data properly. The common way the data is formated is [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), which comes in different flavors and varying difficulties to parse. This article shows three common approaches in Python.
 
-One of the crucial tasks when working with data is to load data properly. The common way the data is formated is [CSV][csv], which comes in different flavors and varying difficulties to parse. This article shows three common approaches in Python.
-
-The data used for the recipes commes from [GPSies][gpsies], a data base of GPS Tracks for hiking, biking and other activities, [NYC Department of Transportation][nyc dot] with data feeds of New York infrastructure and [World Bank Open Data][world bank] where some data sets like global population of the world can be found.
-
+The data used for the recipes commes from [GPSies](http://www.gpsies.com/), a data base of GPS Tracks for hiking, biking and other activities, [NYC Department of Transportation](http://www.nyc.gov/html/dot/html/about/datafeeds.shtml) with data feeds of New York infrastructure and [World Bank Open Data](http://data.worldbank.org/) where some data sets like global population of the world can be found.
 
 ## Load CSV with Python Standard Library
 
-The [Python Standard Library][python standard library] offers a wide variety of built-in modules providing system functionality and standardized solutions to common problems. The module we need is the [csv][csv] module with [csv.reader][csv.reader]. We will use the [data set][gpsies data] of a walking track in France which has the following form
+The [Python Standard Library](https://docs.python.org/3/library/index.html) offers a wide variety of built-in modules providing system functionality and standardized solutions to common problems. The module we need is the [csv](https://docs.python.org/3/library/csv.html) module with [csv.reader](https://docs.python.org/3/library/csv.html#csv.reader). We will use the [data set](http://www.gpsies.com/map.do?fileId=udopvaearytdhxhx&language=da)) of a walking track in France which has the following form
 
 ```
 Latitude,Longitude,Elevation
@@ -32,6 +30,7 @@ Latitude,Longitude,Elevation
 
 We see that the file contains a header and uses commas as delimiters. We can parse this file with
 
+
 ```python
 import csv
 import numpy as np
@@ -40,12 +39,8 @@ import matplotlib.pyplot as plt
 data_path = 'data/EntreDhuisEtMarne.csv'
 with open(data_path, 'r') as f:
     reader = csv.reader(f, delimiter=',')
-    # get header from first row
     headers = next(reader)
-    # get all the rows as a list
-    data = list(reader)
-    # transform data into numpy array
-    data = np.array(data).astype(float)
+    data = np.array(list(reader)).astype(float)
     
 print(headers)
 print(data.shape)
@@ -64,25 +59,26 @@ plt.ylabel(headers[2])
 plt.show()
 ```
 
-which gives us
+    ['Latitude', 'Longitude', 'Elevation']
+    (199, 3)
+    [[ 48.89016   2.68927  71.     ]
+     [ 48.89      2.68973  72.     ]
+     [ 48.88987   2.68981  72.     ]]
 
-```
-['Latitude', 'Longitude', 'Elevation']
-(199, 3)
-[[ 48.89016   2.68927  71.     ]
- [ 48.89      2.68973  72.     ]
- [ 48.88987   2.68981  72.     ]]
-```
 
-![Coordinates]({{ site.baseurl }}/assets/python_csv_files/python_csv_image_01.png)
-![Elevation]({{ site.baseurl }}/assets/python_csv_files/python_csv_image_02.png)
 
-First we need to open the file with [`open()`][python open] giving gives us a file object. the `with` statement makes sure that the file is then closed after the [`with`][python with] block. The file is then is used for the [`csv.reader`][csv.reader] which can be iterated over all rows returning for each row a list of the items as strings. We then finally transform the data into a [Numpy][numpy] array for further processing.
+![png]({{ site.baseurl }}/assets/csv_in_python_files/output_2_1.png)
 
+
+
+![png]({{ site.baseurl }}/assets/csv_in_python_files/output_2_2.png)
+
+
+First we need to open the file with [`open()`](https://docs.python.org/3/library/functions.html#open) giving gives us a file object. the `with` statement makes sure that the file is then closed after the [`with`](https://docs.python.org/3/reference/compound_stmts.html#with) block. The file is then is used for the [`csv.reader`](https://docs.python.org/3/library/csv.html#csv.reader) which can be iterated over all rows returning for each row a list of the items as strings. We then finally transform the data into a [Numpy](http://www.numpy.org/) array for further processing.
 
 ## Load CSV with Numpy
 
-In order to load data with [Numpy][numpy], you can use the functions [numpy.genfromtxt][genfromtxt] or [numpy.loadtxt][loadtxt], where the difference is that np.genfromtxt can read CSV files with missing data and gives you options like the parameters `missing_values` and `filling_values` that help with missing values in the CSV. The loading of our data in previous recipe can be done in one step by
+In order to load data with [Numpy](http://www.numpy.org/), you can use the functions [numpy.genfromtxt](https://docs.scipy.org/doc/numpy/reference/generated/numpy.genfromtxt.html) or [numpy.loadtxt](https://docs.scipy.org/doc/numpy-1.11.0/reference/generated/numpy.loadtxt.html), where the difference is that np.genfromtxt can read CSV files with missing data and gives you options like the parameters `missing_values` and `filling_values` that help with missing values in the CSV. The loading of our data in previous recipe can be done in one step by
 
 ```python
 data = np.loadtxt(data_path, delimiter=',', skiprows=1)
@@ -107,22 +103,30 @@ X,Y,Name,small,large,circular,mini_hoop,total_rack
 ...
 ```
 
-We can see from the data set that the data types of the columns are mixed. This can be solved by specifying the `dtype` argument `nunmpy.genfromtxt`. This can be either a single type like `float` or a list of formats. These formats are specified by the [Data type objects][dtype] in Numpy.
+We can see from the data set that the data types of the columns are mixed. This can be solved by specifying the `dtype` argument `nunmpy.genfromtxt`. This can be either a single type like `float` or a list of formats. These formats are specified by the [Data type objects](https://docs.scipy.org/doc/numpy-1.12.0/reference/arrays.dtypes.html) in Numpy.
+
 
 ```python
+import numpy as np
+import matplotlib.pyplot as plt
+
 data_path = "data/nyc_bike_racks.csv"
 types = ['f8', 'f8', 'U50', 'i4', 'i4', 'i4', 'i4', 'i4']
-data = np.genfromtxt(data_path, dtype=types, delimiter=',',names=True)
+data = np.genfromtxt(data_path, dtype=types, delimiter=',', names=True)
 
 # Plot the data
-plt.scatter(data['X'], data['Y'], s=0.2)
+plt.scatter(data['X'], data['Y'], s=0.5)
 plt.axis('equal')
 plt.axis('off')
 plt.xticks([])
 plt.yticks([])
+
 plt.show()
 ```
-![Bike Racks]({{ site.baseurl }}/assets/python_csv_files/python_csv_image_03.png)
+
+
+![png]({{ site.baseurl }}/assets/csv_in_python_files/output_6_0.png)
+
 
 As mentioned before, the `names` argument enables us to use the header names to select the columns directly with their names as with `data['X']`. It is important to note that the `str` data type only works as a data type for all columns and without specified `names` argument
 
@@ -130,12 +134,11 @@ As mentioned before, the `names` argument enables us to use the header names to 
 data = np.genfromtxt(data_path, dtype=str, delimiter=',')
 ```
 
-and to skip the header row(s) just add the `skip_header=1` argument for the number of rows to be skipped. Additionally [numpy.genfromtxt][genfromtxt] covers functionality for missing values and converters for specific columns.
-
+and to skip the header row(s) just add the `skip_header=1` argument for the number of rows to be skipped. Additionally [numpy.genfromtxt](https://docs.scipy.org/doc/numpy/reference/generated/numpy.genfromtxt.html) covers functionality for missing values and converters for specific columns.
 
 ## Load CSV with Pandas
 
-The third and my recommended way of reading a CSV in Python is by using [Pandas][pandas] with the [pandas.read_csv()][pandas read_csv] function. The function returns a [pandas.DataFrame][pandas DataFrame] object, that is handy for further analysis, processing or plotting. In this recipe we will use the more difficult [population data set][world bank data] which has the following form
+The third and my recommended way of reading a CSV in Python is by using [Pandas](http://pandas.pydata.org/) with the [pandas.read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) function. The function returns a [pandas.DataFrame](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html) object, that is handy for further analysis, processing or plotting. In this recipe we will use the more difficult [population data set](http://data.worldbank.org/indicator/SP.POP.TOTL) which has the following form:
 
 ```
 "Data Source","World Development Indicators",
@@ -147,25 +150,205 @@ The third and my recommended way of reading a CSV in Python is by using [Pandas]
 ...
 ```
 
-First thing we see is that we need to skip some rows to come to the header. Also we want to select `Country Code` as the [index][pandas Index], which will come in handy for selection later on.
+First thing we see is that we need to skip some rows to come to the header. Also we want to select `Country Code` as the [index](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Index.html), which will come in handy for selection later on.
+
 
 ```python
-import pandas as pd
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
 path = 'data/population.csv'
 df = pd.read_csv(path, skiprows=4)
-# Set the country code as index of the DataFrame
 df = df.set_index('Country Code')
 df.head()
 ```
 
-which returns the table
 
-{% include_relative csv-dataframe.html %}
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country Name</th>
+      <th>Indicator Name</th>
+      <th>Indicator Code</th>
+      <th>1960</th>
+      <th>1961</th>
+      <th>1962</th>
+      <th>1963</th>
+      <th>1964</th>
+      <th>1965</th>
+      <th>1966</th>
+      <th>...</th>
+      <th>2008</th>
+      <th>2009</th>
+      <th>2010</th>
+      <th>2011</th>
+      <th>2012</th>
+      <th>2013</th>
+      <th>2014</th>
+      <th>2015</th>
+      <th>2016</th>
+      <th>Unnamed: 61</th>
+    </tr>
+    <tr>
+      <th>Country Code</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ABW</th>
+      <td>Aruba</td>
+      <td>Population, total</td>
+      <td>SP.POP.TOTL</td>
+      <td>54208.0</td>
+      <td>55435.0</td>
+      <td>56226.0</td>
+      <td>56697.0</td>
+      <td>57029.0</td>
+      <td>57360.0</td>
+      <td>57712.0</td>
+      <td>...</td>
+      <td>101342.0</td>
+      <td>101416.0</td>
+      <td>101597.0</td>
+      <td>101936.0</td>
+      <td>102393.0</td>
+      <td>102921.0</td>
+      <td>103441.0</td>
+      <td>103889.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>AFG</th>
+      <td>Afghanistan</td>
+      <td>Population, total</td>
+      <td>SP.POP.TOTL</td>
+      <td>8994793.0</td>
+      <td>9164945.0</td>
+      <td>9343772.0</td>
+      <td>9531555.0</td>
+      <td>9728645.0</td>
+      <td>9935358.0</td>
+      <td>10148841.0</td>
+      <td>...</td>
+      <td>26528741.0</td>
+      <td>27207291.0</td>
+      <td>27962207.0</td>
+      <td>28809167.0</td>
+      <td>29726803.0</td>
+      <td>30682500.0</td>
+      <td>31627506.0</td>
+      <td>32526562.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>AGO</th>
+      <td>Angola</td>
+      <td>Population, total</td>
+      <td>SP.POP.TOTL</td>
+      <td>5270844.0</td>
+      <td>5367287.0</td>
+      <td>5465905.0</td>
+      <td>5565808.0</td>
+      <td>5665701.0</td>
+      <td>5765025.0</td>
+      <td>5863568.0</td>
+      <td>...</td>
+      <td>19842251.0</td>
+      <td>20520103.0</td>
+      <td>21219954.0</td>
+      <td>21942296.0</td>
+      <td>22685632.0</td>
+      <td>23448202.0</td>
+      <td>24227524.0</td>
+      <td>25021974.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ALB</th>
+      <td>Albania</td>
+      <td>Population, total</td>
+      <td>SP.POP.TOTL</td>
+      <td>1608800.0</td>
+      <td>1659800.0</td>
+      <td>1711319.0</td>
+      <td>1762621.0</td>
+      <td>1814135.0</td>
+      <td>1864791.0</td>
+      <td>1914573.0</td>
+      <td>...</td>
+      <td>2947314.0</td>
+      <td>2927519.0</td>
+      <td>2913021.0</td>
+      <td>2904780.0</td>
+      <td>2900247.0</td>
+      <td>2896652.0</td>
+      <td>2893654.0</td>
+      <td>2889167.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>AND</th>
+      <td>Andorra</td>
+      <td>Population, total</td>
+      <td>SP.POP.TOTL</td>
+      <td>13414.0</td>
+      <td>14376.0</td>
+      <td>15376.0</td>
+      <td>16410.0</td>
+      <td>17470.0</td>
+      <td>18551.0</td>
+      <td>19646.0</td>
+      <td>...</td>
+      <td>85616.0</td>
+      <td>85474.0</td>
+      <td>84419.0</td>
+      <td>82326.0</td>
+      <td>79316.0</td>
+      <td>75902.0</td>
+      <td>72786.0</td>
+      <td>70473.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 61 columns</p>
+</div>
+
+
 
 From this table we can see that missing values are automatically included as `NaN` values. We also can see that an additional column was added to the table, but this is due the commas at the end of each row in the data set. To solve this we can simply drop this column. We now want to plot the populations of France and Great Britain.
+
 
 ```python
 # Drop last columns
@@ -184,7 +367,7 @@ for country in ['GBR', 'FRA']:
     # Plot the data
     plt.plot(years, population, label=country_name)
 
-# Add labeling
+# Add labels
 plt.title('Population over Time')
 plt.legend(loc='lower right')
 plt.xlabel('Year')
@@ -193,37 +376,12 @@ plt.ticklabel_format(style='plain')
 plt.show()
 ```
 
-![Population]({{ site.baseurl }}/assets/python_csv_files/python_csv_image_04.png)
 
-Here are some good resources for Pandas on [Indexing and Selecting Data][pandas indexing], [Working with Missing Data][pandas missing values] and [Data Structures][pandas data structures]. There is also a [10 minutes to pandas][pandas 10min] introduction which covers many helpful use cases.
+![png]({{ site.baseurl }}/assets/csv_in_python_files/output_11_0.png)
+
+
+Here are some good resources for Pandas on [Indexing and Selecting Data](https://pandas.pydata.org/pandas-docs/stable/indexing.html), [Working with Missing Data](https://pandas.pydata.org/pandas-docs/stable/missing_data.html) and [Data Structures](https://pandas.pydata.org/pandas-docs/stable/dsintro.html). There is also a [10 minutes to pandas](http://pandas.pydata.org/pandas-docs/stable/10min.html) introduction which covers many helpful use cases.
 
 ## Conclusion
 
-We have seen three recipes on how to load csv tables in Python with the [Python Standard Library][python standard library], [Numpy][numpy] and [Pandas][pandas]. Each of them is useful in their own way, but for more complex data sets I recommend to work with Pandas. Numpy on the other hand is sufficient for simple homogenous data sets and can be also useful for more involved data sets. Let me know in the comments if you are left with some questions.
-
-
-[csv]: https://en.wikipedia.org/wiki/Comma-separated_values
-[gpsies]: http://www.gpsies.com/
-[gpsies data]: http://www.gpsies.com/map.do?fileId=udopvaearytdhxhx&language=da)
-[nyc dot]: http://www.nyc.gov/html/dot/html/about/datafeeds.shtml
-[world bank]: http://data.worldbank.org/
-[world bank data]: http://data.worldbank.org/indicator/SP.POP.TOTL
-[python standard library]: https://docs.python.org/3/library/index.html
-[csv python]: https://docs.python.org/3/library/csv.html
-[csv.reader]: https://docs.python.org/3/library/csv.html#csv.reader
-[csv.DictReader]: https://docs.python.org/3/library/csv.html#csv.DictReader
-[python open]: https://docs.python.org/3/library/functions.html#open
-[python with]: https://docs.python.org/3/reference/compound_stmts.html#with
-[numpy]: http://www.numpy.org/
-[pandas]: http://pandas.pydata.org/
-[scipy]: https://www.scipy.org/
-[dtype]: https://docs.scipy.org/doc/numpy-1.12.0/reference/arrays.dtypes.html
-[genfromtxt]: https://docs.scipy.org/doc/numpy/reference/generated/numpy.genfromtxt.html
-[loadtxt]: https://docs.scipy.org/doc/numpy-1.11.0/reference/generated/numpy.loadtxt.html
-[pandas DataFrame]: http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html
-[pandas Index]: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Index.html
-[pandas read_csv]: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
-[pandas missing values]: https://pandas.pydata.org/pandas-docs/stable/missing_data.html
-[pandas 10min]: http://pandas.pydata.org/pandas-docs/stable/10min.html
-[pandas data structures]: https://pandas.pydata.org/pandas-docs/stable/dsintro.html
-[pandas indexing]: https://pandas.pydata.org/pandas-docs/stable/indexing.html
+We have seen three recipes on how to load csv tables in Python with the [Python Standard Library](https://docs.python.org/3/library/index.html), [Numpy](http://www.numpy.org/) and [Pandas](http://pandas.pydata.org/). Each of them is useful in their own way, but for more complex data sets I recommend to work with Pandas. Numpy on the other hand is sufficient for simple homogenous data sets and can be also useful for more involved data sets. Let me know in the comments if you are left with some questions.
