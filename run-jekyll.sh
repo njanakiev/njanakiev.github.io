@@ -1,1 +1,5 @@
-bundle exec jekyll serve -w --host=0.0.0.0
+docker run --rm -it \
+  --volume="$PWD:/srv/jekyll" \
+  --env JEKYLL_ENV=production \
+  -p 4000:4000 \
+  jekyll/jekyll jekyll serve
