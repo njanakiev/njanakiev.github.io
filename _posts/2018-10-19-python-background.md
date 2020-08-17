@@ -1,15 +1,14 @@
 ---
-title: Running a Python Script in the Background
+title: "Running a Python Script in the Background"
 category: blog
 comments: True
-image: /assets/HP_2647A_terminal.jpg
+image: /assets/python_background_files/HP_2647A_terminal.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:HP_2647A_terminal.jpg
 layout: post
+redirect_from: /til/python-background/
 tags: ['Python', 'Command-Line', 'Server']
-redirect_from: '/til/python-background/'
 ---
-
 This is a quick little guide on how to run a Python script in the background in Linux.
 
 First, you need to add a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line in the Python script which looks like the following:

@@ -1,14 +1,13 @@
 ---
-title: How to Create Your Data Science Blog with Pelican and Jupyter Notebooks
+title: "How to Create Your Data Science Blog with Pelican and Jupyter Notebooks"
 category: blog
-comments: true
-image: /assets/Australian_Pelicans.jpg
+comments: True
+image: /assets/pelican_jupyter_files/Australian_Pelicans.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:Australian_Pelicans.jpg
 layout: post
 tags: ['Data Science', 'Pelican', 'Jupyter', 'Python']
 ---
-
 Writing articles and tutorials are a great way to learn new things in depth while building a portfolio. In this tutorial, you will find the first steps that you will need to start your data science blog with Pelican and Jupyter Notebooks.
 
 Data Science lives and breathes from communicating your findings, presenting reports and discussing results and new insights. A blog is a great way to engage in this discussion. David Robinson wrote a great [article](http://varianceexplained.org/r/start-blog/) explaining much better how a blog could help you.
@@ -176,7 +175,7 @@ Finally, the last way to add metadata is by directly modifying the metadata tag 
 
 # Hosting Your Blog on GitHub with GitHub Pages
 
-You can host your website directly on GitHub with [GitHub Pages](https://pages.github.com/). Before we get started, you have to create a repository in GitHub with `username.github.io`, where you should replace `username` with your username on GitHub. After you have set up your website in the previous steps, you can add this repository as a submodule:
+You can host your website directly on GitHub with [GitHub Pages](https://pages.github.com/). Before we get started, you have to create a repository in GitHub with `username.github.io`, where you should replace `username` with your username on GitHub. After you have set up your website in the previous steps, you can add this repository as a submodule in the output folder:
 
 ```bash
 git submodule add https://github.com/username/username.github.io.git output

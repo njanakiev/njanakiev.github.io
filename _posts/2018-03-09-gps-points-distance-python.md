@@ -1,14 +1,13 @@
 ---
-layout: post
+title: "Calculate Distance Between GPS Points in Python"
 category: blog
-title: Calculate Distance Between GPS Points in Python
-tags: [GIS, Python]
-image: /assets/NOS_162360396834.jpg
-imageurl: http://nos.twnsnd.co/image/162360396834
+comments: True
+image: /assets/gps_points_distance_python_files/NOS_162360396834.jpg
 imagesource: New Old Stock
-comments: true
+imageurl: http://nos.twnsnd.co/image/162360396834
+layout: post
+tags: ['GIS', 'Python']
 ---
-
 When working with [GPS](https://en.wikipedia.org/wiki/Global_Positioning_System), it is sometimes helpful to calculate distances between points. But simple [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) doesn't cut it since we have to deal with a sphere, or an oblate [spheroid](https://en.wikipedia.org/wiki/Spheroid) to be exact. So we have to take a look at [geodesic](https://en.wikipedia.org/wiki/Geodesic) distances. 
 
 There are various ways to handle this calculation problem. For example there is the [Great-circle distance](https://en.wikipedia.org/wiki/Great-circle_distance), which is the shortest distance between two points on the surface of a sphere. Another similar way to measure distances is by using the [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula), which takes the equation
@@ -71,7 +70,7 @@ for city, coord in cities.items():
     vienna 1235650.1412429416
     sydney 16997984.55171465
     berlin 930723.2019867426
-    
+
 
 This already gives us some seemingly accurate result, but let's compare it to another method.
 
@@ -90,7 +89,7 @@ for city, coord in cities.items():
     vienna 1238804.7757636765
     sydney 16988546.466847803
     berlin 933410.764122098
-    
+
 
 As you can see, there is a difference between the values, especially since we work with very large distances, which enhances the distortion of our spheroid-shaped Earth.
 
@@ -119,6 +118,6 @@ for city, coord in cities.items():
         azimuth 60.33221400668488 -40.68498881273351
     berlin 933410.764123629
         azimuth 77.79312482066598 -91.53477000281634
-    
+
 
 On a geographic sidenote, the forward azimuth is the direction which is defined as a horizontal angle measured clockwise from a north base line and a back azimuth is the opposite direction of the forward azimuth. You could use this information for example to sail the ocean if this is what you intend.

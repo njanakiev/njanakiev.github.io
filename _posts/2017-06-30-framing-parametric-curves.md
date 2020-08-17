@@ -1,14 +1,12 @@
 ---
-layout: post
+title: "Framing Parametric Curves"
 category: blog
-title: Framing Parametric Curves
-tags: [Python, Computer Graphics, CAD, 3D]
-image: /assets/parametric_curve.png
 comments: True
 featured: True
+image: /assets/framing_parametric_curves_files/parametric_curve.png
+layout: post
+tags: ['Python', 'Computer Graphics', 'CAD', '3D']
 ---
-
-
 This article explores an efficient way on how to create tubes, ribbons and moving camera orientations based on parametric curves with the help of moving coordinate frames.
 
 
@@ -75,7 +73,7 @@ B = np.apply_along_axis(f, axis=1, arr=B)
 N = np.cross(B, T)
 ```
 
-![Frenet-Serret frame]({{ site.baseurl }}/assets/parametric_curves_files/frenet_serret_frame_1.gif)
+![Frenet-Serret frame]({{ site.baseurl }}/assets/framing_parametric_curves_files/frenet_serret_frame_1.gif)
 
 So it seems we are done and the Frenet frame solves this problem, but we quickly encounter problems. Consider the following curve
 
@@ -89,7 +87,7 @@ $$
 
 This curve draws a straight-line segment from point $$ \overrightarrow{p} $$ to point $$ \overrightarrow{q} $$ for $$ t \in [0, 1] $$. The first derivative is the vector $$ \overrightarrow{x}'(t) = \overrightarrow{q} - \overrightarrow{p} $$, but the second derivative is zero. This means it is not possible to calculate the Frenet frame for straight-line segments and at points where the second derivative vanishes. The Frenet frame has also other problems such as ambiguity and sudden orientation changes as we can see here.
 
-![Frenet-Serret frame]({{ site.baseurl }}/assets/parametric_curves_files/frenet_serret_frame_2.gif)
+![Frenet-Serret frame]({{ site.baseurl }}/assets/framing_parametric_curves_files/frenet_serret_frame_2.gif)
 
 
 # The Case for Parallel Transport Frames
@@ -157,7 +155,7 @@ $$
 
 where $$ v \in [0, 1] $$ and $$ u $$ is dictated by our sampling of the curve and $$ r $$ defines the radius of the tube. The radius can be also defined as a function over $$ u $$ which grows and shrinks for different $$ u $$. In the next image we can see such surface parameterizations for the Frenet frame (left) and the parallel transport frame (right). Here we can see the strong orientation changes along the curve for the Frenet frame.
 
-![Frenet-Serret frame]({{ site.baseurl }}/assets/parametric_curves_files/comparison_frames.png)
+![Frenet-Serret frame]({{ site.baseurl }}/assets/framing_parametric_curves_files/comparison_frames.png)
 
 # Conclusion
 

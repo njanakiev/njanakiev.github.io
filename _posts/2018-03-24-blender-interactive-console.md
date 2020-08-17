@@ -1,15 +1,14 @@
 ---
-layout: post
+title: "Using the Blender Interactive Console from the Command-Line"
 category: blog
-title: Using the Blender Interactive Console from the Command-Line
-tags: [Blender, Python, Command-Line]
-image: /assets/Control_Panel_for_UNIVAC_1232_Computer.jpg
-imageurl: https://commons.wikimedia.org/wiki/File:Control_Panel_for_UNIVAC_1232_Computer.jpg
+comments: True
+image: /assets/blender_interactive_console_files/Control_Panel_for_UNIVAC_1232_Computer.jpg
 imagesource: Wikimedia Commons (Steven Fine)
-comments: true
-redirect_from: '/til/blender-interactive-console/'
+imageurl: https://commons.wikimedia.org/wiki/File:Control_Panel_for_UNIVAC_1232_Computer.jpg
+layout: post
+redirect_from: /til/blender-interactive-console/
+tags: ['Blender', 'Python', 'Command-Line']
 ---
-
 [Blender][blender] is a wonderful and free 3D modelling tool, but sometimes you need to work with it without the GUI. Luckily Blender supports that and you can work there and do your thing very easily with Python.
 
 All you need to run Blender in the background is the following command, which gets you to the Blender interactive console.

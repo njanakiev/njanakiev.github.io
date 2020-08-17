@@ -1,14 +1,12 @@
 ---
-layout: post
+title: "Creating GIFs in the Command Line"
 category: blog
-title: Creating GIFs in the Command Line
-tags: [GIF, Command-Line, Image Processing]
-image: /assets/webgl_02.gif
-comments: true
-redirect_from: '/til/creating-gifs-in-the-command-line/'
+comments: True
+image: /assets/creating_gifs_in_the_command_line_files/webgl_02.gif
+layout: post
+redirect_from: /til/creating-gifs-in-the-command-line/
+tags: ['GIF', 'Command-Line', 'Image Processing']
 ---
-
-
 Some quick tipps on creating GIFs in the command line. 
 
 The tool I mostly use is `convert` from [ImageMagick][imagemagick]. The `-fuzz` option seems to have the largest impact on the final size, which has the effect that *Colors within this distance are considered equal*. The `-delay` option specifies the the delay of each frame in *ticks-per-second*. The `-loop` option specifies the number of loops (0 for infinite loop). The `-layers` option performs different image operation methods for image sequences, where `OptimizePlus` is improving the overall optimization. The `convert` options can be found in the [Command Line Options][imagemagick options].

@@ -1,15 +1,14 @@
 ---
-layout: post
+title: "Predict Economic Indicators with OpenStreetMap"
 category: blog
-title: Predict Economic Indicators with OpenStreetMap
-tags: [OpenStreetMap, Overpass API, GIS, Python]
-image: /assets/OperationsSpecialistVTS.jpg
-imageurl: https://en.wikipedia.org/wiki/File:OperationsSpecialistVTS.jpg
-imagesource: Wikimedia Commons
 comments: True
 featured: True
+image: /assets/osm_predict_economic_indicators_files/OperationsSpecialistVTS.jpg
+imagesource: Wikimedia Commons
+imageurl: https://en.wikipedia.org/wiki/File:OperationsSpecialistVTS.jpg
+layout: post
+tags: ['OpenStreetMap', 'Overpass API', 'GIS', 'Python']
 ---
-
 [OpenStreetMap](https://www.openstreetmap.org/) (OSM) is a massive collaborative map of the world, built and maintained mostly by volunteers. On the other hand, there exist various indicators to measure economic growth, prosperity, and produce of a country. What if we use OpenStreetMap to predict those economic indicators?
 
 One inspiration for this project came from the publication _Measuring Economic Growth from Outer Space_ where they tried to predict the GDP growth of countries with satellite data at night. Their aim was to have an alternative way to measure economic growth since reliable data on economic growth is difficult to come by, especially in rural areas.

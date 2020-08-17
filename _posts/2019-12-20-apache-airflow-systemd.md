@@ -8,7 +8,6 @@ imageurl: https://airflow.apache.org/
 layout: post
 tags: ['Python', 'Apache Airflow', 'Systemd', 'Server']
 ---
-
 [Apache Airflow](https://airflow.apache.org/) is a powerfull workflow management system which you can use to automate and manage complex [Extract Transform Load (ETL)](https://en.wikipedia.org/wiki/Extract,_transform,_load) pipelines. In this tutorial you will see how to integrate Airflow with the [systemd](https://www.freedesktop.org/wiki/Software/systemd/) system and service manager which is available on most Linux systems to help you with monitoring and restarting Airflow on failure.
 
 Apache Airflow goes by the principle of _configuration as code_ which lets you programmatically configure and schedule complex workflows and also monitor them. This is great if you have big data pipelines with lots of dependencies to take care. If you haven't installed Apache Airflow yet, have a look at this [installation guide](https://airflow.readthedocs.io/en/stable/installation.html) and this [tutorial](https://airflow.readthedocs.io/en/stable/tutorial.html) which should bring you up to speed.

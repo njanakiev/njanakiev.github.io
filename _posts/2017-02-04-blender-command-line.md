@@ -1,16 +1,14 @@
 ---
-layout: post
+title: "Running Blender from the Command Line"
 category: blog
-title: Running Blender from the Command Line
-tags: [Python, Blender, Command-Line]
-image: /assets/MET_265559.jpg
-imageurl: http://www.metmuseum.org/art/collection/search/265559
+comments: True
+image: /assets/blender_command_line_files/MET_265559.jpg
 imagesource: Metropolitan Museum of Art
-comments: true
-redirect_from: '/til/blender-command-line/'
+imageurl: http://www.metmuseum.org/art/collection/search/265559
+layout: post
+redirect_from: /til/blender-command-line/
+tags: ['Python', 'Blender', 'Command-Line']
 ---
-
-
 [Blender][blender] is a very powerful professional open source 3D modelling software for 3D graphics and animation among many other tools. Many things in Blender can be automated with [Python][python] and I often use Blender directly from the command line with Python scripts. Here are some quick commands and snippets that I frequently use.
 
 First thing you need is a Python script which creates or works with a scene in Blender. In this [Blender Scripts Cookbook][cookbook] are a few examples to get you started. In order to run a Python script in Blender you can simply execute the following command

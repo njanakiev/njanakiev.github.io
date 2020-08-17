@@ -1,14 +1,12 @@
 ---
-layout: post
+title: "Videos and GIFs with Three.js"
 category: blog
-title: Videos and GIFs with Three.js
-tags: [GIF, FFmpeg, Three.js, JavaScript]
-image: /assets/webgl_01.gif
-comments: true
-redirect_from: '/til/videos-and-gifs-with-threejs/'
+comments: True
+image: /assets/videos_and_gifs_with_threejs_files/webgl_01.gif
+layout: post
+redirect_from: /til/videos-and-gifs-with-threejs/
+tags: ['GIF', 'FFmpeg', 'Three.js', 'JavaScript']
 ---
-
-
 [Three.js][threejs] is a powerful JavaScript library to create 3D computer graphics on the browser using [WebGL][webgl]. Here we'll see how to create animations and videos from Three.js demos.
 
 For this task we will utilize [CCapture.js][ccapture], which is a handy library to capture frames from the canvas. It supports [WebM][webm], gifs or images in jpg or png collected in a tar file. Here we will focus on the image output of all frames because we want more control over the video and gif format.

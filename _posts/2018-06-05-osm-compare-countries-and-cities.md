@@ -1,15 +1,14 @@
 ---
-layout: post
+title: "Compare Countries and Cities with OpenStreetMap and t-SNE"
 category: blog
-title: Compare Countries and Cities with OpenStreetMap and t-SNE
-tags: [OpenStreetMap, Overpass API, GIS, Python]
-image: /assets/NOS_135192661848.jpg
-imageurl: http://nos.twnsnd.co/image/135192661848
-imagesource: New Old Stock
 comments: True
 featured: True
+image: /assets/osm_compare_countries_and_cities_files/NOS_135192661848.jpg
+imagesource: New Old Stock
+imageurl: http://nos.twnsnd.co/image/135192661848
+layout: post
+tags: ['OpenStreetMap', 'Overpass API', 'GIS', 'Python']
 ---
-
 There are many ways to compare countries and cities and many measurements to choose from. We can see how they perform economically, or how their demographics differ, but what if we take a look at data available in [OpenStreetMap](https://www.openstreetmap.org/)? In this article, we explore just that with the help of a procedure called t-SNE.
 
 In the previous article [How to Predict Economic Indicators with OpenStreetMap]({{ site.baseurl }}{% link _posts/2018-05-15-osm-predict-economic-indicators.md

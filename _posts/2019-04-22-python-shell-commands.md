@@ -1,15 +1,14 @@
 ---
-title: How to Execute Shell Commands with Python
+title: "How to Execute Shell Commands with Python"
 category: blog
-comments: true
-image: /assets/DEC_VT100_terminal.jpg
+comments: True
+image: /assets/python_shell_commands_files/DEC_VT100_terminal.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:DEC_VT100_terminal.jpg
 layout: post
+redirect_from: /til/python-shell-commands/
 tags: ['Python', 'Command-Line', 'Server']
-redirect_from: '/til/python-shell-commands/'
 ---
-
 Python is a wonderful language for scripting and automating workflows and it is packed with useful tools out of the box with the [Python Standard Library](https://docs.python.org/3/library/). A common thing to do, especially for a sysadmin, is to execute shell commands. But what usually will end up in a [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) or [batch](https://en.wikipedia.org/wiki/Batch_file) file, can be also done in Python. You'll learn here how to do just that with the [os](https://docs.python.org/3/library/os.html) and [subprocess](https://docs.python.org/3/library/subprocess.html) modules.
 
 # Using the `os` Module

@@ -1,14 +1,13 @@
 ---
-layout: post
+title: "Understanding the Covariance Matrix"
 category: blog
-title: Understanding the Covariance Matrix
-tags: [Python, Data Science, Statistics]
-image: /assets/covariance_visualization.png
 comments: True
 featured: True
+image: /assets/covariance_matrix_files/covariance_visualization.png
+layout: post
+tags: ['Python', 'Data Science', 'Statistics']
 ---
-
-This article is showing a geometric and intuitive explanation of the covariance matrix and the way it describes the shape of a data set. We will describe the geometric relationship of the covariance matrix with the use of linear transformations and eigendecomposition.
+This article is showing a geometric and intuitive explanation of the covariance matrix and the way it describes the shape of a data set. We will describe the geometric relationship of the covariance matrix with the use of linear transformations and eigen decomposition.
 
 # Introduction
 
@@ -18,7 +17,7 @@ $$
 \sigma^2_x = \frac{1}{n-1} \sum^{n}_{i=1}(x_i - \bar{x})^2 \\
 $$
 
-where $$n$$ is the number of samples (e.g. the number of people) and $$\bar{x}$$ is the mean of the random variable $$x$$ (represented as a vector). The covariance $$\sigma(x, y)$$ of two random variables $$x$$ and $$y$$ is given by 
+where $$n$$ is the number of samples (e.g. number of people) and $$\bar{x}$$ is the mean of the random variable $$x$$ (represented as a vector). The covariance $$\sigma(x, y)$$ of two random variables $$x$$ and $$y$$ is given by 
 
 $$
 \sigma(x, y) = \frac{1}{n-1} \sum^{n}_{i=1}{(x_i-\bar{x})(y_i-\bar{y})}
@@ -28,7 +27,7 @@ with $$n$$ samples. The variance $$\sigma_x^2$$ of a random variable $$x$$ can b
 
 # Covariance Matrix
 
-With the covariance we can calculate entries of the covariance matrix, which is a square matrix given by $$C_{i,j} = \sigma(x_i, x_j)$$ where $$C \in \mathbb{R}^{d \times d}$$ and $$d$$ describes the dimension or number of random variables of the data (e.g. the number of features like height, width, weight, ...). Also the covariance matrix is symmetric since $$\sigma(x_i, x_j) = \sigma(x_j, x_i)$$. The diagonal entries of the covariance matrix are the variances and the other entries are the covariances. For this reason, the covariance matrix is sometimes called the _variance-covariance matrix_. The calculation for the covariance matrix can be also expressed as
+With the covariance we can calculate entries of the covariance matrix, which is a square matrix given by $$C_{i,j} = \sigma(x_i, x_j)$$ where $$C \in \mathbb{R}^{d \times d}$$ and $$d$$ describes the dimension or number of random variables of the data (e.g. the number of features like height, width, weight, ...). Also the covariance matrix is symmetric since $$\sigma(x_i, x_j) = \sigma(x_j, x_i)$$. The diagonal entries of the covariance matrix are the variances and the other entries are the covariances. For this reason the covariance matrix is sometimes called the _variance-covariance matrix_. The calculation for the covariance matrix can be also expressed as
 
 $$
 C = \frac{1}{n-1} \sum^{n}_{i=1}{(X_i-\bar{X})(X_i-\bar{X})^T}
@@ -36,7 +35,7 @@ $$
 
 where our data set is expressed by the matrix $$X \in \mathbb{R}^{n \times d}$$. Following from this equation, the covariance matrix can be computed for a data set with zero mean with $$ C = \frac{XX^T}{n-1} $$ by using the semi-definite matrix $$XX^T$$.
 
-In this article, we will focus on the two-dimensional case, but it can be easily generalized to more dimensional data. Following from the previous equations the covariance matrix for two dimensions is given by
+In this article we will focus on the two dimensional case, but it can be easily generalized to more dimensional data. Following from the previous equations the covariance matrix for two dimensions is given by
 
 $$
 C = \left( \begin{array}{ccc}
@@ -44,7 +43,7 @@ C = \left( \begin{array}{ccc}
 \sigma(y, x) & \sigma(y, y) \end{array} \right)
 $$
 
-We want to show how linear transformations affect the data set and in result the covariance matrix. First we will generate random points with mean values $$\bar{x}$$, $$\bar{y}$$ at the origin and unit variance $$\sigma^2_x = \sigma^2_y = 1$$ which is also called [white noise](https://en.wikipedia.org/wiki/White_noise) and has the identity matrix as the covariance matrix.
+We want to show how linear transformation affect the data set and in result the covariance matrix. First we will generate random points with mean values $$\bar{x}$$, $$\bar{y}$$ at the origin and unit variance $$\sigma^2_x = \sigma^2_y = 1$$ which is also called [white noise](https://en.wikipedia.org/wiki/White_noise) and has the identity matrix as the covariance matrix.
 
 
 ```python
@@ -108,7 +107,7 @@ Which approximatelly gives us our expected covariance matrix with variances $$\s
 
 # Linear Transformations of the Data Set
 
-Next, we will look at how transformations affect our data and the covariance matrix $$C$$. We will transform our data with the following scaling matrix.
+Next we will look at how transformations affect our data and the covariance matrix $$C$$. We will transform our data with the following scaling matrix.
 
 $$
 S = \left( \begin{array}{ccc}
@@ -212,7 +211,7 @@ cov_mat(Y.T)
 ![png]({{ site.baseurl }}/assets/covariance_matrix_files/output_7_1.png)
 
 
-This leads to the question of how to decompose the covariance matrix $$C$$ into a rotation matrix $$R$$ and a scaling matrix $$S$$.
+This leads to the question how to decompose the covariance matrix $$C$$ into a rotation matrix $$R$$ and a scaling matrix $$S$$.
 
 # Eigen Decomposition of the Covariance Matrix
 
@@ -220,7 +219,7 @@ Eigen Decomposition is one connection between a linear transformation and the co
 
 $$ Av=\lambda v $$
 
-where $$v$$ is an eigenvector of $$A$$ and $$\lambda$$ is the corresponding eigenvalue. If we put all eigenvectors into the columns of a Matrix $$V$$ and all eigenvalues as the entries of a diagonal matrix $$L$$ we can write for our covariance matrix $$C$$ the following equation
+where $$v$$ is an eigenvector of $$A$$ and $$\lambda$$ is the corresponding eigenvalue. If we put all eigenvectors into the colums of a Matrix $$V$$ and all eigenvalues as the entries of a diagonal matrix $$L$$ we can write for our covariance matrix $$C$$ the following equation
 
 $$ CV = VL $$
 
@@ -228,7 +227,7 @@ where the covariance matrix can be represented as
 
 $$ C = VLV^{-1} $$
 
-which can be also obtained by [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition). The eigenvectors are unit vectors representing the direction of the largest variance of the data, while the eigenvalues represent the magnitude of this variance in the corresponding directions. This means $$V$$ represents a rotation matrix and $$\sqrt{L}$$ represents a scaling matrix. From this equation, we can represent the covariance matrix $$C$$ as
+which can be also obtained by [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition). The eigenvectors are unit vectors representing the direction of the largest variance of the data, while the eigenvalues represent the magnitude of this variance in the corresponding directions. This means $$V$$ represents a rotation matrix and $$\sqrt{L}$$ represents a scaling matrix. From this equation we can represent the covariance matrix $$C$$ as
 
 $$ C = RSSR^{-1} $$
 
@@ -236,14 +235,14 @@ where the rotation matrix $$R=V$$ and the scaling matrix $$S=\sqrt{L}$$. From th
 
 $$ C = RSSR^{-1} = TT^T $$
 
-because $$T^T = (RS)^T=S^TR^T = SR^{-1}$$ due to the properties $$R^{-1}=R^T$$ since $$R$$ is orthogonal and $$S = S^T$$ since $$S$$ is a diagonal matrix. This enables us to calculate the covariance matrix from a linear transformation. In order to calculate the linear transformation of the covariance matrix, one must calculate the eigenvectors and eigenvectors from the covariance matrix $$C$$. This can be done by calculating
+because $$T^T = (RS)^T=S^TR^T = SR^{-1}$$ due to the properties $$R^{-1}=R^T$$ since $$R$$ is orthogonal and $$S = S^T$$ since $$S$$ is a diagonal matrix. This enables us to calculate the covariance matrix from a linear transformation. In order to calculate the linear transformation of the covariance matrix one must calculate the eigenvectors and eigenvectors from the covariance matrix $$C$$. This can be done by calculating
 
 $$ T = V\sqrt{L} $$
 
 where $$V$$ is the previous matrix where the columns are the eigenvectors of $$C$$ and $$L$$ is the previous diagonal matrix consisting of the corresponding eigenvalues. The transformation matrix can be also computed by the [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition) with $$Z = L^{-1}(X-\bar{X})$$ where $$L$$ is the Cholesky factor of $$C = LL^T$$.
 
 
-We can see the basis vectors of the transformation matrix by showing each eigenvector $$v$$ multiplied by $$\sigma = \sqrt{\lambda}$$. By multiplying $$\sigma$$ with $$3$$ we cover approximately $$99.7\%$$ of the points according to the [three sigma rule](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule) if we would draw an ellipse with the two basis vectors and count the points inside the ellipse.
+We can see the basis vectors of the transformation matrix by showing each eigenvector $$v$$ multiplied by $$\sigma = \sqrt{\lambda}$$. By multiply $$\sigma$$ with $$3$$ we cover approximately $$99.7\%$$ of the points according to the [three sigma rule](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule) if we would draw a ellipse with the two basis vectors and count the points inside the ellipse.
 
 
 ```python
@@ -261,7 +260,7 @@ plt.axis('equal');
 ![png]({{ site.baseurl }}/assets/covariance_matrix_files/output_10_0.png)
 
 
-We can now get from the covariance the transformation matrix $$T$$ and we can use the inverse of $$T$$ to remove correlation (whiten) the data. 
+We can now get from the covariance the transformation matrix $$T$$ and we can use the inverse of $$T$$ to uncorrelate (whiten) the data. 
 
 
 ```python
@@ -305,6 +304,6 @@ where $$\mu$$ is the mean and $$C$$ is the covariance of the multivariate normal
 
 # Conclusion
 
-In this article, we saw the relationship of the covariance matrix with linear transformation which is an important building block for understanding and using [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis), [SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition), the [Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier), the [Mahalanobis distance](https://en.wikipedia.org/wiki/Mahalanobis_distance) and other topics in statistics and pattern recognition. I found the covariance matrix to be a helpful cornerstone in the understanding of the many concepts and methods in pattern recognition and statistics.
+In this article we saw the relationship of the covariance matrix with linear transformation which is an important building block for understanding and using [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis), [SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition), the [Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier), the [Mahalanobis distance](https://en.wikipedia.org/wiki/Mahalanobis_distance) and other topics in statistics and pattern recognition. I found the covariance matrix to be a helpful cornerstone in the understanding of the many concepts and methods in pattern recognition and statistics.
 
 Many of the matrix identities can be found in [The Matrix Cookbook](http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf). The relationship between SVD, PCA and the covariance matrix are elegantly shown in this [question](http://math.stackexchange.com/questions/3869/what-is-the-intuitive-relationship-between-svd-and-pca).

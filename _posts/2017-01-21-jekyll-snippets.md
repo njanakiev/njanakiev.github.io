@@ -1,14 +1,12 @@
 ---
-layout: post
+title: "Jekyll Snippets"
 category: blog
-title: Jekyll Snippets
-tags: [Jekyll]
-image: /assets/jekyll-logo.jpg
-comments: true
-redirect_from: '/til/jekyll-snippets/'
+comments: True
+image: /assets/jekyll_snippets_files/jekyll-logo.jpg
+layout: post
+redirect_from: /til/jekyll-snippets/
+tags: ['Jekyll']
 ---
-
-
 Some quick solutions when using [Jekyll][jekyll] to generate static sites.
 
 ## How to serve Jekyll on the local network?

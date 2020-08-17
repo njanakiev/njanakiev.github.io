@@ -1,16 +1,14 @@
 ---
-layout: post
+title: "Loading Data from OpenStreetMap with Python and the Overpass API"
 category: blog
-title: Loading Data from OpenStreetMap with Python and the Overpass API
-tags: [OpenStreetMap, Overpass API, GIS, Python]
-image: /assets/DE_amenity_biergarten.png
-imageurl: https://github.com/njanakiev/openstreetmap-heatmap
-imagesource: openstreetmap-heatmap
 comments: True
 featured: True
+image: /assets/openstreetmap_with_python_and_overpass_api_files/DE_amenity_biergarten.png
+imagesource: openstreetmap-heatmap
+imageurl: https://github.com/njanakiev/openstreetmap-heatmap
+layout: post
+tags: ['OpenStreetMap', 'Overpass API', 'GIS', 'Python']
 ---
-
-
 Have you ever wondered where most Biergarten in Germany are or how many banks are hidden in Switzerland? [OpenStreetMap][OSM] is a great open source map of the world which can give us some insight into these and similar questions. There is a lot of data hidden in this data set, full of useful labels and geographic information, but how do we get our hands on the data?
 
 There are a number of ways to download map data from OpenStreetMap (OSM) as shown in their [wiki][OSM download data]. Of course you could download the whole [Planet.osm][Planet.osm] but you would need to free up over 800 GB as of date of this article to have the whole data set sitting on your computer waiting to be analyzed. If you just need to work with a certain region you can use [extracts][OSM extracts] in various formats such as the native [`.OSM`][OSM XML] (stored as XML), [`.PBF`][OSM PBF] (A compressed version of `.OSM`), [Shapefile][Shapefile] or [GeoJSON][GeoJSON]. There are also different API possible such as the native [OSM API][OSM API] or the [Nominatim API][Nominatim API]. In this article we will only focus on the [Overpass API][Overpass API] which allows us to select specific data from the OSM data set.
@@ -19,15 +17,15 @@ There are a number of ways to download map data from OpenStreetMap (OSM) as show
 
 Before we start, we have to take a look at how OSM is structured. We have three basic components in the OSM data model, which are [nodes][OSM nodes], [ways][OSM ways] and [relations][OSM relations] which all come with an id. Many of the elements come with [tags][OSM tags] which describe specific features represented as key-value pairs. In simple terms, __nodes__ are points on the maps (in latitude and longitude) as in the next image of a well documented [bench][London bench] in London.
 
-![OSM node]({{ site.baseurl }}/assets/overpass_python_files/osm_node_example.png)
+![OSM node]({{ site.baseurl }}/assets/openstreetmap_with_python_and_overpass_api_files/osm_node_example.png)
 
 A __way__ on the other hand is a ordered list of nodes, which could correspond to a street or the outline of a house. Here is an example of [McSorley's Old Ale House][NY pub] in New York which can be found as a way in OSM.
 
-![OSM way]({{ site.baseurl }}/assets/overpass_python_files/osm_way_example.png)
+![OSM way]({{ site.baseurl }}/assets/openstreetmap_with_python_and_overpass_api_files/osm_way_example.png)
 
 The final data element is a __relation__ which is also an ordered list containing either nodes, ways or even other relations. It is used to model logical or geographic relationships between objects. This can be used for example for large structures as in the [Palace of Versailles][palace of versailles] which contains multiple polygons to describe the building.
 
-![OSM relation]({{ site.baseurl }}/assets/overpass_python_files/osm_relation_example.png)
+![OSM relation]({{ site.baseurl }}/assets/openstreetmap_with_python_and_overpass_api_files/osm_relation_example.png)
 
 # Using the Overpass API
 
@@ -61,7 +59,7 @@ out;
 
 The next way to filter our queries is [by element id][Overpass API by ID]. Here is the example for the query `node(1); out;` which gives us the [Prime Meridian of the World][Node 1] with longitude close to zero.
 
-![OSM relation]({{ site.baseurl }}/assets/overpass_python_files/osm_node_1.png)
+![OSM relation]({{ site.baseurl }}/assets/openstreetmap_with_python_and_overpass_api_files/osm_node_1.png)
 
 Another way to filter queries is [by area][Overpass API by Area] which can be specified like `area["ISO3166-1"="GB"][admin_level=2];` which gives us the area for Great Britain. We can use this now as a filter for the query by adding `(area)` to our statement as in
 
@@ -96,7 +94,7 @@ area["ISO3166-1"="DE"][admin_level=2];
 out center;
 ```
 
-![OSM way]({{ site.baseurl }}/assets/overpass_python_files/osm_biergarten.png)
+![OSM way]({{ site.baseurl }}/assets/openstreetmap_with_python_and_overpass_api_files/osm_biergarten.png)
 
 # Python and the Overpass API
 
@@ -182,7 +180,7 @@ plt.axis('equal')
 plt.show()
 ```
 
-![OSM way]({{ site.baseurl }}/assets/overpass_python_files/python_biergarten.png)
+![OSM way]({{ site.baseurl }}/assets/openstreetmap_with_python_and_overpass_api_files/python_biergarten.png)
 
 Another way to access the Overpass API with Python is by using the [overpy][overpy] package as a wrapper. Here you can see how we can translate the previous example with the overpy package
 
@@ -210,7 +208,7 @@ coords += [(float(rel.center_lon), float(rel.center_lat))
 
 One nice thing about overpy is that it detects the content type (i.e. XML, JSON) from the response. For further information take a look at their [documentation][overpy readthedocs]. You can use this collected data then for other purposes or just visualize it with Blender as in my [openstreetmap-heatmap][openstreetmap-heatmap] project.
 
-![OSM way]({{ site.baseurl }}/assets/overpass_python_files/blender_biergarten.gif)
+![OSM way]({{ site.baseurl }}/assets/openstreetmap_with_python_and_overpass_api_files/blender_biergarten.gif)
 
 # Conclusion
 

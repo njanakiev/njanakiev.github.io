@@ -1,15 +1,14 @@
 ---
-layout: post
+title: "Local Testing Server with Python"
 category: blog
-title: Local Testing Server with Python
-tags: [Python, Command-Line]
-image: /assets/QWERTY_keyboard.jpg
+comments: True
+image: /assets/python_testing_server_files/QWERTY_keyboard.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:QWERTY_keyboard.jpg
-comments: true
-redirect_from: '/til/python-testing-server/'
+layout: post
+redirect_from: /til/python-testing-server/
+tags: ['Python', 'Command-Line']
 ---
-
 This quick little tutorial shows how to setup a simple local testing server with Python.
 
 You can run run local files in the browser, but some times they won't work or will give you some headache with things like [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). The main problems include:

@@ -1,16 +1,14 @@
 ---
-layout: post
+title: "Creating Instagram Videos from Images"
 category: blog
-title: Creating Instagram Videos from Images
-tags: [Instagram, FFmpeg, Command-Line, Image Processing]
-image: /assets/NOS_134533666968.jpg
-imageurl: http://nos.twnsnd.co/image/134533666968
+comments: True
+image: /assets/instagram_videos_from_images_files/NOS_134533666968.jpg
 imagesource: New Old Stock
-comments: true
-redirect_from: '/til/instagram-videos-from-images/'
+imageurl: http://nos.twnsnd.co/image/134533666968
+layout: post
+redirect_from: /til/instagram-videos-from-images/
+tags: ['Instagram', 'FFmpeg', 'Command-Line', 'Image Processing']
 ---
-
-
 Uploading Videos in Instagram is tricky, not every format is supported and the format needs to fulfil some video specifications. Here we get into the recipe for creating a proper video for instagram from a sequence of images.
 
 In order to create a [mp4][mp4] slideshow or video from a sequence of frames you can use [ffmpeg][ffmpeg], which is a common multimedia framework and command-line tool for decoding, encoding, converting and other functions usefull for working with various media formats. The command for creating a slideshow from a set of frames is

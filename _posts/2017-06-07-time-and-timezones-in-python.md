@@ -1,15 +1,13 @@
 ---
-layout: post
+title: "Working with Time and Time Zones in Python"
 category: blog
-title: Working with Time and Time Zones in Python
-tags: [Python]
-image: /assets/MET_2094.jpg
-imageurl: http://www.metmuseum.org/art/collection/search/2094
+comments: True
+image: /assets/time_and_timezones_in_python_files/MET_2094.jpg
 imagesource: Metropolitan Museum of Art
-comments: true
+imageurl: http://www.metmuseum.org/art/collection/search/2094
+layout: post
+tags: ['Python']
 ---
-
-
 Time conversions can be tedious, but Python offers some relief for the frustration. Here are some quick recipes which are quite useful when juggling with time.
 
 

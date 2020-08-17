@@ -1,14 +1,13 @@
 ---
-layout: post
+title: "Working with MultiIndex and Pivot Tables in Pandas and Python"
 category: blog
-title: Working with MultiIndex and Pivot Tables in Pandas and Python
-tags: [Pandas, Python]
-image: /assets/Jersey_Telecom_switchboard_and_operator.jpg
-imageurl: https://commons.wikimedia.org/wiki/File:Jersey_Telecom_switchboard_and_operator.jpg
+comments: True
+image: /assets/pandas_multiindex_pivot_files/Jersey_Telecom_switchboard_and_operator.jpg
 imagesource: Wikimedia Commons
-comments: true
+imageurl: https://commons.wikimedia.org/wiki/File:Jersey_Telecom_switchboard_and_operator.jpg
+layout: post
+tags: ['Pandas', 'Python']
 ---
-
 Here we'll take a look at how to work with MultiIndex or also called Hierarchical Indexes in Pandas and Python on real world data. Hierarchical indexing enables you to work with higher dimensional data all while using the regular two-dimensional DataFrames or one-dimensional Series in Pandas.
 
 The data set we will be using is from the [World Bank Open Data](https://data.worldbank.org/) which we can access with the [wbdata](http://github.com/OliverSherouse/wbdata) module by Oliver Sherouse via the World Bank API. To see how to work with wbdata and how to explore the available data sets, take a look at their [documentation](http://wbdata.readthedocs.io/en/latest/). Let's say we want to take a look at the Total Population, the GDP per capita and GNI per capita for each country. We can load this data in the following way.
@@ -425,7 +424,7 @@ df_germany[['GDP per capita', 'GNI per capita']].plot(figsize=(12, 12), subplots
 ```
 
 
-![png]({{ site.baseurl }}/assets/pandas_multiindex_pivot_files/output_18_0.png)
+![png]({{ site.baseurl }}/assets/pandas_multiindex_pivot_files/output_17_0.png)
 
 
 # Pivot Tables
@@ -533,7 +532,7 @@ plt.ticklabel_format(style='plain', axis='y')
 ```
 
 
-![png]({{ site.baseurl }}/assets/pandas_multiindex_pivot_files/output_22_0.png)
+![png]({{ site.baseurl }}/assets/pandas_multiindex_pivot_files/output_21_0.png)
 
 
 # Conclusion

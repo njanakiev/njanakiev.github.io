@@ -1,13 +1,12 @@
 ---
-layout: post
-category: blog
 title: "Where do Mayors Come From: Querying Wikidata with Python and SPARQL"
-tags: [Wikidata, SPARQL, Python, Pandas, Data Science]
-image: /assets/wikidata_mayors_screen.png
+category: blog
 comments: True
 featured: True
+image: /assets/wikidata_mayors_files/wikidata_mayors_screen.png
+layout: post
+tags: ['Wikidata', 'SPARQL', 'Python', 'Pandas', 'Data Science']
 ---
-
 In this article, we will be going through building queries for Wikidata with Python and SPARQL by taking a look where mayors in Europe are born. This tutorial is building up the knowledge to collect the data responsible for this [interactive visualization](https://janakiev.com/wikidata-mayors/) from the header image which was done with [deck.gl](http://deck.gl/#/).
 
 [Wikidata](https://www.wikidata.org/) is a free and collaborative [Linked Open Data (LOD)](https://en.wikipedia.org/wiki/Linked_data) knowledge base which can be edited by humans and machines. The project started 2012 by the [Wikimedia Foundation](https://foundation.wikimedia.org/wiki/Home) as an effort to centralize interwiki links, infoboxes and enable rich queries. Its ambitious goal is to structure the whole human knowledge in a way that is machine readable and it speaks well to the vision of Tim Berners-Lee in his [TED talk](https://www.youtube.com/watch?v=OM6XIICm_qo) of 2009. Surprisingly, the idea of the [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web) existed already in 2001 which is comprised of Linked Data. There have been many projects preceding Wikidata. There is [DBpedia](https://en.wikipedia.org/wiki/DBpedia) which is based on the infoboxes in Wikipedia, [Friend of a Friend (FOAF)](https://en.wikipedia.org/wiki/FOAF_(ontology)) which is an ontology to describe relationships in social networks, [GeoNames](https://en.wikipedia.org/wiki/GeoNames) which provides a database with geographical names, [Upper Mapping and Binding Exchange Layer (UMBEL)](https://en.wikipedia.org/wiki/UMBEL) which is a knowledge graph of concepts and entities and a whole set of others, but Wikidata seems to be the most ambitious project between them.

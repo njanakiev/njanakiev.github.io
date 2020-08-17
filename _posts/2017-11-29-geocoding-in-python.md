@@ -1,14 +1,13 @@
 ---
-layout: post
+title: "Batch Geocoding with Python"
 category: blog
-title: Batch Geocoding with Python
-tags: [GIS, Python]
-image: /assets/monuments.png
-imageurl: https://github.com/njanakiev/austrian-monuments-visualization
+comments: True
+image: /assets/geocoding_in_python_files/monuments.png
 imagesource: austrian-monuments-visualization
-comments: true
+imageurl: https://github.com/njanakiev/austrian-monuments-visualization
+layout: post
+tags: ['GIS', 'Python']
 ---
-
 You have a list of addresses, but you need to get GPS coordinates to crunch some numbers. Don't despair, there is [geocoding][geocoding] for this and Python provides some simple means to help to deal with the APIs out there.
 
 One way to convert addresses is by using one of many geocoding APIs such as Google. This can be done by using the HTTP library [requests][requests], which can be used to access the [Google Geocoding Service][geocoding google] as in the next snippet.

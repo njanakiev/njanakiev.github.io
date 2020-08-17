@@ -1,14 +1,13 @@
 ---
-layout: post
+title: "Working with Pandas Groupby in Python and the Split-Apply-Combine Strategy"
 category: blog
-title: Working with Pandas Groupby in Python and the Split-Apply-Combine Strategy
-tags: [Pandas, Python]
-image: /assets/NOS_170539764971.jpg
-imageurl: http://nos.twnsnd.co/image/170539764971
+comments: True
+image: /assets/pandas_groupby_files/NOS_170539764971.jpg
 imagesource: New Old Stock
-comments: true
+imageurl: http://nos.twnsnd.co/image/170539764971
+layout: post
+tags: ['Pandas', 'Python']
 ---
-
 In this tutorial we will cover how to use the Pandas DataFrame [groupby](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html) function while having an excursion to the Split-Apply-Combine Strategy for data analysis. The Split-Apply-Combine strategy is a process that can be described as a process of _splitting_ the data into groups, _applying_ a function to each group and _combining_ the result into a final data structure.
 
 The data set we will be analysing is the [Current Employee Names, Salaries, and Position Titles](https://www.cityofchicago.org/city/en/depts/dhr/dataset/current_employeenamessalariesandpositiontitles.html) from the City of Chicago, which is listing all their employees with full names, departments, positions, and salaries. Let's get into it!
@@ -158,7 +157,7 @@ df[['Annual Salary', 'Hourly Rate']].hist(figsize=(12, 6), bins=50, grid=False);
 
 
 
-![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_6_1.png)
+![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_5_1.png)
 
 
 Additionally, we want to convert some of the columns into [categorical data](https://pandas.pydata.org/pandas-docs/stable/categorical.html), which will reduce the memory usage and speed up the computations in general (unless there are too many categories in a column). We can do this with [DataFrame.astype](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.astype.html) by converting each column seperately or in one step by passing a dictionary with all columns that we want to convert.
@@ -223,7 +222,7 @@ finance_df['Annual Salary'].plot(kind='hist', bins=50, figsize=(12, 6), title='F
 
 
 
-![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_12_1.png)
+![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_11_1.png)
 
 
 Of course you could have done that by simply querying the DataFrame for the finance department with `df[df['Department'] == 'FINANCE']`, so what is the use of grouping the DataFrame then?
@@ -496,7 +495,7 @@ average_salary.plot(kind='bar', figsize=(12, 6), color='k', alpha=0.5);
 ```
 
 
-![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_18_0.png)
+![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_17_0.png)
 
 
 # Conclusion
@@ -516,5 +515,4 @@ plt.suptitle('');  # Getting rid of pandas-generated boxplot title
 ```
 
 
-![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_20_0.png)
-
+![png]({{ site.baseurl }}/assets/pandas_groupby_files/output_19_0.png)

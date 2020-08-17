@@ -1,15 +1,14 @@
 ---
-layout: post
+title: "File and Directory Comparisons with Python"
 category: blog
-title: File and Directory Comparisons with Python
-tags: [Python, File-System]
-comments: true
-image: /assets/Unix_Server_Attic_Hideaway.jpg
-imageurl: https://commons.wikimedia.org/wiki/File:Unix_Server_Attic_Hideaway.jpeg
+comments: True
+image: /assets/python_filecmp_files/Unix_Server_Attic_Hideaway.jpg
 imagesource: Wikimedia Commons
-redirect_from: '/til/python-filecmp/'
+imageurl: https://commons.wikimedia.org/wiki/File:Unix_Server_Attic_Hideaway.jpeg
+layout: post
+redirect_from: /til/python-filecmp/
+tags: ['Python', 'File-System']
 ---
-
 The Python standard library offers a powerful set of tools out of the box including file system handling. In this quick little article you'll see a couple of useful recipes to compare files and directories with the [filecmp](https://docs.python.org/3/library/filecmp.html) module.
 
 When you have a painful mess of files and folders (like [here](https://xkcd.com/1360/), or [here](https://xkcd.com/1459/)), which are difficult to plow through, Python is your friend to automate the search and comparison. This can then be combined with automatic processing, modification or deletion of files and directories instead of manually going through each file. 

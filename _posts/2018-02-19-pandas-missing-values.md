@@ -1,15 +1,14 @@
 ---
-layout: post
+title: "Working with missing values in Pandas"
 category: blog
-title: Working with Missing Values in Pandas
-tags: [Pandas, Python]
-image: /assets/Belgrade_zoo_mosaic0041.JPG
+comments: True
+image: /assets/pandas_missing_values_files/Belgrade_zoo_mosaic0041.JPG
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:Belgrade_zoo_mosaic0041.JPG
-comments: true
-redirect_from: '/til/pandas-missing-values/'
+layout: post
+redirect_from: /til/pandas-missing-values/
+tags: ['Pandas', 'Python']
 ---
-
 Here we'll see how to work with missing values in a Pandas DataFrame on a data set from the [World Bank Open Data](https://data.worldbank.org/) of the [Global Economic Monitor](https://datacatalog.worldbank.org/dataset/global-economic-monitor).
 
 
@@ -415,5 +414,4 @@ ax.xaxis.set_major_locator(matplotlib.ticker.MaxNLocator(integer=True));
 ```
 
 
-![png]({{ site.baseurl }}/assets/pandas_missing_values_files/output_10_0.png)
-
+![png]({{ site.baseurl }}/assets/pandas_missing_values_files/output_9_0.png)

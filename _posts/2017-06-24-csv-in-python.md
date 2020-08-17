@@ -8,7 +8,6 @@ imageurl: http://nos.twnsnd.co/image/159641617020
 layout: post
 tags: ['Python', 'CSV']
 ---
-
 One of the crucial tasks when working with data is to load data properly. The common way the data is formated is [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), which comes in different flavors and varying difficulties to parse. This article shows three common approaches in Python.
 
 The data used for the recipes commes from [GPSies](http://www.gpsies.com/), a data base of GPS Tracks for hiking, biking and other activities, [NYC Department of Transportation](http://www.nyc.gov/html/dot/html/about/datafeeds.shtml) with data feeds of New York infrastructure and [World Bank Open Data](http://data.worldbank.org/) where some data sets like global population of the world can be found.

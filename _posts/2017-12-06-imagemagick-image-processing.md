@@ -1,15 +1,14 @@
 ---
-title: Command-Line Image Processing with ImageMagick
+title: "Command-Line Image Processing with ImageMagick"
 category: blog
 comments: True
-image: /assets/NOS_163254866811.jpg
+featured: True
+image: /assets/imagemagick_image_processing_files/NOS_163254866811.jpg
 imagesource: New Old Stock
 imageurl: http://nos.twnsnd.co/image/163254866811
 layout: post
 tags: ['Command-Line', 'ImageMagick', 'Image Processing']
-featured: True
 ---
-
 There are times being stuck with a load of images that need to be cropped, resized or converted, but doing this by hand in an image editor is tedious work. One tool I commonly use in these desperate situations is [ImageMagick](http://www.imagemagick.org/script/index.php), which is a powerful tool when automating raster and vector image processing. Here I'll introduce a few common commands I had to look up multiple times.
 
 ImageMagick can do a lot of different graphics editing tasks and it even can create new images from the command-line. It can be incorporated into shell scripts, batch files or through other programs for automatic processing of images. The various command-line tools can be seen in the [documentation](http://www.imagemagick.org/script/command-line-tools.php) and their usage can be seen in the [examples](http://www.imagemagick.org/Usage/).

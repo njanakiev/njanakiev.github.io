@@ -1,15 +1,14 @@
 ---
-layout: post
+title: "Using Anaconda in Blender"
 category: blog
-title: Using Anaconda in Blender
-tags: [Blender, Anaconda, Python]
-image: /assets/NOS_93315690552.jpg
-imageurl: http://nos.twnsnd.co/image/93315690552
+comments: True
+image: /assets/using_anaconda_in_blender_files/NOS_93315690552.jpg
 imagesource: New Old Stock
-comments: true
-redirect_from: '/til/using-anaconda-in-blender/'
+imageurl: http://nos.twnsnd.co/image/93315690552
+layout: post
+redirect_from: /til/using-anaconda-in-blender/
+tags: ['Blender', 'Anaconda', 'Python']
 ---
-
 Sometimes you need other packages when scripting in Blender. Blender already includes [Numpy][numpy] in its newer versions out of the box which is quite handy. However I often have the need to install new packages to use for my own scripts and add-ons. There is also a way to use an already installed version of [Anaconda][anaconda] which I'll show in this post. It worked for me for Blender 2.77 and 2.79 on Windows.
 
 Anaconda is a package manager and Python distribution which simplifies installing new packages for Python and has many useful packages pre-installed, which is especially useful when working with Windows where some packages are sometimes troublesome to install.
