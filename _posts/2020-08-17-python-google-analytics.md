@@ -2,7 +2,6 @@
 title: "Google Analytics Analytics with Python"
 category: blog
 comments: True
-exclude: True
 featured: True
 image: /assets/python_google_analytics_files/ga-python.png
 layout: post

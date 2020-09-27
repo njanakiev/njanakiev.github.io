@@ -9,20 +9,20 @@ layout: post
 redirect_from: /notebooks/keras-iris/
 tags: ['Python', 'Keras', 'Neural Networks']
 ---
-In this short notebook we will take a quick look on how to use [Keras](https://keras.io/) with the familiar Iris data set. We will compare networks with the regular [Dense](https://keras.io/layers/core/) layer with different number of nodes and we will employ a [Softmax](https://en.wikipedia.org/wiki/Softmax_function) activation function and the [Adam](https://arxiv.org/abs/1412.6980) optimizer.
+In this short article we will take a quick look on how to use [Keras](https://keras.io/) with the familiar Iris data set. We will compare networks with the regular [Dense](https://keras.io/layers/core/) layer with different number of nodes and we will employ a [Softmax](https://en.wikipedia.org/wiki/Softmax_function) activation function and the [Adam](https://arxiv.org/abs/1412.6980) optimizer.
+
+## Data Preperation
+
+To prepare the data, we will simply use the [OneHotEncoder](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) to encode the integer features into a [One-hot](https://en.wikipedia.org/wiki/One-hot) vector and we will use a [StandardScaler](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) to remove the mean and scale the features to unit variance. Finally we want to perform a [train test split](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split) to compare our results later on.
 
 
 ```python
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+
 plt.style.use('ggplot')
-%matplotlib inline
 ```
-
-## Data Preperation
-
-To prepare the data, we will simply use the [OneHotEncoder](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) to encode the integer features into a [One-hot](https://en.wikipedia.org/wiki/One-hot) vector and we will use a [StandardScaler](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) to remove the mean and scale the features to unit variance. Finally we want to perform a [train test split](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split) to compare our results later on.
 
 
 ```python
@@ -93,6 +93,7 @@ Now we configure the neural networks as discussed before and we take a look at t
 # In order to ignore FutureWarning
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
+warnings.simplefilter(action='ignore', category=DeprecationWarning)
 
 from keras.models import Sequential
 from keras.layers import Dense
@@ -119,43 +120,43 @@ for create_model in models:
     create_model().summary()
 ```
 
-    Using TensorFlow backend.
-
-
+    Model: "model_1"
     _________________________________________________________________
     Layer (type)                 Output Shape              Param #   
     =================================================================
-    dense_1 (Dense)              (None, 8)                 40        
+    dense_19 (Dense)             (None, 8)                 40        
     _________________________________________________________________
-    dense_2 (Dense)              (None, 3)                 27        
+    dense_20 (Dense)             (None, 3)                 27        
     =================================================================
     Total params: 67
     Trainable params: 67
     Non-trainable params: 0
     _________________________________________________________________
+    Model: "model_2"
     _________________________________________________________________
     Layer (type)                 Output Shape              Param #   
     =================================================================
-    dense_3 (Dense)              (None, 8)                 40        
+    dense_21 (Dense)             (None, 8)                 40        
     _________________________________________________________________
-    dense_4 (Dense)              (None, 8)                 72        
+    dense_22 (Dense)             (None, 8)                 72        
     _________________________________________________________________
-    dense_5 (Dense)              (None, 3)                 27        
+    dense_23 (Dense)             (None, 3)                 27        
     =================================================================
     Total params: 139
     Trainable params: 139
     Non-trainable params: 0
     _________________________________________________________________
+    Model: "model_3"
     _________________________________________________________________
     Layer (type)                 Output Shape              Param #   
     =================================================================
-    dense_6 (Dense)              (None, 8)                 40        
+    dense_24 (Dense)             (None, 8)                 40        
     _________________________________________________________________
-    dense_7 (Dense)              (None, 8)                 72        
+    dense_25 (Dense)             (None, 8)                 72        
     _________________________________________________________________
-    dense_8 (Dense)              (None, 8)                 72        
+    dense_26 (Dense)             (None, 8)                 72        
     _________________________________________________________________
-    dense_9 (Dense)              (None, 3)                 27        
+    dense_27 (Dense)             (None, 3)                 27        
     =================================================================
     Total params: 211
     Trainable params: 211
@@ -193,14 +194,14 @@ for create_model in models:
 ```
 
     Model name: model_1
-    Test loss: 0.2956871708234151
-    Test accuracy: 0.9333333333333333
+    Test loss: 0.27706020573774975
+    Test accuracy: 0.9333333373069763
     Model name: model_2
-    Test loss: 0.185623845855395
-    Test accuracy: 0.9333333333333333
+    Test loss: 0.19892012139161427
+    Test accuracy: 0.9333333373069763
     Model name: model_3
-    Test loss: 0.13748167728384336
-    Test accuracy: 0.9466666666666667
+    Test loss: 0.1849645201365153
+    Test accuracy: 0.9333333373069763
 
 
 # Plot Accuracy and Loss from Training
@@ -212,17 +213,16 @@ Let's have a look how our models perform. We can clearly see that adding more no
 fig, (ax1, ax2) = plt.subplots(2, figsize=(8, 6))
 
 for model_name in history_dict:
-    val_acc = history_dict[model_name][0].history['val_acc']
+    val_accurady = history_dict[model_name][0].history['val_accuracy']
     val_loss = history_dict[model_name][0].history['val_loss']
-    ax1.plot(val_acc, label=model_name)
+    ax1.plot(val_accurady, label=model_name)
     ax2.plot(val_loss, label=model_name)
     
 ax1.set_ylabel('validation accuracy')
 ax2.set_ylabel('validation loss')
 ax2.set_xlabel('epochs')
 ax1.legend()
-ax2.legend()
-plt.show()
+ax2.legend();
 ```
 
 
