@@ -89,6 +89,23 @@ Export the current Anaconda environment:
     
 The `--no-builds` flag prevents the inclusion of platform-specific build IDs. When using `--from-history` (introduced in Conda 4.7.12), Conda will only export packages and versions which you have explicitly installed using conda install.
 
+Here is a script to bulk export all conda environments in your system: 
+
+```bash
+set -e
+
+for conda_env in $$(conda env list | cut -d" " -f1 | tail -n+4); do
+  echo $$conda_env
+  conda activate $$conda_env
+  conda env export \
+    --from-history \
+    --no-builds > "$${conda_env}.yml"
+done
+conda activate
+```
+
+This needs to be run with `source script.sh`.
+
 # References
 
 - [Conda channels](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html)
