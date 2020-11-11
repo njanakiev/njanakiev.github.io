@@ -85,9 +85,21 @@ Source: [How to reset anaconda root environment](https://stackoverflow.com/quest
 
 Export the current Anaconda environment:
 
-    conda env export --from-history --no-builds
+```bash
+conda env export \
+  --from-history \
+  --no-builds > myenv.yml
+```
     
 The `--no-builds` flag prevents the inclusion of platform-specific build IDs. When using `--from-history` (introduced in Conda 4.7.12), Conda will only export packages and versions which you have explicitly installed using conda install.
+
+This environment can be then installed with:
+
+```bash
+conda env create \
+  --name myenv \
+  --file myenv.yml
+```
 
 Here is a script to bulk export all conda environments in your system: 
 

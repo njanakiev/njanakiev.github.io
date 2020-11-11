@@ -101,7 +101,7 @@ If you want to see the 10 last log entries for both services you can type:
 
     sudo journalctl -u airflow-webserver.service -u airflow-scheduler.service -n 10
 
-In this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs) you will find a detailed description and examples how to use `journalctl` in practice.
+For more useful commands and arguments have a look at this [Systemd cheatsheet](https://janakiev.com/blog/systemd-cheatsheet/).
 
 # Conclusion
 
@@ -109,6 +109,7 @@ In this tutorial you have seen how to run Apache Airflow with systemd on Debian 
 
 ## Resources
 
+- [Systemd Cheatsheet](https://janakiev.com/blog/systemd-cheatsheet/)
 - [How To Use Systemctl to Manage Systemd Services and Units](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
 - [How To Use Journalctl to View and Manipulate Systemd Logs](https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs)
 - [Understanding Systemd Units and Unit Files](https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files)
