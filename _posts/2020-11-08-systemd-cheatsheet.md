@@ -2,9 +2,9 @@
 title: "Systemd Cheatsheet"
 category: blog
 comments: True
-image: /assets/systemd_cheatsheet_files/Activiteit_in_de_controle_kamer_in_de_Tap-Line_olie_terminal_nabij_Saida,_Bestanddeelnr_255-6308.jpg
-imagesource: Wikimedia Commons
-imageurl: https://commons.wikimedia.org/wiki/File:Activiteit_in_de_controle_kamer_in_de_Tap-Line_olie_terminal_nabij_Saida,_Bestanddeelnr_255-6308.jpg
+image: /assets/systemd_cheatsheet_files/systemd.png
+imagesource: Systemd
+imageurl: https://systemd.io/
 layout: post
 tags: ['Systemd', 'Server']
 ---

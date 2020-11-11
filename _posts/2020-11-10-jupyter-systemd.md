@@ -2,9 +2,9 @@
 title: "Manage Jupyter Notebook and JupyterLab with Systemd"
 category: blog
 comments: True
-image: /assets/jupyter_systemd_files/Alcator_C-Mod_graduate_students_in_control_room.jpg
+image: /assets/jupyter_systemd_files/Activiteit_in_de_controle_kamer_in_de_Tap-Line_olie_terminal_nabij_Saida,_Bestanddeelnr_255-6308.jpg
 imagesource: Wikimedia Commons
-imageurl: https://commons.wikimedia.org/wiki/File:Alcator_C-Mod_graduate_students_in_control_room.jpg
+imageurl: https://commons.wikimedia.org/wiki/File:Activiteit_in_de_controle_kamer_in_de_Tap-Line_olie_terminal_nabij_Saida,_Bestanddeelnr_255-6308.jpg
 layout: post
 tags: ['Jupyter', 'Systemd', 'Server']
 ---
@@ -121,7 +121,7 @@ Started Jupyter Notebook.
 [I 18:54:36.880 LabApp] http://0.0.0.0:8888/
 ```
 
-This really useful if you need to have a look at what Jupyter logs out since some errors and logs are not visible within the notebooks. For more useful commands and arguments have a lookt at my [Systemd cheatsheet](https://janakiev.com/blog/systemd-cheatsheet/).
+This really useful if you need to have a look at what Jupyter logs out since some errors and logs are not visible within the notebooks. For more useful commands and arguments have a look at this [Systemd cheatsheet](https://janakiev.com/blog/systemd-cheatsheet/).
 
 # Conclusion
 
