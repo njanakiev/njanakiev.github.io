@@ -1,31 +1,31 @@
 ---
-title: "Anaconda Snippets"
+title: "Anaconda Cheat Sheet"
 category: blog
 comments: True
-image: /assets/anaconda_snippets_files/Eunectes_murinus_10zz.jpg
+seo:
+    date_modified: 2020-11-11
+image: /assets/anaconda_cheat_sheet_files/Eunectes_murinus_10zz.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:Eunectes_murinus_10zz.jpg
 layout: post
-redirect_from: /til/anaconda-snippets/
+redirect_from: /blog/anaconda-snippets/
 tags: ['Anaconda', 'Python']
 ---
 Here is a short collection of commands and solutions for [Anaconda](https://www.continuum.io/downloads) with Python that I frequently tend to use.
 
 # Quick and Useful Commands
 
-| Command | Description |
-| --- | --- |
-|`conda -v`| See current version of Anaconda |
-|`conda install [package]`| Install package to the root Python installation |
-|`conda search python`| See available versions of Python |
-|`conda list`| List all packages installed in Anaconda |
-|`conda update conda`| Update Anaconda |
-|`conda info -e`| List all installed enviroments |
-|`conda env export > environment.yml`| Export active environment |
-|`conda env create -f environment.yml`| Create environment from specification |
-|`conda install --rev 1`| Restore root environment to its state after installation|
+- `conda -v` See current version of Anaconda
+- `conda install [package]` Install package to the root Python installation
+- `conda search python` See available versions of Python 
+- `conda list` List all packages installed in Anaconda 
+- `conda update conda` Update Anaconda 
+- `conda info -e` List all installed enviroments 
+- `conda env export > environment.yml` Export active environment 
+- `conda env create -f environment.yml` Create environment from specification 
+- `conda install --rev 1` Restore root environment to its state after installation
 
-# How to use virtual environments in Anaconda?
+# How to use Virtual Environments in Anaconda?
 
 In Anaconda it is possible to run different environments and versions of Python which helps when working with conflicting packages or packages that are for example not updated and available for newer Python versions. In order to install a new environment with the name `py35` in Anaconda simply use
 
@@ -78,7 +78,11 @@ Remove root environment and `conda` command:
 Restore root environment to state after first installation:
 
     conda install --revision 1
-    
+
+To list revisions, type:
+
+    conda list --revision
+
 Source: [How to reset anaconda root environment](https://stackoverflow.com/questions/41914139/how-to-reset-anaconda-root-environment)
 
 # Export Anaconda Environment
@@ -104,8 +108,10 @@ conda env create \
 Here is a script to bulk export all conda environments in your system: 
 
 ```bash
+#!/bin/bash
 set -e
 
+conda activate
 for conda_env in $$(conda env list | cut -d" " -f1 | tail -n+4); do
   echo $$conda_env
   conda activate $$conda_env

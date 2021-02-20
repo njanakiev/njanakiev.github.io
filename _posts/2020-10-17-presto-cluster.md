@@ -1,7 +1,10 @@
 ---
-title: "How to Install Presto on a Cluster and Query Distributed Data on Apache Hive and HDFS"
+title: "How to Install Presto or Trino on a Cluster and Query Distributed Data on Apache Hive and HDFS"
 category: blog
 comments: True
+seo:
+    date_modified: 2021-02-06
+featured: True
 image: /assets/presto_cluster_files/Multiple_Server_.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:Multiple_Server_.jpg
@@ -10,31 +13,39 @@ tags: ['Presto', 'Data Engineering', 'Big Data', 'Hadoop', 'HDFS', 'Hive']
 ---
 [Presto](https://prestodb.io/) is an open source distibruted query engine built for Big Data enabling high performance SQL access to a large variety of data sources including HDFS, PostgreSQL, MySQL, Cassandra, MongoDB, Elasticsearch and Kafka among others.
 
+__Update 6 Feb 2021:__ PrestoSQL is now rebranded as Trino. Read more about it [here](https://trino.io/blog/2020/12/27/announcing-trino.html). If you installed PrestoSQL before, have a look at the [migration guide](https://trino.io/blog/2021/01/04/migrating-from-prestosql-to-trino.html). This tutorial was done using PrestoDB 0.242 and PrestoSQL 344.
+
 To start off with a bit of history: Presto started 2012 in Facebook and was later released in 2013 as an open source project under the Apache Licence. It is most comparable to [Apache Spark](https://spark.apache.org/) in the Big Data space as it also offers query optimization with the [Catalyst Optimizer](https://databricks.com/de/glossary/catalyst-optimizer) and an SQL interface to its data sources. Presto and Apache Spark have its own resource manager, but Apache Spark is generally run on top of Hadoops' [YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) resource manager. Presto on the other hand uses its own coordinator within the cluster to schedule queries among its workers.
 
 Presto itself does not offer a database and should be only used for large analytical queries that fall into [Online Analytical Processing (OLAP)](https://en.wikipedia.org/wiki/Online_analytical_processing). Therefore [Online transaction processing (OLTP)](https://en.wikipedia.org/wiki/Online_transaction_processing) workloads should be avoided. Presto offers a large variety of [connectors](https://prestodb.io/docs/current/connector.html) like for example MySQL, PostgreSQL, HDFS with Hive, Cassandra, Redis, Kafka, ElasticSearch, MongoDB among others. Further, Presto enables federated queries which means that you can query different databases with different schemas in the same SQL statement at the same time.
 
 To read further into the inner workings and architecture behind Presto, check out the 2019 paper [Presto: SQL on Everything](https://prestosql.io/Presto_SQL_on_Everything.pdf).
 
-# Installation
+### Installation
 
-Prerequesite for this tutorial is having a running Hadoop and Hive installation, you can follow the instructions in the tutorial [How to Install and Set Up a 3-Node Hadoop Cluster](https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/) and this [Hive Tutorial](https://cwiki.apache.org/confluence/display/Hive/GettingStarted#GettingStarted-InstallationandConfiguration). The configuration and setup scripts used for this tutorial including further configurations of the HDFS cluster can be found in this [repository](https://github.com/njanakiev/scalable-geospatial-data-science). This installation also requires Java version >= 11.
-
-Note, that there are two active projects of Presto, [PrestoSQL](https://prestosql.io/) and [PrestoDB](https://prestodb.io/). To clarify the difference between both, have a read into [What is the relationship of prestosql and prestodb?](https://github.com/prestosql/presto/issues/380). All of this article including the configuration runs on both with the releases of presto-server 0.242 and presto-server 344. First, [download Presto](https://prestosql.io/download.html) and unpack it to a desired location. In this case it will be located in `/usr/local/presto`.
+Prerequesite for this tutorial is having a running Hadoop and Hive installation, you can follow the instructions in the tutorial [How to Install and Set Up a 3-Node Hadoop Cluster](https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/) and this [Hive Tutorial](https://cwiki.apache.org/confluence/display/Hive/GettingStarted#GettingStarted-InstallationandConfiguration). The configuration and setup scripts used for this tutorial including further configurations of the HDFS cluster can be found in this [repository](https://github.com/njanakiev/scalable-geospatial-data-science). This installation also requires Java version >= 11. To install Java you can type:
 
 ```bash
-wget "https://repo1.maven.org/maven2/io/prestosql/"\
-     "presto-server/344/presto-server-344.tar.gz"
-tar -xzvf presto-server-344.tar.gz
-sudo mv presto-server-344 /usr/local/presto
-sudo chown $$USER:$$USER /usr/local/presto
+sudo apt-get update
+sudo apt-get install openjdk-11-jdk-headless \
+                     openjdk-11-jre-headless \
+                     openjdk-11-jre
 ```
 
-Next, add `PRESTO_HOME` environment variable and add the `PRESTO_HOME/bin` directory to the `PATH` environment variable in `~/.bashrc`:
+Note, that there are two active projects of Presto, [Trino](https://trino.io/) and [PrestoDB](https://prestodb.io/). To clarify the difference between both, have a read into [What is the relationship of prestosql and prestodb?](https://github.com/prestosql/presto/issues/380). All of this article including the configuration runs on both with the releases of presto-server 0.242 and trino-server 352. In this article we will focus on Trino. First, [download Trino](https://trino.io/download.html) and unpack it to a desired location. In this case it will be located in `/usr/local/trino`.
 
 ```bash
-export PRESTO_HOME=/usr/local/presto 
-export PATH=$$PATH:$$PRESTO_HOME/bin
+wget "https://repo1.maven.org/maven2/io/trino/trino-server/352/trino-server-352.tar.gz"
+tar -xzvf trino-server-352.tar.gz
+sudo mv trino-server-352 /usr/local/trino
+sudo chown $$USER:$$USER /usr/local/trino
+```
+
+Next, add `TRINO_HOME` environment variable and add the `TRINO_HOME/bin` directory to the `PATH` environment variable in `~/.bashrc`:
+
+```bash
+export TRINO_HOME=/usr/local/trino
+export PATH=$$PATH:$$TRINO_HOME/bin
 ```
 
 If you aim to run multiple servers, this needs to be done for all servers.
@@ -73,7 +84,7 @@ Each server needs a unique `node.id`. For this, you can generate a [UUID](https:
     -XX:+ExitOnOutOfMemoryError
     -Djdk.attach.allowAttachSelf=true
 
-The flag `-Djdk.attach.allowAttachSelf=true` needs to be added in order to avoid the error [Error injecting constructor, java.io.IOException: Can not attach to current VM](https://github.com/prestosql/presto/issues/752). These two files (except the `node.id`) are the same for all servers.
+It is important to set the flag `-Xmx16G` to the available RAM on the nodes (in this case 16 GB). A rule of thumb is to allocate around 80% of the available RAM to leave some for the operating system and other processes. The flag `-Djdk.attach.allowAttachSelf=true` needs to be added in order to avoid the error [Error injecting constructor, java.io.IOException: Can not attach to current VM](https://github.com/prestosql/presto/issues/752). These two files (except the `node.id`) are the same for all servers.
 
 ## Single Node
 
@@ -184,6 +195,8 @@ To see the freshly create table type `SHOW TABLES tutorial;`. To show metadata a
     
 For even more information you can use `DESCRIBE FORMATTED tutorial.iris;`.
 
+The Hive connector is also used with the various cloud-based object stores like S3, GCS, Azure Blob Storage, Minio and others. To read more on this have a read in this [explainer](https://trino.io/blog/2020/10/20/intro-to-hive-connector.html).
+
 # Start Presto
 
 Now, everything is set to start Presto. To start the Presto daemon simply run on each node:
@@ -253,4 +266,6 @@ That's nice, we can already see clear differences here between the flowers witho
 
 # Conclusion
 
-For more information have a look at the paper [Presto: SQL on Everything](https://prestosql.io/Presto_SQL_on_Everything.pdf), which explains the inner workings of Presto in much more technical detail and also explains some of the challenges that Presto tries to solve. Additionally there is [Presto: The Definitive Guide](https://prestosql.io/blog/2020/04/11/the-definitive-guide.html), a great book that goes into much more detail on how to use and configure Presto in an optimal way. Further resources and links are listed in the homepage of the [Presto Software Foundation](https://prestosql.io/foundation.html). It is also helpful to directly check the issues and pull requests in the [prestodb/presto](https://github.com/prestodb/presto) and [prestosql/presto](https://github.com/prestosql/presto) Github pages as they often include detailed descriptions of some of the more advanced features. Finally, Mark Litwintischik did a great performance comparision of [Spark 2.4.0 versus Presto 0.214](https://tech.marksblogg.com/billion-nyc-taxi-rides-spark-2-4-versus-presto-214.html).
+For more information have a look at the paper [Presto: SQL on Everything](https://prestosql.io/Presto_SQL_on_Everything.pdf), which explains the inner workings of Presto in much more technical detail and also explains some of the challenges that Presto tries to solve. Additionally there is [Presto: The Definitive Guide](https://prestosql.io/blog/2020/04/11/the-definitive-guide.html), a great book that goes into much more detail on how to use and configure Presto in an optimal way.
+
+Further resources and links are listed in the homepage of the [Presto Software Foundation](https://prestosql.io/foundation.html). It is also helpful to directly check the issues and pull requests in the [prestodb/presto](https://github.com/prestodb/presto) and [prestosql/presto](https://github.com/prestosql/presto) Github pages as they often include detailed descriptions of some of the more advanced features. Finally, Mark Litwintischik did a great performance comparision of [Spark 2.4.0 versus Presto 0.214](https://tech.marksblogg.com/billion-nyc-taxi-rides-spark-2-4-versus-presto-214.html).

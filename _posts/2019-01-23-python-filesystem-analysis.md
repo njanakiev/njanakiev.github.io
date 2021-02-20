@@ -2,6 +2,8 @@
 title: "Analyzing Your File System and Folder Structures with Python"
 category: blog
 comments: True
+seo:
+    date_modified: 2021-02-20
 featured: True
 image: /assets/python_filesystem_analysis_files/Hard_disk_head.jpg
 imagesource: Wikimedia Commons
@@ -125,7 +127,7 @@ The module can be used either as a command-line tool or as a module within a scr
 git clone https://github.com/pandas-dev/pandas
 ```
 
-You can also directly download the repository [here](https://github.com/pandas-dev/pandas/archive/master.zip). To use the command-line tool you can run the following command:
+To use the command-line tool you can run the following command:
 
 ```bash
 folderstats pandas/ -p -i -v -o pandas.csv

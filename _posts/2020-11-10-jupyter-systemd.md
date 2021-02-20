@@ -2,6 +2,8 @@
 title: "Manage Jupyter Notebook and JupyterLab with Systemd"
 category: blog
 comments: True
+seo:
+    date_modified: 2021-02-20
 image: /assets/jupyter_systemd_files/Activiteit_in_de_controle_kamer_in_de_Tap-Line_olie_terminal_nabij_Saida,_Bestanddeelnr_255-6308.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:Activiteit_in_de_controle_kamer_in_de_Tap-Line_olie_terminal_nabij_Saida,_Bestanddeelnr_255-6308.jpg
@@ -59,12 +61,13 @@ If you use more configuration and want to have it in a bash script instead, you 
 
 ```bash
 #!/bin/bash
-/home/nikolai/anaconda3/bin/jupyter-lab \
+/home/user/anaconda3/bin/jupyter-lab \
   --notebook-dir=/home/user/notebooks \
   --ip='*' \
   --port=8888 \
   --NotebookApp.token='' \
   --NotebookApp.password='sha1:137...' \
+  --ContentsManager.allow_hidden=True \
   --no-browser
 ```
 

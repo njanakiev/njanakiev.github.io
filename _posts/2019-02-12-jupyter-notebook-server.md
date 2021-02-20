@@ -1,7 +1,9 @@
 ---
-title: "Installing and Running Jupyter Notebooks on a Server"
+title: "Installing and Running Jupyter on a Server"
 category: blog
 comments: True
+seo:
+    date_modified: 2021-02-12
 featured: True
 image: /assets/jupyter_notebook_server_files/Leitstand_2.jpg
 imagesource: Wikimedia Commons
@@ -11,7 +13,7 @@ tags: ['Jupyter', 'Data Science', 'Server']
 ---
 Jupyter Notebook is a powerful tool, but how can you use it in all its glory on a server? In this tutorial you will see how to set up Jupyter notebook on a server like [Digital Ocean](https://m.do.co/c/cd7e4dd5ee1f), [AWS](https://aws.amazon.com/) or most other hosting provider available. Additionally, you will see how to use Jupyter notebooks over SSH tunneling or SSL with with [Let's Encrypt](https://letsencrypt.org/).
 
-[Jupyter Notebook](https://jupyter.org/) is an open source web application that enables interactive computing from the browser. You can create documents that feature live code, documentation with Markdown, equations, visualization and even widgets and other interesting capabilities. Jupyter comes from the three core languages that are supported: Julia, Python, and R. Jupyter connects to a kernel with a specific language, the most common being the IPython kernel. It supports a [whole variety](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) of kernels and you should find most languages you need. This tutorial was written in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), the next developments of Jupyter notebook:
+[Jupyter](https://jupyter.org/) is an open source web application that enables interactive computing from the browser. You can create documents that feature live code, documentation with Markdown, equations, visualization and even widgets and other interesting capabilities. Jupyter comes from the three core languages that are supported: Julia, Python, and R. Jupyter connects to a kernel with a specific language, the most common being the IPython kernel. It supports a [whole variety](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) of kernels and you should find most languages you need. This tutorial was written in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), the next developments of Jupyter notebook:
 
 ![JupyterLab]({{ site.baseurl }}/assets/jupyter_notebook_server_files/jupyterlab.png)
 
