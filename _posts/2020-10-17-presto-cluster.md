@@ -9,7 +9,7 @@ image: /assets/presto_cluster_files/Multiple_Server_.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:Multiple_Server_.jpg
 layout: post
-tags: ['Presto', 'Data Engineering', 'Big Data', 'Hadoop', 'HDFS', 'Hive']
+tags: ['Presto', 'Trino', 'Data Engineering', 'Big Data', 'Hadoop', 'HDFS', 'Hive']
 ---
 [Presto](https://prestodb.io/) is an open source distibruted query engine built for Big Data enabling high performance SQL access to a large variety of data sources including HDFS, PostgreSQL, MySQL, Cassandra, MongoDB, Elasticsearch and Kafka among others.
 
