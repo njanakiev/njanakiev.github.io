@@ -5,7 +5,7 @@ comments: True
 featured: True
 image: /assets/presto_trino_s3_files/CERN_Control_Center.png
 imagesource: Wikimedia Commons
-imageurl: https://commons.wikimedia.org/wiki/File:CERN_Control_Center.png
+imageurl: https://commons.wikimedia.org/wiki/File:CERN_Control_Center.jpg
 layout: post
 tags: ['Presto', 'Trino', 'Data Engineering', 'Big Data', 'Hive', 'S3', 'Minio']
 ---
