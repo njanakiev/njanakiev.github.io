@@ -3,7 +3,7 @@ title: "Querying S3 Object Stores with Presto or Trino"
 category: blog
 comments: True
 featured: True
-image: /assets/presto_trino_s3_files/CERN_Control_Center.png
+image: /assets/presto_trino_s3_files/CERN_Control_Center.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:CERN_Control_Center.jpg
 layout: post
