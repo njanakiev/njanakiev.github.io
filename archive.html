@@ -1,0 +1,26 @@
+---
+layout: default
+title: Archive
+---
+
+<div class="posts">
+  <h1 class="page-title">Archive</h1>
+  <div class="post">
+  <ul>
+  {% for post in site.posts %}
+    <li>
+      <div class="archive">
+        {{ post.date | date: "%Y-%m-%d" }} - 
+        <a href="{{ post.url | prepend: site.baseurl }}">
+            {{ post.title | truncatewords: 14 }}
+        </a>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+  <div class="footer">
+    <a href="{{ site.baseurl }}/about">About</a>
+    <a href="{{ site.baseurl }}/blog/">Blog</a>
+  </div>
+</div>
