@@ -2,6 +2,8 @@
 title: "Using Virtual Environments in Jupyter Notebook and Python"
 category: blog
 comments: True
+seo:
+    date_modified: 2021-03-27
 image: /assets/jupyter_virtual_envs_files/LabTest_CHK300J_05-11_037.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:LabTest_CHK300J_05-11_037.jpg
@@ -55,7 +57,7 @@ After creating your environment, you can install the packages you need besides t
 
 # Add Virtual Environment to Jupyter Notebook
 
-Jupyter Notebook makes sure that the IPython kernel is available, but you have to manually add a kernel with a different version of Python or a virtual environment. First, you need to activate your virtual environment. Next, install [ipykernel](https://github.com/ipython/ipykernel) which provides the IPython kernel for Jupyter:
+Jupyter Notebook makes sure that the IPython kernel is available, but you have to manually add a kernel with a different version of Python or a virtual environment. First, make sure your environment is activated with `conda activate myenv`. Next, install [ipykernel](https://github.com/ipython/ipykernel) which provides the IPython kernel for Jupyter:
 
     pip install --user ipykernel
     
@@ -100,11 +102,3 @@ This should return something like:
 Now, to uninstall the kernel, you can type:
 
     jupyter kernelspec uninstall myenv
-
-# Further Reading
-
-In this [documentation](https://ipython.readthedocs.io/en/stable/install/kernel_install.html) you can find more information on installing IPython kernels. There have been developments to simplify managing packages with [Pipenv](https://pipenv.readthedocs.io/en/latest/):
-
-> Pipenv is a tool that aims to bring the best of all packaging worlds (bundler, composer, npm, cargo, yarn, etc.) to the Python world. Windows is a first-class citizen, in our world. ([Source](https://pipenv.readthedocs.io/en/latest/))
-
-In [Pipenv & Virtual Environments](https://docs.python-guide.org/dev/virtualenvs/), you'll find a helpful guide that explains working with packages and virtual environments.

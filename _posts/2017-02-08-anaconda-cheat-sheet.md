@@ -3,7 +3,7 @@ title: "Anaconda Cheat Sheet"
 category: blog
 comments: True
 seo:
-    date_modified: 2020-11-11
+    date_modified: 2021-03-27
 image: /assets/anaconda_cheat_sheet_files/Eunectes_murinus_10zz.jpg
 imagesource: Wikimedia Commons
 imageurl: https://commons.wikimedia.org/wiki/File:Eunectes_murinus_10zz.jpg
@@ -16,14 +16,16 @@ Here is a short collection of commands and solutions for [Anaconda](https://www.
 # Quick and Useful Commands
 
 - `conda -v` See current version of Anaconda
-- `conda install [package]` Install package to the root Python installation
-- `conda search python` See available versions of Python 
-- `conda list` List all packages installed in Anaconda 
-- `conda update conda` Update Anaconda 
-- `conda info -e` List all installed enviroments 
-- `conda env export > environment.yml` Export active environment 
-- `conda env create -f environment.yml` Create environment from specification 
+- `conda install [package]` Install package to current environment
+- `conda install -c [channel] [package]` Install package with a specific channel
+- `conda search python` See available versions of Python
+- `conda list` List all packages installed in current environment
+- `conda update conda` Update Anaconda
+- `conda info -e` or `conda env list` List all installed enviroments
+- `conda env export > environment.yml` Export active environment
+- `conda env create -f environment.yml` Create environment from specification
 - `conda install --rev 1` Restore root environment to its state after installation
+- `conda remove --name myenv --all` Remove an environment
 
 # How to use Virtual Environments in Anaconda?
 
