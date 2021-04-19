@@ -193,6 +193,8 @@ After the initialization is finished, you can start the metastore service with:
 /usr/local/metastore/bin/start-metastore &
 ```
 
+For more information about the metastore configuration, have a look at the [documentation](https://cwiki.apache.org/confluence/display/Hive/AdminManual+Metastore+3.0+Administration) and  more specifically on [Running the Metastore Without Hive](https://cwiki.apache.org/confluence/display/Hive/AdminManual+Metastore+3.0+Administration#AdminManualMetastore3.0Administration-RunningtheMetastoreWithoutHive).
+
 # Trino and Presto
 
 [Trino](https://trino.io/) and [Presto](https://prestodb.io/) are both open-source distributed query engines for big data across a large variety of data sources including HDFS, S3, PostgreSQL, MySQL, Cassandra, MongoDB, and Elasticsearch among others. To see the difference between both projects, have a look at this [article](https://trino.io/blog/2020/12/27/announcing-trino.html). In this installation, you will see how to install Trino 352 in particular, but all the steps and queries were also tested on Presto 0.247.
